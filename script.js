@@ -275,11 +275,11 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
             receipt.appendChild(note);
             var homeBtn = document.createElement('a');
             homeBtn.className = 'btn booked-home';
-            homeBtn.href = 'index.html';
+            homeBtn.href = '/';
             homeBtn.textContent = 'Continue to Home Page';
             homeBtn.addEventListener('click', function (ce) {
               ce.preventDefault();
-              transitionTo('index.html');
+              transitionTo('/');
             });
             receipt.appendChild(homeBtn);
             fadeReceiptIn();
