@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inaya Advisory | Merchant Banking, Practiced for the Modern Private Markets</title>
+<meta name="description" content="Founders, funds, and sponsors come to Inaya to originate deals and raise institutional capital across private markets, in the Gulf, Europe, and North America.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://inayaadvisory.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inaya Advisory">
+<meta property="og:title" content="Inaya Advisory | Merchant Banking, Practiced for the Modern Private Markets">
+<meta property="og:description" content="Founders, funds, and sponsors come to Inaya to originate deals and raise institutional capital across private markets, in the Gulf, Europe, and North America.">
+<meta property="og:url" content="https://inayaadvisory.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inaya Advisory | Merchant Banking, Practiced for the Modern Private Markets">
+<meta name="twitter:description" content="Founders, funds, and sponsors come to Inaya to originate deals and raise institutional capital across private markets, in the Gulf, Europe, and North America.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;500&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="styles.css?v=73">
+</head>
+<body class="dark">
+
+<!-- Entrance loader (Harrington recipe) — mark strokes wipe in through masks, curtain lifts -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-curtain">
+    <div class="loader-inner">
+      <svg class="loader-mark" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="lm-bracket lm-left" d="M56 280 L56 0 L8 0 Q22 13 40 16 L40 264 Q22 267 8 280 Z"/>
+        <rect class="lm-bar lm-b1" x="70" y="0" width="10" height="280"/>
+        <rect class="lm-bar lm-b2" x="95" y="0" width="10" height="280"/>
+        <rect class="lm-bar lm-b3" x="120" y="0" width="10" height="280"/>
+        <path class="lm-bracket lm-right" d="M144 280 L144 0 L192 0 Q178 13 160 16 L160 264 Q178 267 192 280 Z"/>
+      </svg>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var loader = document.getElementById('loader');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var internalNav = false;
+  try {
+    internalNav = !!document.referrer && new URL(document.referrer).origin === location.origin;
+    var navEntry = performance.getEntriesByType('navigation')[0];
+    if (navEntry && navEntry.type === 'reload') internalNav = false; // reloads always replay the intro
+  } catch (e) {}
+  if (internalNav || reduced) {
+    loader.parentNode.removeChild(loader);
+    return;
+  }
+  var html = document.documentElement;
+  html.classList.add('intro-lock');
+  html.classList.add('has-intro');
+
+  // Intro always lands on the hero: no anchor jump, no restored scroll position
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname);
+  window.scrollTo(0, 0);
+
+  // Curtain done — loader leaves the DOM
+  setTimeout(function () {
+    if (loader.parentNode) loader.parentNode.removeChild(loader);
+    html.classList.remove('intro-lock');
+  }, 2700);
+})();
+</script>
+
+<nav class="on-dark">
+  <div class="nav-inner">
+    <a class="wordmark" href="index.html">Inaya Advisory</a>
+    <div class="nav-links">
+      <a href="#thesis">Thesis</a>
+      <a href="#about">About INAYA</a>
+      <a class="nav-cta" href="partner.html">Partner With Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Section 01 — Hero (black, left-aligned, giant outline mark right) -->
+<header class="hero hero-dark">
+  <svg class="hero-mark-bg" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M56 280 L56 0 L8 0 Q22 13 40 16 L40 264 Q22 267 8 280 Z"/>
+    <rect x="70" y="0" width="10" height="280"/>
+    <rect x="95" y="0" width="10" height="280"/>
+    <rect x="120" y="0" width="10" height="280"/>
+    <path d="M144 280 L144 0 L192 0 Q178 13 160 16 L160 264 Q178 267 192 280 Z"/>
+  </svg>
+  <div class="wrap">
+    <div class="label" data-reveal style="--reveal-delay: calc(var(--intro-delay) - 0.1s)">The Layer Above The Rolodex</div>
+    <h1><span class="w" style="--i:0">Merchant</span> <span class="w" style="--i:1">Banking,</span> <span class="w" style="--i:2">Practiced</span> <span class="w" style="--i:3">for</span> <span class="w" style="--i:4">the</span> <span class="w" style="--i:5">Modern</span> <span class="w" style="--i:6">Private</span> <span class="w" style="--i:7">Markets.</span></h1>
+    <p data-reveal style="--reveal-delay: calc(var(--intro-delay) + 0.5s)">Founders, funds, and sponsors come to Inaya for capital raising and private market deal origination. Every mandate is run from the principal's chair, by people who have raised and sold on their own account. The mandate is assessed and positioned before the market is ever engaged, so that what reaches it is already clear and defensible.</p>
+    <div class="btn-row" data-reveal style="--reveal-delay: calc(var(--intro-delay) + 0.7s)"><a class="btn" href="partner.html">Submit a Mandate</a></div>
+  </div>
+</header>
+
+<!-- Section 02 — Full-bleed photo -->
+<div class="full-photo">
+  <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&q=80" alt="Towers from below" loading="lazy">
+</div>
+
+<!-- Section 02c — The Firm -->
+<section class="divider-top" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-left">
+        <div class="label">The Firm</div>
+        <h2 data-reveal>Access, Judgement, Execution.</h2>
+        <a class="btn about-cta" href="partner.html">Partner With Us</a>
+      </div>
+      <div class="about-body" data-reveal style="--reveal-delay:.15s">
+        <p>At Inaya, we blend the discipline of institutional capital advisory with the instincts of modern origination. Our clients are fund managers, sponsors, founders, and private wealth principals. We pride ourselves on being operators first, advisors second, bringing a practical, ownership-driven view to every mandate.</p>
+        <p>With deep transactional experience across capital formation, M&amp;A, and private wealth, we bring more than advice. Whether the mandate is a fund raise, a real estate or infrastructure project, growth capital, or a private wealth introduction, every engagement is qualified before it begins and built to close.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Section 02b -- Global Access (split: photo left, navy panel right) -->
+<div class="split-section">
+  <div class="split-photo"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1400&q=80" alt="Gulf skyline at dusk" loading="lazy"></div>
+  <div class="split-panel" data-reveal>
+    <div class="label">Global Access</div>
+    <h2>Access is the part of this business that cannot be improvised.</h2>
+    <p>Inaya holds standing relationships with allocators, family offices, and private wealth principals across the Gulf, Europe, North America, and APAC. These are direct relationships built over years, which is why an introduction from Inaya arrives already warm.</p>
+  </div>
+</div>
+
+<!-- Section 02e — Network Profiles marquee -->
+<section class="network-band divider-top">
+  <div class="wrap">
+    <div class="label">Our Network Profiles</div>
+    <div class="network-head">
+      <h2 class="network-heading" data-reveal>The other side of a mandate.</h2>
+      <svg class="network-mark" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M56 280 L56 0 L8 0 Q22 13 40 16 L40 264 Q22 267 8 280 Z"/>
+        <rect x="70" y="0" width="10" height="280"/>
+        <rect x="95" y="0" width="10" height="280"/>
+        <rect x="120" y="0" width="10" height="280"/>
+        <path d="M144 280 L144 0 L192 0 Q178 13 160 16 L160 264 Q178 267 192 280 Z"/>
+      </svg>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="chip">Sovereign Wealth Funds</span><span class="chip">Family Offices</span><span class="chip">Pension Funds &amp; Endowments</span><span class="chip">Institutional Allocators</span><span class="chip">Institutional Asset Managers</span><span class="chip">Private Equity Funds</span><span class="chip">Venture Capital Funds</span><span class="chip">Ultra-High-Net-Worth Individuals</span><span class="chip">Sovereign Wealth Funds</span><span class="chip">Family Offices</span><span class="chip">Pension Funds &amp; Endowments</span><span class="chip">Institutional Allocators</span><span class="chip">Institutional Asset Managers</span><span class="chip">Private Equity Funds</span><span class="chip">Venture Capital Funds</span><span class="chip">Ultra-High-Net-Worth Individuals</span>
+    </div>
+  </div>
+  <div class="marquee reverse" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="chip">Strategic Acquirers</span><span class="chip">Corporate Development Teams</span><span class="chip">Holding Companies &amp; Conglomerates</span><span class="chip">Corporate Venture Arms</span><span class="chip">Growth Equity Investors</span><span class="chip">Infrastructure Sponsors</span><span class="chip">Real Estate Platforms</span><span class="chip">Industrial &amp; Strategic Groups</span><span class="chip">Strategic Acquirers</span><span class="chip">Corporate Development Teams</span><span class="chip">Holding Companies &amp; Conglomerates</span><span class="chip">Corporate Venture Arms</span><span class="chip">Growth Equity Investors</span><span class="chip">Infrastructure Sponsors</span><span class="chip">Real Estate Platforms</span><span class="chip">Industrial &amp; Strategic Groups</span>
+    </div>
+  </div>
+</section>
+
+<!-- Section 03 — What We Do (clickable service switcher) -->
+<section class="svc-switch" id="thesis">
+  <div class="wrap">
+    <img class="svc-script" src="images/thesis-navy.png" alt="Thesis">
+
+    <div class="svc-stage">
+
+    <div class="svc-panel active" data-svc-panel="cma">
+      <div class="svc-text">
+        <h3>Capital Markets</h3>
+        <p>When you are raising, the difficulty is rarely the merit of the business. It is reaching the allocators whose mandate actually fits yours, in the order that builds momentum rather than spends it, and arriving in front of them already understood, framed as the opportunity it is rather than one more deck in the pile.</p>
+        <p>We identify the allocators suited to each mandate and prepare them before the first conversation, so the raise reaches them already positioned to be understood on its own terms.</p>
+      </div>
+      <div class="svc-image"><img src="https://images.unsplash.com/photo-1501324682324-0d8d7c4b9706?w=1200&q=80" alt="" loading="lazy"></div>
+    </div>
+
+    <div class="svc-panel" data-svc-panel="ma">
+      <div class="svc-text">
+        <h3>Mergers &amp; Acquisitions</h3>
+        <p>Not every situation calls for capital. A founder may be weighing a full exit, a family a succession, a principal the sale of a minority stake, each resting on judgment well before it rests on price. We advise them through the whole of it, from how it is positioned and valued to how it is structured and timed.</p>
+        <p>We take one situation at a time and confirm fit on both sides before any conversation begins, so the counterparty in the room is one with genuine reason to be there.</p>
+      </div>
+      <div class="svc-image"><img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1200&q=80" alt="" loading="lazy"></div>
+    </div>
+
+    <div class="svc-panel" data-svc-panel="origination">
+      <div class="svc-text">
+        <h3>Deal Origination</h3>
+        <p>The same relationships that serve those raising also serve those deploying. For allocators, family offices, and advisory firms, we originate situations across our coverage, from fund raises and real estate to growth capital and private wealth, each held to the standard we apply on the advisory side of the table.</p>
+        <p>Every situation is weighed against that standard before it reaches you, so what arrives is worth the time it asks for and never sent on the chance that it lands.</p>
+      </div>
+      <div class="svc-image"><img src="https://images.unsplash.com/photo-1462206092226-f46025ffe607?w=1200&q=80" alt="" loading="lazy"></div>
+    </div>
+
+    </div>
+
+    <div class="svc-tabs">
+      <button class="svc-tab active" data-svc-tab="cma">Capital Markets</button>
+      <button class="svc-tab" data-svc-tab="ma">Mergers &amp; Acquisitions</button>
+      <button class="svc-tab" data-svc-tab="origination">Deal Origination</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section 04 — The Funnel (scroll-activated timeline) -->
+<section class="funnel-flow divider-top">
+  <div class="wrap">
+    <div class="label">The Funnel</div>
+    <h2 class="funnel-heading" data-reveal>From hundreds, to a handful.</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-node"></div>
+        <div class="flow-body">
+          <h4>Screening</h4>
+          <p>Hundreds of situations pass through our coverage each year, the majority of which warrant no more than an initial review.</p>
+        </div>
+        <div class="flow-tag">Ongoing</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"></div>
+        <div class="flow-body">
+          <h4>Initial Call</h4>
+          <p>A preliminary discussion to determine whether the situation merits mutual engagement, with no obligation on either side.</p>
+        </div>
+        <div class="flow-tag">20 Minutes</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"></div>
+        <div class="flow-body">
+          <h4>Assessment</h4>
+          <p>We evaluate the mandate and the counterparty against our internal threshold, and you receive a candid read on where it stands.</p>
+        </div>
+        <div class="flow-tag">Week 1</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"></div>
+        <div class="flow-body">
+          <h4>Internal Diligence</h4>
+          <p>Substantive work commences once fit and timing are established, each a precondition rather than a formality.</p>
+        </div>
+        <div class="flow-tag">Weeks 2-3</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-node"></div>
+        <div class="flow-body">
+          <h4>Acceptance</h4>
+          <p>A select share of screened situations is ultimately taken on, and that discipline is what gives an Inaya introduction its standing with the parties who receive it.</p>
+        </div>
+        <div class="flow-tag">2-3%</div>
+      </div>
+    </div>
+    <div class="funnel-cta" data-reveal>
+      <a class="btn" href="partner.html">Request a Confidential Mandate</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="wordmark">Inaya Advisory</div>
+        <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
+      </div>
+    </div>
+    <p class="footer-legal">inayaadvisory.com (the "Inaya Advisory Website") is a website operated by Inaya Advisory, a privately held Wyoming limited liability company. Inaya Advisory provides financial and strategic advisory, consulting services, mergers and acquisitions advisory, deal origination, investor relations, capital raising, and private wealth introduction services to fund managers, sponsors, founders, and private wealth principals. Inaya Advisory is not a registered broker-dealer, investment adviser, or placement agent, and nothing on this website constitutes an offer to sell or a solicitation of an offer to buy any security, nor the provision of investment, legal, tax, or accounting advice. Any engagement is subject to a separate written agreement, and references to capital, mandates, and introductions describe the nature of our advisory work rather than any guarantee of outcome. Past performance is not indicative of future results. © 2026 Inaya Advisory. All rights reserved.</p>
+    <div class="footer-wordmark" aria-hidden="true">INAYA</div>
+  </div>
+</footer>
+
+<script src="script.js?v=73"></script>
+</body>
+</html>
