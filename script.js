@@ -21,13 +21,10 @@ function inayaMarkSVG() {
 
 // Page-transition curtain — used ONLY by the post-booking "Continue to Home Page" button
 function transitionTo(href) {
-  var ov = document.createElement('div');
-  ov.className = 'page-trans';
-  ov.innerHTML = '<div class="pt-mark">' + inayaMarkSVG() + '</div>';
-  document.body.appendChild(ov);
-  requestAnimationFrame(function () { ov.classList.add('show'); });
+  // No leaving curtain on this page — go straight to home. The home page still
+  // plays its own arrival fade (the pageTrans block below); that one we keep.
   sessionStorage.setItem('pageTrans', '1');
-  setTimeout(function () { location.href = href; }, 900);
+  location.href = href;
 }
 // arriving under the curtain: fade it away
 if (sessionStorage.getItem('pageTrans')) {
@@ -81,7 +78,7 @@ function scrollToSection(id, smooth) {
   window.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
   return true;
 }
-['thesis', 'about'].forEach(function (id) {
+['thesis', 'about', 'people'].forEach(function (id) {
   document.querySelectorAll('a[href$="#' + id + '"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
       if (document.getElementById(id)) {
@@ -92,7 +89,7 @@ function scrollToSection(id, smooth) {
     });
   });
 });
-if (location.hash === '#thesis' || location.hash === '#about') {
+if (location.hash === '#thesis' || location.hash === '#about' || location.hash === '#people') {
   window.addEventListener('load', function () {
     var id = location.hash.slice(1);
     requestAnimationFrame(function () { scrollToSection(id, false); });
@@ -214,7 +211,7 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
       var email = (form.elements.email && form.elements.email.value) || '';
       var details = {
         firm: (form.elements.firm && form.elements.firm.value) || '',
-        mandateType: (form.elements.mandate_type && form.elements.mandate_type.value) || '',
+        companyType: (form.elements.company_type && form.elements.company_type.value) || '',
         capitalTarget: (form.elements.capital_target && form.elements.capital_target.value) || '',
         description: (form.elements.description && form.elements.description.value) || ''
       };
@@ -259,6 +256,7 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
         var enterBookedState = function () {
           fadeReceiptOut(function () {
             receipt.classList.remove('has-cal');
+            formBody.classList.remove('cal-mode');
             receipt.classList.add('booked');
             receipt.innerHTML = '';
             var bookedMark = document.createElement('div');
@@ -275,11 +273,11 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
             receipt.appendChild(note);
             var homeBtn = document.createElement('a');
             homeBtn.className = 'btn booked-home';
-            homeBtn.href = '/';
+            homeBtn.href = 'index.html';
             homeBtn.textContent = 'Continue to Home Page';
             homeBtn.addEventListener('click', function (ce) {
               ce.preventDefault();
-              transitionTo('/');
+              transitionTo('index.html');
             });
             receipt.appendChild(homeBtn);
             fadeReceiptIn();
@@ -291,7 +289,12 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
             mark.remove();
             redirect.remove();
             receipt.classList.add('has-cal');
+            formBody.classList.add('cal-mode');
             receipt.innerHTML = '';
+            // Panel stays LOCKED at the form height. Cal.com resizes its own
+            // iframe as dates/months are clicked, but that happens inside a
+            // fixed-height scroll wrapper, so the panel and the image matched
+            // to it never move.
 
             msg = document.createElement('p');
             msg.className = 'receipt-msg';
@@ -306,17 +309,10 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
             calMount.className = 'cal-mount';
             receipt.appendChild(calMount);
 
-            mountInayaCalendar(calMount, {
-              name: name,
-              email: email,
-              details: details,
-              onBooked: enterBookedState,
-              onReady: fadeReceiptIn,
-              fallback: function () {
-                mountCalEmbed(calMount, calLink, name, email, enterBookedState);
-                fadeReceiptIn();
-              }
-            });
+            // Plain Cal.com layout (dark-themed) mounted straight into the
+            // right-side space — no custom in-design calendar.
+            mountCalEmbed(calMount, calLink, name, email, enterBookedState);
+            fadeReceiptIn();
           });
         }, 4000);
       }
@@ -333,336 +329,31 @@ document.querySelectorAll('form[data-inline-success]').forEach(function (form) {
   });
 });
 
-// ---------- Cal.com embed (fallback only) ----------
+// ---------- Cal.com inline embed (stock interface) ----------
+// Mounts Cal.com's own booking UI, unstyled, straight into calMount. The panel
+// is locked to the form height and calMount scrolls internally, so Cal.com
+// resizing its iframe (on date/month clicks) never moves the panel or the
+// height-matched image. On a successful booking, onBooked() swaps in our own
+// confirmation (see enterBookedState).
 function mountCalEmbed(container, calLink, name, email, onBooked) {
   container.innerHTML = '';
   if (!container.id) container.id = 'cal-inline';
-  container.classList.add('cal-frame', 'cal-embed');
+  container.classList.add('cal-embed');
+  var done = false;
+  function fireBooked() { if (done) return; done = true; onBooked(); }
   try {
     Cal('inline', {
       elementOrSelector: '#' + container.id,
       calLink: calLink,
-      config: { name: name, email: email, theme: 'dark', layout: 'month_view' }
+      config: { name: name, email: email, theme: 'light', layout: 'month_view' }
     });
-    Cal('ui', {
-      theme: 'dark',
-      hideEventTypeDetails: true,
-      cssVarsPerTheme: {
-        dark: {
-          'cal-brand': '#F5F2EB',
-          'cal-bg': '#0B0B09',
-          'cal-bg-muted': '#121110',
-          'cal-border': 'rgba(245,242,235,0.16)',
-          'cal-border-default': 'rgba(245,242,235,0.16)',
-          'cal-border-subtle': 'rgba(245,242,235,0.1)',
-          'cal-radius': '0px',
-          'cal-radius-md': '0px',
-          'cal-radius-lg': '0px'
-        }
-      }
-    });
-    Cal('on', { action: 'bookingSuccessful', callback: function () { onBooked(); } });
+    // Cal.com's own default (light) interface — no Inaya theming applied.
+    Cal('ui', { theme: 'light', hideEventTypeDetails: false });
+    // On a completed booking, swap Cal.com's own confirmation for ours: the
+    // "Arrange An Introduction." heading clears and enterBookedState shows
+    // "Your call has been booked." + the Continue to Home Page button. Register
+    // both event names Cal.com has shipped, guarded so it only fires once.
+    Cal('on', { action: 'bookingSuccessful', callback: fireBooked });
+    Cal('on', { action: 'bookingSuccessfulV2', callback: fireBooked });
   } catch (e) {}
-}
-
-// ---------- Custom in-design calendar (Inaya) ----------
-// Reads availability from /api/slots and books through /api/book.
-// Both endpoints keep the Cal.com key server-side. Months are cached and the
-// next month is prefetched, so navigation is instant after the first load.
-function mountInayaCalendar(container, opts) {
-  var tz = 'UTC';
-  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) {}
-  var name = opts.name, email = opts.email;
-  var details = opts.details || {};
-  var cache = {};
-  var today = new Date();
-  var view = { y: today.getFullYear(), m: today.getMonth() };
-  var selectedDateKey = null;
-  var selectedSlot = null;
-  var booking = false;
-  var firstLoad = true;
-
-  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var DOW = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function monthKey(y, m) { return y + '-' + pad(m + 1); }
-  function dayKey(y, m, d) { return y + '-' + pad(m + 1) + '-' + pad(d); }
-  function nextMonth(y, m) { return m === 11 ? { y: y + 1, m: 0 } : { y: y, m: m + 1 }; }
-  function prevMonth(y, m) { return m === 0 ? { y: y - 1, m: 11 } : { y: y, m: m - 1 }; }
-  function atCurrentMonth() { return view.y === today.getFullYear() && view.m === today.getMonth(); }
-
-  container.classList.add('inaya-cal');
-
-  function fetchMonth(y, m) {
-    var mk = monthKey(y, m);
-    if (cache[mk]) return Promise.resolve(cache[mk]);
-    var daysIn = new Date(y, m + 1, 0).getDate();
-    var start = dayKey(y, m, 1);
-    var end = dayKey(y, m, daysIn);
-    var url = '/api/slots?start=' + encodeURIComponent(start) +
-      '&end=' + encodeURIComponent(end) + '&timeZone=' + encodeURIComponent(tz);
-    return fetch(url, { headers: { Accept: 'application/json' } })
-      .then(function (r) { if (!r.ok) throw new Error('slots ' + r.status); return r.json(); })
-      .then(function (j) {
-        if (!j || j.status !== 'success' || !j.data) throw new Error('bad payload');
-        cache[mk] = j.data;
-        return j.data;
-      });
-  }
-
-  function prefetchNext() {
-    var n = nextMonth(view.y, view.m);
-    fetchMonth(n.y, n.m).catch(function () {});
-  }
-
-  function formatTime(iso) {
-    try { return new Date(iso).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }); }
-    catch (e) { return iso; }
-  }
-  function formatDateHeading(key) {
-    var p = key.split('-');
-    var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
-    return d.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric' });
-  }
-
-  function renderLoading() {
-    // no logo loader — keep the space clean; the calendar appears when ready
-    container.innerHTML = '';
-  }
-
-  var gridEl = null, belowEl = null;
-  function currentData() { return cache[monthKey(view.y, view.m)] || {}; }
-
-  function buildHead() {
-    var head = document.createElement('div');
-    head.className = 'ic-head';
-    var title = document.createElement('div');
-    title.className = 'ic-title';
-    title.innerHTML = '<span>' + MONTHS[view.m] + '</span> ' + view.y;
-    head.appendChild(title);
-    var navWrap = document.createElement('div');
-    navWrap.className = 'ic-navwrap';
-    var prev = document.createElement('button');
-    prev.className = 'ic-nav'; prev.setAttribute('aria-label', 'Previous month'); prev.innerHTML = '&#8592;';
-    prev.disabled = atCurrentMonth();
-    var next = document.createElement('button');
-    next.className = 'ic-nav'; next.setAttribute('aria-label', 'Next month'); next.innerHTML = '&#8594;';
-    navWrap.appendChild(prev); navWrap.appendChild(next);
-    head.appendChild(navWrap);
-    prev.addEventListener('click', function () {
-      if (prev.disabled) return;
-      var p = prevMonth(view.y, view.m);
-      view.y = p.y; view.m = p.m; selectedDateKey = null; selectedSlot = null; load();
-    });
-    next.addEventListener('click', function () {
-      var n = nextMonth(view.y, view.m);
-      view.y = n.y; view.m = n.m; selectedDateKey = null; selectedSlot = null; load();
-    });
-    return head;
-  }
-
-  function paint() {
-    var data = currentData();
-    container.innerHTML = '';
-    container.appendChild(buildHead());
-
-    gridEl = document.createElement('div');
-    gridEl.className = 'ic-grid ic-anim-in';
-    DOW.forEach(function (d) {
-      var c = document.createElement('div'); c.className = 'ic-dow'; c.textContent = d; gridEl.appendChild(c);
-    });
-    var firstDow = new Date(view.y, view.m, 1).getDay();
-    var daysIn = new Date(view.y, view.m + 1, 0).getDate();
-    var todayMid = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    for (var i = 0; i < firstDow; i++) {
-      var blank = document.createElement('div'); blank.className = 'ic-day is-blank'; gridEl.appendChild(blank);
-    }
-    for (var day = 1; day <= daysIn; day++) {
-      var key = dayKey(view.y, view.m, day);
-      var cell = document.createElement('button');
-      cell.className = 'ic-day'; cell.textContent = day;
-      var isPast = new Date(view.y, view.m, day) < todayMid;
-      var hasSlots = data[key] && data[key].length > 0;
-      if (isPast || !hasSlots) { cell.classList.add('is-empty'); cell.disabled = true; }
-      else { cell.classList.add('is-available'); }
-      if (key === selectedDateKey) cell.classList.add('is-selected');
-      (function (k, c) {
-        c.addEventListener('click', function () {
-          if (c.disabled) return;
-          selectedDateKey = k; selectedSlot = null;
-          var cells = gridEl.querySelectorAll('.ic-day');
-          for (var x = 0; x < cells.length; x++) cells[x].classList.remove('is-selected');
-          c.classList.add('is-selected');
-          renderBelow(true);
-        });
-      })(key, cell);
-      gridEl.appendChild(cell);
-    }
-    // pad with trailing blanks so every month fills a full 6-week grid — height never changes between months
-    for (var t = firstDow + daysIn; t < 42; t++) {
-      var tail = document.createElement('div'); tail.className = 'ic-day is-blank'; gridEl.appendChild(tail);
-    }
-    container.appendChild(gridEl);
-
-    belowEl = document.createElement('div');
-    belowEl.className = 'ic-below';
-    container.appendChild(belowEl);
-    renderBelow(false);
-  }
-
-  function renderBelow(animate) {
-    if (!belowEl) return;
-    var data = currentData();
-    var slots = data[selectedDateKey];
-    belowEl.innerHTML = '';
-    if (!selectedDateKey || !slots || !slots.length) {
-      var hint = document.createElement('div');
-      hint.className = 'ic-empty-hint';
-      hint.textContent = 'Select a date to view available times.';
-      belowEl.appendChild(hint);
-      return;
-    }
-
-    var times = document.createElement('div');
-    times.className = 'ic-times';
-    var th = document.createElement('div');
-    th.className = 'ic-times-head';
-    th.textContent = formatDateHeading(selectedDateKey);
-    times.appendChild(th);
-    var list = document.createElement('div');
-    list.className = 'ic-slot-list';
-    slots.forEach(function (slot) {
-      var b = document.createElement('button');
-      b.className = 'ic-slot';
-      b.textContent = formatTime(slot.start);
-      if (selectedSlot && selectedSlot.start === slot.start) b.classList.add('is-selected');
-      b.addEventListener('click', function () {
-        selectedSlot = slot;
-        var others = list.querySelectorAll('.ic-slot');
-        for (var x = 0; x < others.length; x++) others[x].classList.remove('is-selected');
-        b.classList.add('is-selected');
-        showConfirm();
-      });
-      list.appendChild(b);
-    });
-    times.appendChild(list);
-    belowEl.appendChild(times);
-
-    if (selectedSlot) belowEl.appendChild(buildConfirm());
-
-    if (animate) {
-      belowEl.classList.remove('ic-anim-in');
-      void belowEl.offsetWidth;
-      belowEl.classList.add('ic-anim-in');
-    }
-  }
-
-  function buildConfirm() {
-    var confirm = document.createElement('div');
-    confirm.className = 'ic-confirm';
-    var line = document.createElement('p');
-    line.className = 'ic-confirm-line';
-    line.textContent = formatDateHeading(selectedDateKey) + ' at ' + formatTime(selectedSlot.start);
-    confirm.appendChild(line);
-    var cbtn = document.createElement('button');
-    cbtn.className = 'btn ic-confirm-btn';
-    cbtn.textContent = booking ? 'Confirming…' : 'Confirm This Time';
-    cbtn.disabled = booking;
-    cbtn.addEventListener('click', doBook);
-    confirm.appendChild(cbtn);
-    var err = document.createElement('p');
-    err.className = 'ic-error'; err.id = 'ic-error';
-    confirm.appendChild(err);
-    return confirm;
-  }
-
-  function showConfirm() {
-    if (!belowEl) return;
-    var existing = belowEl.querySelector('.ic-confirm');
-    if (existing) existing.remove();
-    if (!selectedSlot) return;
-    var c = buildConfirm();
-    c.classList.add('ic-anim-in');
-    belowEl.appendChild(c);
-  }
-
-  function showError(t) { var e = document.getElementById('ic-error'); if (e) e.textContent = t; }
-
-  function doBook() {
-    if (booking || !selectedSlot) return;
-    booking = true;
-    showConfirm();
-    if (isLocalPreview()) {
-      setTimeout(function () { booking = false; opts.onBooked(); }, 700);
-      return;
-    }
-    fetch('/api/book', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ start: selectedSlot.start, name: name, email: email, timeZone: tz, details: details })
-    })
-      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-      .then(function (res) {
-        booking = false;
-        if (res.ok && res.j && res.j.status === 'success') { opts.onBooked(); }
-        else { showConfirm(); showError('That time is no longer available. Please choose another.'); }
-      })
-      .catch(function () { booking = false; showConfirm(); showError('Something went wrong. Please try again.'); });
-  }
-
-  function isLocalPreview() {
-    return location.hostname === 'localhost' ||
-      location.hostname === '127.0.0.1' ||
-      location.protocol === 'file:';
-  }
-
-  // Placeholder availability so the custom calendar can be designed locally
-  // (the live /api endpoints only run on Vercel). Varies per day so the time
-  // list visibly changes between dates.
-  function mockMonth(y, m) {
-    var data = {};
-    var daysIn = new Date(y, m + 1, 0).getDate();
-    var todayMid = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    var pool = [[9, 30], [10, 0], [10, 30], [11, 0], [11, 30], [13, 30], [14, 0], [14, 30], [15, 0], [15, 30], [16, 0], [16, 30]];
-    for (var d = 1; d <= daysIn; d++) {
-      var dt = new Date(y, m, d);
-      if (dt < todayMid) continue;
-      if (dt.getDay() === 0 || dt.getDay() === 6) continue;
-      var offset = d % 4;
-      var count = 5 + (d % 4);
-      var picks = pool.slice(offset, offset + count);
-      data[dayKey(y, m, d)] = picks.map(function (h) {
-        return { start: new Date(y, m, d, h[0], h[1]).toISOString() };
-      });
-    }
-    return data;
-  }
-
-  var readyFired = false;
-  function fireReady() {
-    if (readyFired) return;
-    readyFired = true;
-    if (opts.onReady) opts.onReady();
-  }
-
-  function load() {
-    var mk = monthKey(view.y, view.m);
-    if (!cache[mk]) renderLoading();
-    fetchMonth(view.y, view.m)
-      .then(function () { firstLoad = false; paint(); fireReady(); prefetchNext(); })
-      .catch(function () {
-        if (isLocalPreview()) {
-          cache[mk] = mockMonth(view.y, view.m);
-          firstLoad = false;
-          paint();
-          fireReady();
-        } else if (firstLoad && opts.fallback) {
-          opts.fallback();
-        } else {
-          paint();
-        }
-      });
-  }
-
-  load();
 }
