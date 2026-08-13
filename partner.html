@@ -1,109 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partner With Us | Inaya Advisory</title>
-<meta name="description" content="Submit a confidential mandate inquiry to Inaya Advisory and arrange an introduction.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The mandate consultation | Inaya Advisory</title>
+<meta name="description" content="Book a thirty-minute mandate consultation with Inaya Advisory. For principals raising capital who want a direct read on where the raise stands with allocators deploying today.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://inayaadvisory.com/partner">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Inaya Advisory">
-<meta property="og:title" content="Partner With Us | Inaya Advisory">
-<meta property="og:description" content="Submit a confidential mandate inquiry to Inaya Advisory and arrange an introduction.">
+<meta property="og:title" content="The mandate consultation | Inaya Advisory">
+<meta property="og:description" content="A thirty-minute mandate consultation for principals raising capital.">
 <meta property="og:url" content="https://inayaadvisory.com/partner">
 <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Partner With Us | Inaya Advisory">
-<meta name="twitter:description" content="Submit a confidential mandate inquiry to Inaya Advisory and arrange an introduction.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=630&fit=crop&q=80">
+<meta name="twitter:title" content="The mandate consultation | Inaya Advisory">
+<meta name="twitter:description" content="A thirty-minute mandate consultation for principals raising capital.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500&family=DM+Sans:wght@300;500&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="styles.css?v=97">
-</head>
-<body class="dark">
+<style>
+:root{
+  --ink:#0B0B09;
+  --panel:#141311;
+  --line:#2A2724;
+  --line-2:#3B3730;
+  --cream:#F4EFE6;
+  --warm:#A79E92;
+  --muted:#7E766C;
+  --faint:#5F594F;
+  --err:#C58A70;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --wm:"Marcellus",Georgia,serif;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+section{scroll-margin-top:86px}
 
-<nav class="on-dark">
-  <div class="nav-inner">
-    <a class="wordmark" href="index.html">Inaya Advisory</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a class="nav-cta" href="partner.html">Partner With Us</a>
+.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.15}
+h1{font-size:clamp(34px,4.6vw,58px)}
+h2{font-size:clamp(28px,3.4vw,42px)}
+h3{font-size:clamp(18px,1.6vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--warm)}
+a{color:inherit}
+
+header{position:sticky;top:0;z-index:50;background:transparent;transition:background .3s ease}
+header.scrolled{background:rgba(11,11,9,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:26px 6vw}
+.mark{font-family:var(--wm);font-size:19px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-right:-.42em}
+.hdr-r{display:flex;align-items:center;gap:14px}
+.hdr-r span{font-size:12px;color:var(--muted)}
+
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:.04em;padding:13px 26px;border:1px solid var(--cream);background:var(--cream);color:var(--ink);text-decoration:none;text-align:center;cursor:pointer;transition:opacity .2s}
+.btn:hover{opacity:.86}
+.btn-ghost{background:transparent;color:var(--cream);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--warm);opacity:1}
+.btn-sm{padding:9px 18px;font-size:12px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
+
+.hero{padding:clamp(56px,7vw,104px) 0 clamp(44px,5vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start}
+.hero h1{margin:20px 0 22px;max-width:14ch}
+.hero p.lede{max-width:52ch}
+.agenda{margin:30px 0;border-top:1px solid var(--line)}
+.agenda div{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.agenda i{font-style:normal;font-size:11px;color:var(--faint);padding-top:4px}
+.agenda p{font-size:14px;color:var(--warm)}
+.agenda b{font-weight:400;color:var(--cream)}
+.cta-row{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-row .btn{min-width:220px}
+.microline{font-size:12px;color:var(--muted)}
+.textlink{font-size:13px;color:var(--warm);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.textlink:hover{color:var(--cream)}
+
+.card{border:1px solid var(--line);background:var(--panel);padding:26px}
+.card-label{font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.rule{height:1px;background:var(--line);margin:16px 0}
+.prole{font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+
+/* stat band — grouped and centred */
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.band-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:148px;padding:34px clamp(20px,3vw,42px);border-right:1px solid var(--line);text-align:center}
+.band-grid>div:last-child{border-right:none}
+.stat{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);color:var(--cream);line-height:1}
+.stat-l{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:12px}
+
+.sec{padding:clamp(64px,8vw,116px) 0}
+.sec-head{max-width:640px;margin-bottom:clamp(32px,4vw,52px)}
+.sec-head h2{margin:16px 0 16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.step-n{font-size:12px;color:var(--faint)}
+.step-t{font-size:10px;letter-spacing:.14em;color:var(--muted)}
+.card h3{margin-bottom:12px}
+.card p{font-size:14px}
+.grid3>.card{display:flex;flex-direction:column;min-height:400px}
+.who{display:flex;gap:11px;align-items:flex-start;margin-top:auto;height:74px;padding-top:18px;border-top:1px solid var(--line)}
+.av{width:32px;height:32px;border-radius:50%;overflow:hidden;background:#1D1B18;border:1px solid var(--line);flex-shrink:0}
+.av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
+.av-stack{display:flex}
+.av-stack .av:not(:first-child){margin-left:-10px}
+
+.handoff{display:grid;grid-template-columns:.85fr 1.4fr;gap:clamp(20px,4vw,48px);align-items:center;margin-top:16px}
+.bio{margin-bottom:16px}
+.bio-grid{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+.bio-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.bio-sub{font-size:13px;color:var(--muted);margin:6px 0 14px}
+.means{border-left:2px solid var(--line-2);padding:2px 0 2px 16px;margin-top:18px}
+.means p{font-size:14px;color:var(--cream);margin-top:5px}
+.pname{font-family:var(--serif);font-size:24px;color:var(--cream)}
+.ph-lg{width:200px;height:250px;overflow:hidden;background:#1D1B18;border:1px solid var(--line)}
+.ph-lg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
+
+.form-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.slots{display:grid;gap:8px;margin-bottom:10px}
+.slots-day{grid-template-columns:repeat(4,88px);justify-content:start;margin-bottom:12px}
+.slots-time{grid-template-columns:repeat(6,minmax(0,1fr))}
+.slot{border:1px solid var(--line);background:transparent;color:var(--warm);font-family:var(--sans);font-size:12px;font-weight:300;padding:12px 4px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.slot:hover{border-color:var(--line-2);color:var(--cream)}
+.slot[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.slot-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px 4px}
+.slot-day .d-wd,.slot-day .d-mo{font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.slot-day .d-dd{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1;color:var(--cream)}
+.slot-day:hover .d-dd{color:var(--cream)}
+.slot-day[aria-pressed="true"] .d-wd,.slot-day[aria-pressed="true"] .d-mo{color:var(--faint)}
+.slot-day[aria-pressed="true"] .d-dd{color:var(--ink)}
+.fee-line{font-size:13px;line-height:1.6;color:var(--warm);margin:-2px 0 20px;padding-left:14px;border-left:2px solid var(--line-2)}
+.fee-line b{color:var(--cream);font-weight:400}
+.tz{font-size:12px;color:var(--faint);margin-bottom:22px}
+.tz a{color:var(--cream)}
+.frow{display:grid;gap:18px;margin-bottom:18px}
+.f2{grid-template-columns:1fr 1fr}
+.f3{grid-template-columns:repeat(3,1fr)}
+label{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+input,select,textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:14px;padding:6px 0}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 13px,calc(100% - 4px) 13px;background-size:5px 5px;background-repeat:no-repeat}
+select option{background:var(--ink)}
+::placeholder{color:var(--faint)}
+.check{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);padding:16px;margin-bottom:6px}
+.check input{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--cream)}
+.check span{font-size:13px;color:var(--warm);line-height:1.6}
+.field-err{font-size:12px;color:var(--err);margin:8px 0 16px}
+.side .card{margin-bottom:16px}
+.side .card:last-child{margin-bottom:0}
+.mini{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--warm)}
+.mini:last-child{border-bottom:none;padding-bottom:0}
+.mini:first-of-type{padding-top:0}
+.mini i{font-style:normal;font-size:10px;color:var(--faint);padding-top:3px}
+
+/* footer — as on the website */
+footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;overflow:hidden}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:52px}
+.footer-brand .fmark{font-family:var(--wm);font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:var(--cream)}
+.footer-brand a{display:block;font-size:14px;color:var(--muted);margin-top:12px;text-decoration:none}
+.footer-brand a:hover{color:var(--warm)}
+.footer-social a{display:inline-block;color:var(--warm)}
+.footer-social a:hover{color:var(--cream)}
+.footer-social svg{display:block;width:20px;height:20px;fill:currentColor}
+.footer-legal p{font-size:11px;line-height:1.85;color:var(--faint);margin-bottom:12px;max-width:1000px}
+.footer-wm{font-family:var(--serif);font-weight:300;font-size:clamp(80px,15vw,210px);line-height:.9;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--cream);opacity:.04;user-select:none;margin-top:56px}
+
+@media(max-width:900px){
+  .hero-grid,.form-grid,.handoff,.bio-grid{grid-template-columns:1fr}
+  .grid3,.band-grid,.f3,.f2{grid-template-columns:1fr}
+  .band-grid>div{border-right:none;border-bottom:1px solid var(--line);min-height:0;padding:26px 0}
+  .band-grid>div:last-child{border-bottom:none}
+  .slots-day{grid-template-columns:repeat(4,1fr)}
+  .slots-time{grid-template-columns:repeat(3,1fr)}
+  .hdr-r span{display:none}
+  .ph-lg{width:150px;height:188px}
+  .footer-top{flex-direction:column}
+  .grid3>.card{min-height:0}
+  .who{height:auto;margin-top:24px}
+}
+@media(max-width:560px){
+  .hdr{padding:18px 24px}
+  .mark{font-size:14px;letter-spacing:.26em;margin-right:-.26em}
+  .hdr-home{display:none}
+  .hdr-r .btn{padding:10px 16px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<script>
+/* On load or refresh, always land on the hero: never restore a scroll position, never jump to an anchor. */
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+  window.addEventListener('load', function () { window.scrollTo(0, 0); });
+  window.addEventListener('pageshow', function () { window.scrollTo(0, 0); });
+})();
+</script>
+
+<header>
+  <div class="hdr">
+    <a class="mark" href="index.html" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
+    <span class="hdr-r">
+      <a class="btn btn-ghost hdr-home" href="index.html">Home</a>
+      <a class="btn btn-ghost" href="#book">Book the call</a>
+    </span>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">For principals raising capital</p>
+      <h1 style="max-width:none">Mandate consultation.</h1>
+      <p class="lede">You walk through what you are raising, the timeline, and the constraints. We tell you where it stands with the allocators deploying into your part of the market today. If we are not the firm to run it, we will say so on the call.</p>
+
+      <div class="cta-row" style="margin-top:34px">
+        <a class="btn" href="#book">Book the consultation</a>
+        <p class="microline">You will know where you stand inside thirty minutes.</p>
+        <a class="textlink" href="#how">See how it works ↓</a>
+      </div>
+    </div>
+
+    <div style="padding-top:6px">
+      <p class="eyebrow">What the thirty minutes cover</p>
+      <div class="agenda" style="margin-top:18px">
+        <div><i>01</i><p><b>A read on the raise.</b> How it lands with allocators, and what is working against it.</p></div>
+        <div><i>02</i><p><b>Where the capital is.</b> Which allocators are live for a mandate like yours.</p></div>
+        <div><i>03</i><p><b>A direct answer on fit.</b> Whether we would take it, and what we would change.</p></div>
+      </div>
+      <p class="microline" style="margin-top:18px">30 minutes · video or phone · held in confidence</p>
     </div>
   </div>
-</nav>
+</section>
 
-<!-- Confidential Mandate Inquiry -->
-<section>
+<div class="band">
+  <div class="wrap band-grid">
+    <div><div class="stat">$7B+</div><div class="stat-l">Pension assets directed</div></div>
+    <div><div class="stat">$100M–$1B</div><div class="stat-l">Institutional placements</div></div>
+    <div><div class="stat">$600M+</div><div class="stat-l">In active mandates</div></div>
+  </div>
+</div>
+
+<section class="sec" id="how">
   <div class="wrap">
-    <div class="form-split" data-reveal>
-      <div class="form-visual"><img src="https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=1600&q=85" alt="Geometric glass architecture" loading="lazy"></div>
-      <div class="form-body">
-        <h2>Mandate Intake <span class="straight-dash">-</span> By Introduction.</h2>
-        <form data-inline-success data-cal="https://cal.com/abbas-chothia-strmar/introductory-call" action="https://formspree.io/f/xnjednnd" method="POST">
-          <input type="hidden" name="_subject" value="New Inaya Mandate Inquiry">
-          <div class="field">
-            <label for="p-name">Full Name</label>
-            <input id="p-name" name="name" type="text" required>
+    <div class="sec-head">
+      <p class="eyebrow">How this works</p>
+      <h2>Three conversations before anyone signs anything.</h2>
+      <p>You will know where you stand with us inside a week, and you will know it from the people who would actually run your mandate.</p>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="step-top"><span class="step-n">01</span><span class="step-t">30 MIN</span></div>
+        <h3>The discovery call</h3>
+        <p>Thirty minutes with Abbas Chotia. What you're raising, the timeline you're working to, the constraints in front of you, and what has already been tried.</p>
+        <div class="who"><span class="av"><img src="images/abbas.png" alt="Abbas Chotia" style="object-position:60% center"></span><div><div style="font-size:13px;color:var(--cream)">Abbas Chotia</div><div class="prole">Senior client advisor</div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="step-top"><span class="step-n">02</span><span class="step-t">48–72 HRS</span></div>
+        <h3>The internal read</h3>
+        <p>Your situation goes to David Hunter and Anas Ansar. Inside 48 to 72 hours you get a direct answer on whether we would take the mandate, including when the answer is no, and why.</p>
+        <div class="who"><span class="av-stack"><span class="av"><img src="images/david.png" alt="David Hunter"></span><span class="av"><img src="images/anas-ansar.jpg" alt="Anas Ansar"></span></span><div><div style="font-size:13px;color:var(--cream)">David Hunter and Anas Ansar</div><div class="prole">Senior advisor · Managing partner</div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="step-top"><span class="step-n">03</span><span class="step-t">60–90 MIN</span></div>
+        <h3>The strategy call</h3>
+        <p>All three of us on one call. How the raise would be positioned, which capital we would go to and in what order, and how the engagement is structured. Our team is also willing to fly to your place to discuss the mandate.</p>
+        <div class="who"><span class="av-stack"><span class="av"><img src="images/abbas.png" alt="" style="object-position:60% center"></span><span class="av"><img src="images/anas-ansar.jpg" alt=""></span><span class="av"><img src="images/david.png" alt=""></span></span><div><div style="font-size:13px;color:var(--cream)">The full team</div><div class="prole">Senior advisor · Managing partner · Senior client advisor</div></div></div>
+      </div>
+    </div>
+
+    <div class="card handoff">
+      <div>
+        <p class="card-label">After the engagement letter</p>
+        <h3 style="margin-top:10px">You are not handed to an analyst.</h3>
+      </div>
+      <p>Anas runs the mandate from signing through close. Nobody joins your deal who was not on the strategy call.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="team" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Who you would be working with</p>
+      <h2>Three people. All three on your mandate.</h2>
+      <p>A firm this size can put its most senior people on every deal it takes. That is the whole reason to be this size.</p>
+    </div>
+
+    <div class="card bio">
+      <div class="bio-grid">
+        <div class="ph-lg"><img src="images/david.png" alt="David Hunter" style="object-position:center"></div>
+        <div>
+          <div class="bio-head"><span class="pname">David Hunter</span><span class="prole">Senior advisor</span></div>
+          <p class="bio-sub">24 years placing institutional capital · University of Chicago</p>
+          <p>Directed $7B+ in pension assets at HSBC North America and served as Executive Director and Chief Investment Officer of two US public pension systems, growing one from roughly $8B to nearly $20B across 27 portfolios. Led the $40B Texas Municipal Retirement System to back-to-back top-quartile returns, a first in that system's history. Named to ISS's Power 100 Chief Investment Officers.</p>
+          <div class="means">
+            <span class="prole">What this means for your raise</span>
+            <p>Your materials get read by someone who spent a career on the allocator's side of the table, before an allocator ever sees them.</p>
           </div>
-          <div class="field">
-            <label for="p-firm">Firm Name</label>
-            <input id="p-firm" name="firm" type="text" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bio">
+      <div class="bio-grid">
+        <div class="ph-lg"><img src="images/anas-ansar.jpg" alt="Anas Ansar" style="object-position:center"></div>
+        <div>
+          <div class="bio-head"><span class="pname">Anas Ansar</span><span class="prole">Managing partner</span></div>
+          <p class="bio-sub">Origination · North America, Europe, the Gulf</p>
+          <p>Comes to private markets from origination, the function most advisory firms outsource and Inaya treats as the core of the practice. Has opened direct conversations inside enterprises including Boeing, Caterpillar, Panasonic, and Revlon, and built the reach that puts a mandate in front of capital referral networks never touch.</p>
+          <div class="means">
+            <span class="prole">What this means for your raise</span>
+            <p>Your raise is not limited to who we already know. We build a route to the allocators who fit it.</p>
           </div>
-          <div class="field">
-            <label for="p-email">Business Email</label>
-            <input id="p-email" name="email" type="email" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="card bio">
+      <div class="bio-grid">
+        <div class="ph-lg"><img src="images/abbas.png" alt="Abbas Chotia" style="object-position:60% center"></div>
+        <div>
+          <div class="bio-head"><span class="pname">Abbas Chotia</span><span class="prole">Senior client advisor</span></div>
+          <p class="bio-sub">Principal-level advisory · Founder and operator</p>
+          <p>Has founded and run businesses of his own, and brings the commercial judgement of someone who has sat in the seat the principals he advises are sitting in. Leads every discovery and qualification conversation with managing directors, partners, and founders.</p>
+          <div class="means">
+            <span class="prole">What this means for your raise</span>
+            <p>The first call is with a principal, not an associate reading from a script.</p>
           </div>
-          <div class="field">
-            <label for="p-ctype">Organization Type</label>
-            <select id="p-ctype" name="company_type" required>
-              <option value="" disabled selected></option>
-              <option>Private Company</option>
-              <option>Public Company</option>
-              <option>Fund</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="p-target">Capital Target</label>
-            <input id="p-target" name="capital_target" type="text" required>
-          </div>
-          <div class="field">
-            <label for="p-desc">Brief Description: what you are raising, current status, timeline</label>
-            <textarea id="p-desc" name="description"></textarea>
-          </div>
-          <button class="btn" type="submit">Submit Inquiry</button>
-          <p class="form-consent"><span>Consent-Based Contact</span>Your details are used only to respond to this inquiry. No lists, no sharing, no unsolicited follow-up.</p>
-          <div class="form-success">We have received your inquiry. If there is alignment, someone from the team will be in touch within 48 hours.</div>
-        </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec" id="book" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Book the call</p>
+      <h2>Tell us what you are raising.</h2>
+      <p>Six fields and a time. Abbas reviews everything you send before the call, so the thirty minutes go on your situation rather than on background.</p>
+    </div>
+
+    <div class="form-grid">
+      <div class="card" id="bookcard">
+        <p class="card-label">Pick a time</p>
+        <div class="rule"></div>
+        <div class="slots slots-day" id="days"></div>
+        <div class="slots slots-time" id="times"></div>
+        <p class="tz" id="tz">Loading available times</p>
+
+        <div class="rule"></div>
+
+        <div class="frow"><div><label for="n">Full name</label><input id="n" type="text" autocomplete="name"></div></div>
+        <div class="frow"><div><label for="f">Firm</label><input id="f" type="text" autocomplete="organization"></div></div>
+        <div class="frow"><div><label for="e">Business email</label><input id="e" type="email" autocomplete="email"></div></div>
+        <div class="frow f3">
+          <div><label for="o">You are</label><select id="o"><option>Fund manager</option><option>Sponsor</option><option>Founder or owner</option><option>Family office</option><option>M&amp;A advisory firm</option></select></div>
+          <div><label for="c">Raising</label><select id="c"><option value="">Select size...</option><option>Under $5M</option><option>$5M - $15M</option><option>$15M - $50M</option><option>$50M - $150M</option><option>$150M+</option></select></div>
+          <div><label for="t">Timeline</label><select id="t"><option value="">Select timeline...</option><option>In market now</option><option>Next 90 days</option><option>3 - 6 months</option><option>6 - 12 months</option><option>Exploring (12+ months)</option></select></div>
+        </div>
+        <p class="fee-line" id="feeline">The engagement fee begins at <b>$10,000</b>, one-time and scoped to the mandate. Select your raise size above to see the fee for that range.</p>
+        <div class="check">
+          <input id="q" type="checkbox">
+          <span>I am raising for my own company, fund, or mandate. I am not an advisor, intermediary, or broker.</span>
+        </div>
+        <p class="field-err" id="qerr" hidden>We only take enquiries from principals. Please confirm the box above to continue.</p>
+        <button class="btn" id="confirm" type="button" style="width:100%">Pick a time to continue</button>
+        <p class="field-err" id="bookerr" hidden>That time could not be confirmed. Please choose another, or email <a href="mailto:capital@inayaadvisory.com" style="color:var(--cream)">capital@inayaadvisory.com</a> and we will arrange it.</p>
+      </div>
+
+      <div class="side">
+        <div class="card">
+          <p class="card-label">After you book</p>
+          <div class="rule"></div>
+          <p class="mini"><i>01</i>Thirty minutes with Abbas</p>
+          <p class="mini"><i>02</i>A direct answer in 48–72 hours</p>
+          <p class="mini"><i>03</i>Strategy call with all three of us</p>
+        </div>
+        <div class="card">
+          <p class="card-label">How engagements are structured</p>
+          <div class="rule"></div>
+          <p style="font-size:14px">A one-time engagement fee scoped to the mandate, plus a success fee on close. The engagement fee is credited against the success fee. Both figures are confirmed in writing before any work begins.</p>
+        </div>
+        <div class="card">
+          <p class="card-label">Your details</p>
+          <div class="rule"></div>
+          <p style="font-size:14px">Anything you share is used only to respond to this enquiry. It is never added to a list, shared with anyone, or used to reach you again unless you ask.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="wordmark">Inaya Advisory</div>
+        <div class="fmark">Inaya Advisory</div>
         <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
       </div>
       <div class="footer-social">
-        <a href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
+        <a href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
       </div>
     </div>
     <div class="footer-legal">
       <p>inayaadvisory.com is operated by Inaya LLC, a privately held Wyoming limited liability company ("Inaya Advisory").</p>
-      <p>Inaya Advisory provides strategic advisory, M&amp;A advisory, deal origination, and related consulting services to fund managers, sponsors, founders, and private capital principals globally.</p>
-      <p>This website is for informational purposes only. Nothing on this website constitutes an offer, solicitation, or recommendation to buy or sell any security or financial product, nor should it be construed as investment advice or a commitment to enter into any transaction. Inaya Advisory does not provide legal, tax, or accounting advice. All engagements are subject to separate written agreement.</p>
-      <p>This website does not constitute an offer or solicitation in any jurisdiction where such offer or solicitation would be unlawful. Products and services described herein may not be available to residents of all jurisdictions.</p>
+      <p>Inaya Advisory provides capital raising, M&amp;A advisory, deal origination, and related advisory services to fund managers, sponsors, founders, and private capital principals globally.</p>
+      <p>This material is for informational purposes only and does not constitute an offer, solicitation, or recommendation to buy or sell any security or financial product, nor investment, legal, tax, or accounting advice. All engagements are subject to separate written agreement.</p>
       <p>© 2026 Inaya LLC. All rights reserved.</p>
     </div>
-    <div class="footer-wordmark" aria-hidden="true">INAYA</div>
+    <div class="footer-wm" aria-hidden="true">INAYA</div>
   </div>
 </footer>
 
-<script src="script.js?v=97"></script>
+<script>
+(function () {
+  var daysEl = document.getElementById('days'),
+      timesEl = document.getElementById('times'),
+      tzEl = document.getElementById('tz'),
+      confirmBtn = document.getElementById('confirm'),
+      checkBox = document.getElementById('q'),
+      qerr = document.getElementById('qerr'),
+      bookerr = document.getElementById('bookerr'),
+      card = document.getElementById('bookcard');
+  var FORMSPREE = 'https://formspree.io/f/xnjednnd';
+  var EMAIL = 'capital@inayaadvisory.com';
+
+  var tz = 'UTC';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'; } catch (e) {}
+  function tzLabel() {
+    var city = tz.split('/').pop().replace(/_/g, ' ');
+    var off = '';
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'shortOffset' }).formatToParts(new Date());
+      for (var i = 0; i < parts.length; i++) { if (parts[i].type === 'timeZoneName') off = parts[i].value; }
+    } catch (e) {}
+    return off ? (city + ', ' + off) : city;
+  }
+  var slotsByDay = {}, dayKeys = [], selDay = null, selStart = null;
+
+  function fmtTime(iso) { var d = new Date(iso); var h = d.getHours(); var m = d.getMinutes(); var ap = h < 12 ? 'AM' : 'PM'; var h12 = h % 12; if (h12 === 0) h12 = 12; return h12 + ':' + ('0' + m).slice(-2) + ' ' + ap; }
+  function dayParts(key) { var p = key.split('-'); var d = new Date(+p[0], +p[1] - 1, +p[2], 12); return { wd: d.toLocaleDateString([], { weekday: 'short' }).toUpperCase(), dd: d.getDate(), mo: d.toLocaleDateString([], { month: 'short' }).toUpperCase() }; }
+  function weekdayLong(iso) { return new Date(iso).toLocaleDateString([], { weekday: 'long' }); }
+
+  function setConfirm() {
+    confirmBtn.textContent = selStart ? ('Confirm ' + weekdayLong(selStart) + ', ' + fmtTime(selStart)) : 'Pick a time to continue';
+  }
+  function renderTimes() {
+    timesEl.innerHTML = '';
+    (slotsByDay[selDay] || []).forEach(function (iso) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'slot';
+      b.setAttribute('aria-pressed', iso === selStart ? 'true' : 'false');
+      b.textContent = fmtTime(iso);
+      b.addEventListener('click', function () {
+        selStart = iso;
+        [].forEach.call(timesEl.children, function (c) { c.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        bookerr.hidden = true;
+        setConfirm();
+      });
+      timesEl.appendChild(b);
+    });
+  }
+  function selectDay(key) {
+    selDay = key; selStart = null;
+    [].forEach.call(daysEl.children, function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-k') === key ? 'true' : 'false'); });
+    renderTimes(); setConfirm();
+  }
+  function renderDays() {
+    daysEl.innerHTML = '';
+    dayKeys.forEach(function (key) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'slot slot-day'; b.setAttribute('data-k', key); b.setAttribute('aria-pressed', 'false');
+      var dp = dayParts(key); b.innerHTML = '<span class="d-wd">' + dp.wd + '</span><span class="d-dd">' + dp.dd + '</span><span class="d-mo">' + dp.mo + '</span>';
+      b.addEventListener('click', function () { selectDay(key); });
+      daysEl.appendChild(b);
+    });
+  }
+  function fail(msg) {
+    daysEl.innerHTML = ''; timesEl.innerHTML = '';
+    tzEl.innerHTML = (msg || 'We could not load times just now.') + ' Email <a href="mailto:' + EMAIL + '">' + EMAIL + '</a> and we will arrange one.';
+  }
+  function localKey(d) { return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function load() {
+    fetch('/api/slots?timeZone=' + encodeURIComponent(tz))
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok || !res.j || !res.j.slots) throw 0;
+        // Every open start time straight from Abbas's Cal.com calendar.
+        var all = [];
+        Object.keys(res.j.slots).forEach(function (k) {
+          (res.j.slots[k] || []).forEach(function (s) { if (s && s.start) all.push(s.start); });
+        });
+        // Group by the visitor's own calendar date so the day and its times always agree.
+        slotsByDay = {};
+        all.forEach(function (iso) {
+          var key = localKey(new Date(iso));
+          (slotsByDay[key] = slotsByDay[key] || []).push(iso);
+        });
+        var todayKey = localKey(new Date());
+        dayKeys = Object.keys(slotsByDay).sort().filter(function (k) {
+          if (k <= todayKey) return false;
+          var p = k.split('-');
+          return new Date(+p[0], +p[1] - 1, +p[2], 12).getDay() !== 0; // Sunday off
+        }).slice(0, 4);
+        dayKeys.forEach(function (k) { slotsByDay[k].sort(); }); // chronological within each day
+        if (!dayKeys.length) { fail('No times are open right now.'); return; }
+        tzEl.textContent = 'Times shown in your local timezone (' + tzLabel() + ')';
+        renderDays(); selectDay(dayKeys[0]);
+      })
+      .catch(function () { fail('We could not load times just now.'); });
+  }
+
+  confirmBtn.addEventListener('click', function () {
+    if (!selStart) return;
+    if (!checkBox.checked) { qerr.hidden = false; checkBox.focus(); return; }
+    qerr.hidden = true; bookerr.hidden = true;
+
+    var name = document.getElementById('n').value || '';
+    var email = document.getElementById('e').value || '';
+    var payload = {
+      start: selStart, name: name, email: email, timeZone: tz,
+      firm: document.getElementById('f').value || '',
+      companyType: document.getElementById('o').value || '',
+      capitalTarget: document.getElementById('c').value || '',
+      timeline: document.getElementById('t').value || ''
+    };
+
+    // lead notification to the team inbox (fires regardless of booking outcome)
+    try {
+      var fd = new FormData();
+      fd.append('name', name); fd.append('email', email);
+      fd.append('firm', payload.firm); fd.append('you_are', payload.companyType);
+      fd.append('raising', payload.capitalTarget); fd.append('timeline', payload.timeline);
+      fd.append('selected_time', new Date(selStart).toString());
+      fd.append('_subject', 'New Inaya Mandate Consultation');
+      fetch(FORMSPREE, { method: 'POST', body: fd, headers: { Accept: 'application/json' } }).catch(function () {});
+    } catch (e) {}
+
+    var prev = confirmBtn.textContent;
+    confirmBtn.textContent = 'Booking...';
+    fetch('/api/book', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok || !res.j || !res.j.ok) throw 0;
+        card.innerHTML = '<p class="card-label">Booked</p><div class="rule"></div>'
+          + '<h3 style="margin-bottom:12px">Your consultation is confirmed.</h3>'
+          + '<p style="font-size:14px">A calendar invitation and confirmation are on their way to ' + (email ? email : 'your email')
+          + '. Abbas reviews everything you sent before the call, so the thirty minutes go on your situation.</p>';
+      })
+      .catch(function () { confirmBtn.textContent = prev; bookerr.hidden = false; });
+  });
+
+  var raiseSel = document.getElementById('c');
+  var feeLine = document.getElementById('feeline');
+  var FEES = { 'Under $5M': '$10,000', '$5M - $15M': '$10,000', '$15M - $50M': '$15,000', '$50M - $150M': '$15,000', '$150M+': '$20,000' };
+  function updateFee() {
+    var f = FEES[raiseSel.value];
+    feeLine.innerHTML = f
+      ? ('The engagement fee for a raise this size is <b>' + f + '</b>, one-time and scoped to the mandate.')
+      : ('The engagement fee begins at <b>$10,000</b>, one-time and scoped to the mandate. Select your raise size above to see the fee for that range.');
+  }
+  if (raiseSel && feeLine) { raiseSel.addEventListener('change', updateFee); updateFee(); }
+
+  var hdrEl = document.querySelector('header');
+  function onScroll() { if (hdrEl) hdrEl.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  load();
+})();
+</script>
 </body>
 </html>
