@@ -241,6 +241,13 @@ nav.on-dark .nav-cta:hover {
   border-color: var(--cream);
 }
 
+/* phone header: match the booking page — wordmark and CTA stay on one line */
+@media (max-width: 560px) {
+  nav.on-dark .nav-inner { padding-left: 24px; padding-right: 24px; }
+  nav .wordmark { font-size: 14px; letter-spacing: 0.26em; margin-right: -0.26em; }
+  .nav-cta { padding: 9px 13px; font-size: 11px; letter-spacing: 1px; white-space: nowrap; }
+}
+
 /* ---------- two pillars ---------- */
 .pillars {
   display: grid;
