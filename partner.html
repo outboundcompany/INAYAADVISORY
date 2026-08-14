@@ -149,6 +149,17 @@ select option{background:var(--ink)}
 .check input{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--cream)}
 .check span{font-size:13px;color:var(--warm);line-height:1.6}
 .field-err{font-size:12px;color:var(--err);margin:8px 0 16px}
+.card.is-confirmed{display:flex;align-items:center;justify-content:center}
+.confirmed{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 0}
+.conf-badge{width:58px;height:58px;margin-bottom:22px;animation:conf-pop .55s cubic-bezier(.22,1,.36,1) both}
+.conf-badge circle{fill:none;stroke:var(--line-2);stroke-width:1.5}
+.conf-badge path{fill:none;stroke:var(--cream);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44;animation:conf-draw .5s ease .35s forwards}
+.confirmed .card-label{animation:conf-up .5s ease .25s both}
+.confirmed h3{animation:conf-up .5s ease .4s both}
+.confirmed>p{animation:conf-up .5s ease .55s both}
+@keyframes conf-pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
+@keyframes conf-draw{to{stroke-dashoffset:0}}
+@keyframes conf-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .side .card{margin-bottom:16px}
 .side .card:last-child{margin-bottom:0}
 .mini{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--warm)}
@@ -217,7 +228,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">For principals raising capital</p>
-      <h1 style="max-width:none">Mandate consultation.</h1>
+      <h1 style="max-width:none">Mandate Consultation.</h1>
       <p class="lede">You walk through what you are raising, the timeline, and the constraints. We tell you where it stands with the allocators deploying into your part of the market today. If we are not the firm to run it, we will say so on the call.</p>
 
       <div class="cta-row" style="margin-top:34px">
@@ -258,21 +269,21 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
     <div class="grid3">
       <div class="card">
         <div class="step-top"><span class="step-n">01</span><span class="step-t">30 MIN</span></div>
-        <h3>The discovery call</h3>
+        <h3>Initial Briefing</h3>
         <p>Thirty minutes with Abbas Chotia. What you're raising, the timeline you're working to, the constraints in front of you, and what has already been tried.</p>
         <div class="who"><span class="av"><img src="images/abbas.png" alt="Abbas Chotia" style="object-position:60% center"></span><div><div style="font-size:13px;color:var(--cream)">Abbas Chotia</div><div class="prole">Senior client advisor</div></div></div>
       </div>
 
       <div class="card">
         <div class="step-top"><span class="step-n">02</span><span class="step-t">48–72 HRS</span></div>
-        <h3>The internal read</h3>
+        <h3>Senior Review</h3>
         <p>Your situation goes to David Hunter and Anas Ansar. Inside 48 to 72 hours you get a direct answer on whether we would take the mandate, including when the answer is no, and why.</p>
         <div class="who"><span class="av-stack"><span class="av"><img src="images/david.png" alt="David Hunter"></span><span class="av"><img src="images/anas-ansar.jpg" alt="Anas Ansar"></span></span><div><div style="font-size:13px;color:var(--cream)">David Hunter and Anas Ansar</div><div class="prole">Senior advisor · Managing partner</div></div></div>
       </div>
 
       <div class="card">
         <div class="step-top"><span class="step-n">03</span><span class="step-t">60–90 MIN</span></div>
-        <h3>The strategy call</h3>
+        <h3>Proposed Approach</h3>
         <p>All three of us on one call. How the raise would be positioned, which capital we would go to and in what order, and how the engagement is structured. Our team is also willing to fly to your place to discuss the mandate.</p>
         <div class="who"><span class="av-stack"><span class="av"><img src="images/abbas.png" alt="" style="object-position:60% center"></span><span class="av"><img src="images/anas-ansar.jpg" alt=""></span><span class="av"><img src="images/david.png" alt=""></span></span><div><div style="font-size:13px;color:var(--cream)">The full team</div><div class="prole">Senior advisor · Managing partner · Senior client advisor</div></div></div>
       </div>
@@ -283,7 +294,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
         <p class="card-label">After the engagement letter</p>
         <h3 style="margin-top:10px">You are not handed to an analyst.</h3>
       </div>
-      <p>Anas runs the mandate from signing through close. Nobody joins your deal who was not on the strategy call.</p>
+      <p>Anas runs the mandate from signing through close. Nobody joins your deal who was not on the call.</p>
     </div>
   </div>
 </section>
@@ -366,16 +377,10 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
         <div class="frow"><div><label for="f">Firm</label><input id="f" type="text" autocomplete="organization"></div></div>
         <div class="frow"><div><label for="e">Business email</label><input id="e" type="email" autocomplete="email"></div></div>
         <div class="frow f3">
-          <div><label for="o">You are</label><select id="o"><option>Fund manager</option><option>Sponsor</option><option>Founder or owner</option><option>Family office</option><option>M&amp;A advisory firm</option></select></div>
+          <div><label for="o">You are</label><input id="o" type="text" autocomplete="organization-title" placeholder="Your title"></div>
           <div><label for="c">Raising</label><select id="c"><option value="">Select size...</option><option>Under $5M</option><option>$5M - $15M</option><option>$15M - $50M</option><option>$50M - $150M</option><option>$150M+</option></select></div>
           <div><label for="t">Timeline</label><select id="t"><option value="">Select timeline...</option><option>In market now</option><option>Next 90 days</option><option>3 - 6 months</option><option>6 - 12 months</option><option>Exploring (12+ months)</option></select></div>
         </div>
-        <p class="fee-line" id="feeline">The engagement fee begins at <b>$10,000</b>, one-time and scoped to the mandate. Select your raise size above to see the fee for that range.</p>
-        <div class="check">
-          <input id="q" type="checkbox">
-          <span>I am raising for my own company, fund, or mandate. I am not an advisor, intermediary, or broker.</span>
-        </div>
-        <p class="field-err" id="qerr" hidden>We only take enquiries from principals. Please confirm the box above to continue.</p>
         <button class="btn" id="confirm" type="button" style="width:100%">Pick a time to continue</button>
         <p class="field-err" id="bookerr" hidden>That time could not be confirmed. Please choose another, or email <a href="mailto:capital@inayaadvisory.com" style="color:var(--cream)">capital@inayaadvisory.com</a> and we will arrange it.</p>
       </div>
@@ -432,8 +437,6 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
       timesEl = document.getElementById('times'),
       tzEl = document.getElementById('tz'),
       confirmBtn = document.getElementById('confirm'),
-      checkBox = document.getElementById('q'),
-      qerr = document.getElementById('qerr'),
       bookerr = document.getElementById('bookerr'),
       card = document.getElementById('bookcard');
   var FORMSPREE = 'https://formspree.io/f/xnjednnd';
@@ -528,8 +531,7 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 
   confirmBtn.addEventListener('click', function () {
     if (!selStart) return;
-    if (!checkBox.checked) { qerr.hidden = false; checkBox.focus(); return; }
-    qerr.hidden = true; bookerr.hidden = true;
+    bookerr.hidden = true;
 
     var name = document.getElementById('n').value || '';
     var email = document.getElementById('e').value || '';
@@ -558,24 +560,19 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (!res.ok || !res.j || !res.j.ok) throw 0;
-        card.innerHTML = '<p class="card-label">Booked</p><div class="rule"></div>'
-          + '<h3 style="margin-bottom:12px">Your consultation is confirmed.</h3>'
-          + '<p style="font-size:14px">A calendar invitation and confirmation are on their way to ' + (email ? email : 'your email')
-          + '. Abbas reviews everything you sent before the call, so the thirty minutes go on your situation.</p>';
+        card.style.minHeight = card.offsetHeight + 'px';   // freeze size so nothing on the page shifts
+        card.classList.add('is-confirmed');
+        card.innerHTML = '<div class="confirmed">'
+          + '<svg class="conf-badge" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30"/><path d="M19 33 L28 42 L46 22"/></svg>'
+          + '<p class="card-label">Booked</p>'
+          + '<h3 style="margin:12px 0 12px">Your consultation is confirmed.</h3>'
+          + '<p style="font-size:14px;max-width:44ch">A calendar invitation and confirmation are on their way to ' + (email ? email : 'your email')
+          + '. Abbas reviews everything you sent before the call, so the thirty minutes go on your situation.</p>'
+          + '</div>';
+        try { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
       })
       .catch(function () { confirmBtn.textContent = prev; bookerr.hidden = false; });
   });
-
-  var raiseSel = document.getElementById('c');
-  var feeLine = document.getElementById('feeline');
-  var FEES = { 'Under $5M': '$10,000', '$5M - $15M': '$10,000', '$15M - $50M': '$15,000', '$50M - $150M': '$15,000', '$150M+': '$20,000' };
-  function updateFee() {
-    var f = FEES[raiseSel.value];
-    feeLine.innerHTML = f
-      ? ('The engagement fee for a raise this size is <b>' + f + '</b>, one-time and scoped to the mandate.')
-      : ('The engagement fee begins at <b>$10,000</b>, one-time and scoped to the mandate. Select your raise size above to see the fee for that range.');
-  }
-  if (raiseSel && feeLine) { raiseSel.addEventListener('change', updateFee); updateFee(); }
 
   var hdrEl = document.querySelector('header');
   function onScroll() { if (hdrEl) hdrEl.classList.toggle('scrolled', window.scrollY > 8); }
