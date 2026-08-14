@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/partner", "destination": "/mandateconsultation", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
