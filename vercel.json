@@ -3,6 +3,17 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "thetranchemandate.inayaadvisory.com"
+        }
+      ],
+      "destination": "/first-tranche",
+      "permanent": false
+    },
+    {
       "source": "/partner",
       "destination": "/mandateconsultation",
       "permanent": true
@@ -40,17 +51,5 @@
       ]
     }
   ],
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "thetranchemandate.inayaadvisory.com"
-        }
-      ],
-      "destination": "/first-tranche"
-    }
-  ]
+  "cleanUrls": true
 }
