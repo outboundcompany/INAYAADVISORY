@@ -9,7 +9,7 @@
 .ifoot-col h4{font-family:'DM Sans',sans-serif;font-weight:400;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7E766C;margin:0 0 18px}
 .ifoot-col a{display:block;font-size:14px;line-height:1.4;color:#C9C1B5;text-decoration:none;padding:5px 0;transition:color .2s}
 .ifoot-col a:hover,.ifoot-col a:focus-visible{color:#F4EFE6}
-.ifoot-col a[target="_blank"]::after{content:' \2197';font-size:11px;color:#7E766C}
+.ifoot-col a[target="_blank"]::after{content:'\00a0\2197';font-size:11px;color:#7E766C}
 .ifoot-legal{padding-top:0;padding-bottom:40px;background:linear-gradient(#2A2724,#2A2724) no-repeat;background-size:100% 1px;background-position:top;background-origin:content-box}
 .ifoot-legal>p:first-child{margin-top:34px}
 .ifoot-legal p{font-size:12px;line-height:1.8;color:#8A8277;max-width:1040px;margin:0 0 14px}
