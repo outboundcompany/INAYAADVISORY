@@ -213,6 +213,15 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 .legal-doc .upd{font-size:13px;color:var(--muted);margin-top:14px}
 </style>
 <link rel="stylesheet" href="/footer.css?v=1">
+<style>
+/* Header locked to the homepage geometry, so the logo never moves between pages */
+.hdr{height:96px;padding-top:0!important;padding-bottom:0!important}
+.mark{line-height:32px;font-weight:400;display:block;view-transition-name:inaya-logo}
+@media(max-width:560px){.hdr{height:72px}.mark{line-height:24px}}
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(inaya-logo){animation-duration:0s}
+</style>
 </head>
 <body>
 <header>

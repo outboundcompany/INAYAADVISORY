@@ -1534,3 +1534,11 @@ body.dark .field select option { background: #121110; color: var(--cream); }
 .call-fact-line { font-size: 15px; line-height: 1.6; color: var(--cream); max-width: 340px; }
 
 .footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+/* Header locked to the same geometry as every other page, so the logo never moves between pages */
+nav.on-dark .nav-inner { height: 96px; padding-top: 0; padding-bottom: 0; }
+nav .wordmark { line-height: 32px; display: block; view-transition-name: inaya-logo; }
+@media (max-width: 560px) { nav.on-dark .nav-inner { height: 72px; } nav .wordmark { line-height: 24px; } }
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+::view-transition-group(inaya-logo) { animation-duration: 0s; }
