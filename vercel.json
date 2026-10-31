@@ -22,6 +22,11 @@
       "source": "/tranche",
       "destination": "/first-tranche",
       "permanent": true
+    },
+    {
+      "source": "/david-hunter",
+      "destination": "/?profile=david-hunter",
+      "permanent": false
     }
   ],
   "headers": [
