@@ -1542,3 +1542,20 @@ nav .wordmark { line-height: 32px; display: block; view-transition-name: inaya-l
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
 ::view-transition-group(inaya-logo) { animation-duration: 0s; }
+
+/* ---------- on a mandate (stage table from the David Hunter deck) ---------- */
+.mandate-flow { padding: 110px 0 120px; }
+.mandate-heading { font-size: clamp(30px, 3.2vw, 46px); margin-bottom: 56px; }
+.mtable { border-top: 1px solid rgba(245, 242, 235, 0.12); }
+.mrow { display: grid; grid-template-columns: 90px 220px 1fr; gap: 24px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid rgba(245, 242, 235, 0.12); }
+.mrow.mhead { padding: 16px 0; }
+.mrow.mhead span { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7E766C; }
+.mno { font-size: 14px; letter-spacing: 0.12em; color: #7E766C; }
+.mst { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 24px; color: var(--cream); line-height: 1.25; }
+.mrow p { font-size: 16px; line-height: 1.75; color: #A79E92; margin: 0; max-width: 820px; }
+.mstrip { margin-top: 36px; padding: 24px 28px; border: 1px solid rgba(245, 242, 235, 0.12); background: #141311; font-size: 16px; line-height: 1.7; color: var(--cream); }
+@media (max-width: 760px) {
+  .mrow { grid-template-columns: 44px 1fr; gap: 6px 16px; }
+  .mrow p { grid-column: 2; }
+  .mrow.mhead span:last-child { display: none; }
+}
