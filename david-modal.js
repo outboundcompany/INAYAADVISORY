@@ -50,7 +50,7 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
         <p class="dm-lede">For most of his career, David decided which managers received pension capital. Today he brings managers to the allocators he knows.</p>
         <p class="dm-p">Nearly four decades in institutional capital, from HSBC, Citicorp and SMBC to two US public pension systems, which he served as Executive Director and Chief Investment Officer.</p>
       </div>
-      <div class="dm-ph"><img src="images/david.png" alt="David Hunter" loading="lazy"></div>
+      <div class="dm-ph"><img src="images/david.webp" alt="David Hunter" loading="lazy"></div>
     </div>
 
     <div class="dm-sec">

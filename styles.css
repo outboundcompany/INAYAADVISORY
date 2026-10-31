@@ -1532,3 +1532,5 @@ body.dark .field select option { background: #121110; color: var(--cream); }
   .call-info-grid { grid-template-columns: 1fr; gap: 48px; }
 }
 .call-fact-line { font-size: 15px; line-height: 1.6; color: var(--cream); max-width: 340px; }
+
+.footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}

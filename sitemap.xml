@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://inayaadvisory.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://inayaadvisory.com/mandateconsultation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://www.inayaadvisory.com/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://www.inayaadvisory.com/mandateconsultation</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://www.inayaadvisory.com/privacy</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://www.inayaadvisory.com/terms</loc><lastmod>2026-11-01</lastmod></url>
 </urlset>
