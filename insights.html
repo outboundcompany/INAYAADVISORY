@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights | Inaya Advisory</title>
+<meta name="description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.inayaadvisory.com/insights">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inaya Advisory">
+<meta property="og:title" content="Insights | Inaya Advisory">
+<meta property="og:description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<meta property="og:url" content="https://www.inayaadvisory.com/insights">
+<meta property="og:image" content="https://www.inayaadvisory.com/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insights | Inaya Advisory">
+<meta name="twitter:description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<link rel="preload" href="/fonts/Marcellus-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fonts.css?v=2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{
+  --ink:#0B0B09;
+  --panel:#141311;
+  --line:#2A2724;
+  --line-2:#3B3730;
+  --cream:#F4EFE6;
+  --warm:#A79E92;
+  --muted:#7E766C;
+  --faint:#5F594F;
+  --err:#C58A70;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --wm:"Marcellus",Georgia,serif;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+section{scroll-margin-top:86px}
+
+.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.15}
+h1{font-size:clamp(34px,4.6vw,58px)}
+h2{font-size:clamp(28px,3.4vw,42px)}
+h3{font-size:clamp(18px,1.6vw,22px)}
+p{font-size:15px;line-height:1.75;color:var(--warm)}
+a{color:inherit}
+
+header{position:sticky;top:0;z-index:50;background:transparent;transition:background .3s ease}
+header{border-bottom:1px solid transparent}
+header.scrolled{background:rgba(11,11,9,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:rgba(245,242,235,.12)}
+.hdr{display:flex;align-items:center;justify-content:space-between;padding:26px 6vw}
+.mark{font-family:var(--wm);font-size:19px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-right:-.42em}
+.hdr-r{display:flex;align-items:center;gap:14px}
+.hdr-r span{font-size:12px;color:var(--muted)}
+
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:.04em;padding:13px 26px;border:1px solid var(--cream);background:var(--cream);color:var(--ink);text-decoration:none;text-align:center;cursor:pointer;transition:opacity .2s}
+.btn:hover{opacity:.86}
+.btn-ghost{background:transparent;color:var(--cream);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--warm);opacity:1}
+.btn-sm{padding:9px 18px;font-size:12px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
+
+.hero{padding:clamp(56px,7vw,104px) 0 clamp(44px,5vw,72px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start}
+.hero h1{margin:20px 0 22px;max-width:14ch}
+.hero p.lede{max-width:52ch}
+.agenda{margin:30px 0;border-top:1px solid var(--line)}
+.agenda div{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.agenda i{font-style:normal;font-size:11px;color:var(--faint);padding-top:4px}
+.agenda p{font-size:14px;color:var(--warm)}
+.agenda b{font-weight:400;color:var(--cream)}
+.cta-row{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.cta-row .btn{min-width:220px}
+.microline{font-size:12px;color:var(--muted)}
+.textlink{font-size:13px;color:var(--warm);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.textlink:hover{color:var(--cream)}
+
+.card{border:1px solid var(--line);background:var(--panel);padding:26px}
+.card-label{font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.rule{height:1px;background:var(--line);margin:16px 0}
+.prole{font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+
+/* stat band grouped and centred */
+.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.band-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:148px;padding:34px clamp(20px,3vw,42px);border-right:1px solid var(--line);text-align:center}
+.band-grid>div:last-child{border-right:none}
+.stat{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);color:var(--cream);line-height:1}
+.stat-l{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:12px}
+
+.sec{padding:clamp(64px,8vw,116px) 0}
+.sec-head{max-width:640px;margin-bottom:clamp(32px,4vw,52px)}
+.sec-head h2{margin:16px 0 16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.step-n{font-size:12px;color:var(--faint)}
+.step-t{font-size:10px;letter-spacing:.14em;color:var(--muted)}
+.card h3{margin-bottom:12px}
+.card p{font-size:14px}
+.grid3>.card{display:flex;flex-direction:column;min-height:400px}
+.who{display:flex;gap:11px;align-items:flex-start;margin-top:auto;height:74px;padding-top:18px;border-top:1px solid var(--line)}
+.av{width:32px;height:32px;border-radius:50%;overflow:hidden;background:#1D1B18;border:1px solid var(--line);flex-shrink:0}
+.av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
+.av-stack{display:flex}
+.av-stack .av:not(:first-child){margin-left:-10px}
+
+.handoff{display:grid;grid-template-columns:.85fr 1.4fr;gap:clamp(20px,4vw,48px);align-items:center;margin-top:16px}
+.bio{margin-bottom:16px}
+.bio-grid{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
+.bio-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.bio-sub{font-size:13px;color:var(--muted);margin:6px 0 14px}
+.means{border-left:2px solid var(--line-2);padding:2px 0 2px 16px;margin-top:18px}
+.means p{font-size:14px;color:var(--cream);margin-top:5px}
+.pname{font-family:var(--serif);font-size:24px;color:var(--cream)}
+.ph-lg{width:200px;height:250px;overflow:hidden;background:#1D1B18;border:1px solid var(--line)}
+.ph-lg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
+
+.form-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.slots{display:grid;gap:8px;margin-bottom:10px}
+.slots-day{grid-template-columns:repeat(4,88px);justify-content:start;margin-bottom:12px}
+.slots-time{grid-template-columns:repeat(6,minmax(0,1fr))}
+.slot{border:1px solid var(--line);background:transparent;color:var(--warm);font-family:var(--sans);font-size:12px;font-weight:300;padding:12px 4px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.slot:hover{border-color:var(--line-2);color:var(--cream)}
+.slot[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.slot-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px 4px}
+.slot-day .d-wd,.slot-day .d-mo{font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.slot-day .d-dd{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1;color:var(--cream)}
+.slot-day:hover .d-dd{color:var(--cream)}
+.slot-day[aria-pressed="true"] .d-wd,.slot-day[aria-pressed="true"] .d-mo{color:var(--faint)}
+.slot-day[aria-pressed="true"] .d-dd{color:var(--ink)}
+.fee-line{font-size:13px;line-height:1.6;color:var(--warm);margin:-2px 0 20px;padding-left:14px;border-left:2px solid var(--line-2)}
+.fee-line b{color:var(--cream);font-weight:400}
+.tz{font-size:12px;color:var(--faint);margin-bottom:22px}
+.tz a{color:var(--cream)}
+.frow{display:grid;gap:18px;margin-bottom:18px}
+.f2{grid-template-columns:1fr 1fr}
+.f3{grid-template-columns:repeat(3,1fr)}
+label{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+input,select,textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:14px;padding:6px 0}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 13px,calc(100% - 4px) 13px;background-size:5px 5px;background-repeat:no-repeat}
+select option{background:var(--ink)}
+::placeholder{color:var(--faint)}
+.check{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);padding:16px;margin-bottom:6px}
+.check input{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--cream)}
+.check span{font-size:13px;color:var(--warm);line-height:1.6}
+.field-err{font-size:12px;color:var(--err);margin:8px 0 16px}
+.card.is-confirmed{display:flex;align-items:center;justify-content:center}
+.confirmed{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 0}
+.conf-badge{width:58px;height:58px;margin-bottom:22px;animation:conf-pop .55s cubic-bezier(.22,1,.36,1) both}
+.conf-badge circle{fill:none;stroke:var(--line-2);stroke-width:1.5}
+.conf-badge path{fill:none;stroke:var(--cream);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44;animation:conf-draw .5s ease .35s forwards}
+.confirmed .card-label{animation:conf-up .5s ease .25s both}
+.confirmed h3{animation:conf-up .5s ease .4s both}
+.confirmed>p{animation:conf-up .5s ease .55s both}
+@keyframes conf-pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
+@keyframes conf-draw{to{stroke-dashoffset:0}}
+@keyframes conf-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.side .card{margin-bottom:16px}
+.side .card:last-child{margin-bottom:0}
+.mini{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--warm)}
+.mini:last-child{border-bottom:none;padding-bottom:0}
+.mini:first-of-type{padding-top:0}
+.mini i{font-style:normal;font-size:10px;color:var(--faint);padding-top:3px}
+
+/* footer as on the website */
+footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;overflow:hidden}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:52px}
+.footer-brand .fmark{font-family:var(--wm);font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:var(--cream)}
+.footer-brand a{display:block;font-size:14px;color:var(--muted);margin-top:12px;text-decoration:none}
+.footer-brand a:hover{color:var(--warm)}
+.footer-social a{display:inline-block;color:var(--warm)}
+.footer-social a:hover{color:var(--cream)}
+.footer-social svg{display:block;width:20px;height:20px;fill:currentColor}
+.footer-legal p{font-size:11px;line-height:1.85;color:var(--faint);margin-bottom:12px;max-width:1000px}
+.footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.footer-wm{font-family:var(--serif);font-weight:300;font-size:clamp(80px,15vw,210px);line-height:.9;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--cream);opacity:.04;user-select:none;margin-top:56px}
+
+@media(max-width:900px){
+  .hero-grid,.form-grid,.handoff,.bio-grid{grid-template-columns:1fr}
+  .grid3,.band-grid,.f3,.f2{grid-template-columns:1fr}
+  .band-grid>div{border-right:none;border-bottom:1px solid var(--line);min-height:0;padding:26px 0}
+  .band-grid>div:last-child{border-bottom:none}
+  .slots-day{grid-template-columns:repeat(4,1fr)}
+  .slots-time{grid-template-columns:repeat(3,1fr)}
+  .hdr-r span{display:none}
+  .ph-lg{width:150px;height:188px}
+  .footer-top{flex-direction:column}
+  .grid3>.card{min-height:0}
+  .who{height:auto;margin-top:24px}
+}
+@media(max-width:560px){
+  .hdr{padding:18px 24px}
+  .mark{font-size:14px;letter-spacing:.26em;margin-right:-.26em}
+  .hdr-home{display:none}
+  .hdr-r .btn{padding:10px 16px;font-size:12px}
+}
+</style>
+<link rel="stylesheet" href="/footer.css?v=4">
+<style>
+/* Header locked to the homepage geometry, so the logo never moves between pages */
+.hdr{height:96px;padding-top:0!important;padding-bottom:0!important}
+.mark{line-height:32px;font-weight:400;display:block;view-transition-name:inaya-logo}
+@media(max-width:560px){.hdr{height:72px}.mark{line-height:24px}}
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(inaya-logo){animation-duration:0s}
+</style>
+<style>
+/* Insights */
+.ins-head{padding:clamp(56px,7vw,104px) 0 clamp(36px,4vw,56px)}
+.ins-head h1{margin:18px 0 18px;font-weight:300;color:var(--cream)}
+.ins-head p{max-width:60ch}
+.ins-list{border-top:1px solid var(--line);padding-bottom:clamp(48px,6vw,88px)}
+.ins-card{display:grid;grid-template-columns:180px 1fr auto;gap:clamp(20px,4vw,48px);align-items:baseline;padding:34px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:background .2s}
+.ins-card:hover h2{color:#fff}
+.ins-card .meta{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.ins-card h2{font-size:clamp(24px,2.6vw,32px);color:var(--cream);margin-bottom:10px;transition:color .2s}
+.ins-card p{font-size:14.5px;max-width:62ch}
+.ins-card .go{font-size:12px;letter-spacing:.04em;color:var(--warm);white-space:nowrap;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+
+.art{border-top:1px solid var(--line);padding:clamp(64px,8vw,116px) 0}
+.art-inner{max-width:820px}
+.art h1{font-size:clamp(34px,4.4vw,54px);color:var(--cream);margin:18px 0 18px}
+.art .byline{font-size:13px;color:var(--muted)}
+.art .lede{font-size:17px;line-height:1.75;color:var(--warm);margin-top:30px}
+.art h2{font-size:clamp(26px,2.8vw,34px);color:var(--cream);margin:clamp(56px,6vw,80px) 0 14px}
+.art p+p{margin-top:14px}
+.art p b{font-weight:400;color:var(--cream)}
+
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:44px}
+.kpis>div{padding:30px 24px 28px 0;border-right:1px solid var(--line)}
+.kpis>div+div{padding-left:24px}
+.kpis>div:last-child{border-right:none}
+.kpi-n{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.2vw,52px);line-height:1;color:var(--cream)}
+.kpi-l{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:12px;line-height:1.6}
+
+.chart{margin-top:30px;border-top:1px solid var(--line)}
+.chart-cap{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;padding:18px 0 6px}
+.bar{display:grid;grid-template-columns:200px 1fr 112px;gap:20px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.bar-l{font-size:13.5px;color:var(--warm);line-height:1.45}
+.bar-t{height:2px;background:var(--line)}
+.bar-f{height:2px;background:var(--cream);width:var(--w)}
+.bar-v{text-align:right;white-space:nowrap}
+.bar-v b{font-family:var(--serif);font-weight:300;font-size:28px;line-height:1;color:var(--cream)}
+.bar-v i{font-style:normal;font-size:11px;color:var(--muted);margin-left:8px}
+.chart-note{font-size:12.5px;color:var(--muted);margin-top:14px;line-height:1.7}
+
+.view{margin-top:22px;border-top:1px solid var(--line)}
+.view>div{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--line)}
+.view i{font-style:normal;font-size:11px;color:var(--faint);padding-top:6px}
+.view h3{font-size:clamp(20px,1.9vw,24px);color:var(--cream);margin-bottom:8px}
+.view p{font-size:15px}
+
+.src{margin-top:clamp(48px,6vw,72px);padding-top:22px;border-top:1px solid var(--line);font-size:12px;line-height:1.8;color:var(--muted)}
+.art-cta{margin-top:40px;display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+
+@media(max-width:900px){
+  .ins-card{grid-template-columns:1fr;gap:10px}
+  .ins-card .go{justify-self:start;margin-top:8px}
+}
+@media(max-width:640px){
+  .kpis{grid-template-columns:1fr}
+  .kpis>div,.kpis>div+div{padding:22px 0;border-right:none;border-bottom:1px solid var(--line)}
+  .kpis>div:last-child{border-bottom:none}
+  .bar{grid-template-columns:1fr auto;gap:10px 16px;padding:16px 0}
+  .bar-l{grid-column:1}
+  .bar-v{grid-column:2;grid-row:1}
+  .bar-t{grid-column:1 / -1}
+  .bar-v b{font-size:24px}
+}
+</style>
+<style>body,main{background:#0B0B09}header:not(.scrolled){background:#0B0B09}</style>
+</head>
+<body>
+<header>
+  <div class="hdr">
+    <a class="mark" href="/" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
+    <span class="hdr-r">
+      <a class="btn btn-ghost hdr-home" href="/">Home</a>
+      <a class="btn btn-ghost" href="/mandateconsultation#book">Book the call</a>
+    </span>
+  </div>
+</header>
+<main>
+<section class="ins-head"><div class="wrap">
+<p class="eyebrow">Insights</p>
+<h1>Insights.</h1>
+<p>Research on private capital formation, drawn from public filings and our own analysis.</p>
+</div></section>
+
+<section class="ins-index" aria-label="Articles"><div class="wrap">
+<div class="ins-list">
+  <a class="ins-card" href="#open-private-raises">
+    <span class="meta">November 2026<br>Private capital</span>
+    <div>
+      <h2>Open private raises: $129.8 billion still unraised.</h2>
+      <p>Of 951 private offerings of $50 million or more still open, most report little or nothing sold. A look at how much remains, and for how long.</p>
+    </div>
+    <span class="go">Read the article</span>
+  </a>
+</div>
+</div></section>
+
+<article class="art" id="open-private-raises"><div class="wrap"><div class="art-inner">
+<p class="eyebrow">Private capital &middot; Form D analysis</p>
+<h1>Open private raises: $129.8 billion still unraised.</h1>
+<p class="byline">Inaya Advisory &middot; November 2026</p>
+
+<p class="lede">Across Form D filings made in the twelve months to July 2026, 951 private offerings of $50 million or more remain open. Together they sought $149.3 billion. On the most recent filings, $129.8 billion of that is still to be raised.</p>
+
+<div class="kpis">
+  <div><div class="kpi-n">951</div><div class="kpi-l">Open offerings of<br>$50 million or more</div></div>
+  <div><div class="kpi-n">$149.3bn</div><div class="kpi-l">Sought in total</div></div>
+  <div><div class="kpi-n">$129.8bn</div><div class="kpi-l">Still unraised</div></div>
+</div>
+
+<h2>How much has been sold</h2>
+<p>Most of these raises have made little progress on paper. <b>567 of the 951</b> reported nothing sold on their latest filing. A further 253 had sold less than a quarter of their target. Only 46 had sold more than half.</p>
+
+<div class="chart" role="figure" aria-label="The 951 open offerings by share of target sold">
+  <p class="chart-cap">The 951 open offerings, by share of target sold</p>
+  <div class="bar"><span class="bar-l">Nothing sold</span><div class="bar-t"><div class="bar-f" style="--w:59.6%"></div></div><span class="bar-v"><b>567</b><i>60%</i></span></div>
+  <div class="bar"><span class="bar-l">Under 25% sold</span><div class="bar-t"><div class="bar-f" style="--w:26.6%"></div></div><span class="bar-v"><b>253</b><i>27%</i></span></div>
+  <div class="bar"><span class="bar-l">25% to 50% sold</span><div class="bar-t"><div class="bar-f" style="--w:8.9%"></div></div><span class="bar-v"><b>85</b><i>9%</i></span></div>
+  <div class="bar"><span class="bar-l">50% to 80% sold</span><div class="bar-t"><div class="bar-f" style="--w:4.8%"></div></div><span class="bar-v"><b>46</b><i>5%</i></span></div>
+</div>
+
+<h2>Time in market</h2>
+<p>Time alone does not close a raise. <b>470</b> of these offerings have been open for six months or longer, and <b>414</b> of those have sold less than a quarter of their target.</p>
+
+<div class="chart" role="figure" aria-label="Open offerings by time in market">
+  <p class="chart-cap">Open offerings and time in market</p>
+  <div class="bar"><span class="bar-l">All open offerings</span><div class="bar-t"><div class="bar-f" style="--w:100%"></div></div><span class="bar-v"><b>951</b></span></div>
+  <div class="bar"><span class="bar-l">Open six months or longer</span><div class="bar-t"><div class="bar-f" style="--w:49.4%"></div></div><span class="bar-v"><b>470</b></span></div>
+  <div class="bar"><span class="bar-l">Of those, under 25% sold</span><div class="bar-t"><div class="bar-f" style="--w:43.5%"></div></div><span class="bar-v"><b>414</b></span></div>
+</div>
+
+<h2>By industry</h2>
+<p>The pattern is broad. Among the 951, real estate accounts for 440 offerings and investing for 233. Technology and health care together account for 69.</p>
+
+<div class="chart" role="figure" aria-label="Selected industry groups among the 951 open offerings">
+  <p class="chart-cap">Selected industry groups among the 951</p>
+  <div class="bar"><span class="bar-l">Real estate</span><div class="bar-t"><div class="bar-f" style="--w:46.3%"></div></div><span class="bar-v"><b>440</b></span></div>
+  <div class="bar"><span class="bar-l">Investing</span><div class="bar-t"><div class="bar-f" style="--w:24.5%"></div></div><span class="bar-v"><b>233</b></span></div>
+  <div class="bar"><span class="bar-l">Technology and health care</span><div class="bar-t"><div class="bar-f" style="--w:7.3%"></div></div><span class="bar-v"><b>69</b></span></div>
+</div>
+<p class="chart-note">Amounts are as reported on each issuer's most recent Form D. Issuers are not required to amend a Form D for every sale, so reported figures can lag what has been raised.</p>
+
+<h2>Our view</h2>
+<p>The filings do not say why any single raise has not closed. In our experience, the raises that do close tend to have four things in place.</p>
+<div class="view">
+  <div><i>01</i><div><h3>Materials that answer the committee</h3><p>An investment committee comes to a raise with a familiar set of questions. Materials that answer them before the first meeting allow that meeting to be spent on the decision rather than on the basics.</p></div></div>
+  <div><i>02</i><div><h3>A considered sequence</h3><p>The order in which allocators see a raise shapes how the market reads it. A raise shown to everyone at once reads differently from one introduced in a deliberate order, to the right allocators first.</p></div></div>
+  <div><i>03</i><div><h3>An introduction from someone known</h3><p>Allocators give their time to people they know. An introduction from someone the allocator already knows is read and answered in a way that an unsolicited approach rarely is.</p></div></div>
+  <div><i>04</i><div><h3>Follow-through to terms</h3><p>Interest is not a commitment. Diligence requests, follow-up questions and the commitment conversations need to be carried through, without gaps, until terms are agreed.</p></div></div>
+</div>
+
+<p class="src">Source: SEC EDGAR Form D filings, twelve months to July 2026, Inaya Advisory analysis. For information only. Nothing here constitutes an offer or solicitation to buy or sell any security.</p>
+
+<div class="art-cta">
+  <a class="btn" href="/mandateconsultation">Book a Consultation</a>
+  <a class="textlink" href="/insights">Back to Insights</a>
+</div>
+</div></div></article>
+</main>
+
+<footer class="ifoot">
+  <div class="ifw ifoot-top">
+    <div class="ifoot-brand">
+      <div class="ifoot-mark">INAYA&nbsp; ADVISORY</div>
+      <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
+    </div>
+    <a class="ifoot-li" href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="Inaya Advisory on LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
+  </div>
+  <div class="ifw ifoot-legal">
+    <p>Securities are offered through Finalis Securities LLC (CRD# 305908), Member <a href="https://www.finra.org" target="_blank" rel="noopener">FINRA</a>/<a href="https://www.sipc.org" target="_blank" rel="noopener">SIPC</a>. Inaya Advisory is not a registered broker-dealer. Inaya Advisory and Finalis Securities LLC are separate, unaffiliated entities. The Office of Supervisory Jurisdiction of Finalis Securities LLC is located at 450 Lexington Ave, New York, NY 10017, telephone <a href="tel:8009620418">800-962-0418</a>.</p>
+    <p><a href="https://www.inayaadvisory.com/">inayaadvisory.com</a> is operated by Inaya LLC, a privately held Wyoming limited liability company ("Inaya Advisory"). The content of this website is provided for information only. It is not an offer to sell or a solicitation of an offer to buy any security, it is not a recommendation, and it is not investment, legal or tax advice. Services described here may not be available in every jurisdiction. Figures describing the prior experience of members of our team relate to their earlier roles and are not transactions of Inaya Advisory. Information on this website is not warranted as to completeness or accuracy and may change without notice.</p>
+    <p>Private placements carry a high degree of risk. They may be illiquid and speculative, may be subject to restrictions on transfer, and can result in the loss of all or part of the capital invested. Prospective investors should conduct their own diligence and take legal, tax and financial advice before investing. The <a href="https://www.finalis.com/regulatory-disclaimers?form-CRS" target="_blank" rel="noopener">Form CRS</a> of Finalis Securities LLC describes its services, how it is compensated and other important information.</p>
+    <p class="ifoot-reg"><a href="https://www.finalis.com/privacy" target="_blank" rel="noopener">Finalis Privacy Policy</a><span>|</span><a href="https://www.finalis.com/regulatory-disclaimers?business-continuity-planning" target="_blank" rel="noopener">Business Continuity Plan</a><span>|</span><a href="https://brokercheck.finra.org/firm/summary/305908" target="_blank" rel="noopener">FINRA BrokerCheck</a><span>|</span><a href="https://www.finalis.com/regulatory-disclaimers?form-CRS" target="_blank" rel="noopener">Form CRS</a></p>
+    <div class="ifoot-base">
+      <span>&copy; 2026 Inaya LLC. All rights reserved.</span>
+      <nav aria-label="Footer"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+    </div>
+  </div>
+  <div class="ifoot-wm" aria-hidden="true">INAYA</div>
+</footer>
+<script src="/david-modal.js?v=3"></script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.wordmark,a.mark');if(!a)return;var h=a.getAttribute('href');if((h==='/'||h==='index.html')&&(location.pathname==='/'||location.pathname==='/index.html')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}});</script>
+<script>(function(){var h=document.querySelector('header');function s(){if(h)h.classList.toggle('scrolled',window.scrollY>8)}window.addEventListener('scroll',s,{passive:true});s()})();</script>
+</body>
+</html>
