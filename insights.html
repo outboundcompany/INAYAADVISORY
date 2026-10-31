@@ -265,6 +265,17 @@ main .meta span+span::before{content:"";display:inline-block;width:3px;height:3p
 .feat-figs div:last-child{border-right:none;margin-right:0;padding-right:0}
 .feat-figs b{display:block;font-family:var(--serif);font-weight:300;font-size:30px;line-height:1;color:var(--cream)}
 .feat-figs small{display:block;white-space:nowrap;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+.fviz{margin-top:30px;padding-top:22px;border-top:1px solid rgba(245,242,235,.12)}
+.fviz-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:12px}
+.fviz-top span{display:flex;flex-direction:column;gap:7px}
+.fviz-top span:last-child{align-items:flex-end;text-align:right}
+.fviz-top b{font-family:var(--serif);font-weight:300;font-size:32px;line-height:1;color:var(--cream)}
+.fviz-top span:last-child b{font-size:22px;color:var(--warm)}
+.fviz-top small{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fviz-bar{display:flex;height:14px;gap:2px}
+.fviz-bar span:first-child{background:#F4EFE6}
+.fviz-bar span:last-child{background:#5F594F}
+.feat .fviz-cap{font-size:12px;color:var(--warm);margin-top:12px;line-height:1.5}
 .go{margin-top:auto;padding-top:30px;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.06em;color:var(--warm)}
 .go::after{content:"";width:28px;height:1px;background:currentColor;transition:width .3s cubic-bezier(.22,1,.36,1)}
 a:hover .go{color:var(--cream)}
@@ -294,7 +305,7 @@ a:hover .ph img{transform:scale(1.035)}
 .art{border-top:1px solid rgba(245,242,235,.12);padding:clamp(72px,9vw,128px) 0;scroll-margin-top:150px}
 .art-col{max-width:700px;margin:0 auto}
 .art-wide{max-width:900px;margin-left:auto;margin-right:auto}
-.art-head{max-width:700px;margin:0 auto}
+.art-head{max-width:700px;margin:0 auto;position:static!important;z-index:auto!important;background:none!important;border-bottom:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
 .art h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.6vw,60px);line-height:1.06;color:var(--cream);margin:22px 0 22px;max-width:20ch}
 .art .meta{display:flex;flex-wrap:wrap;align-items:center}
 .art-img{aspect-ratio:21/9;margin:clamp(36px,4vw,52px) auto clamp(40px,5vw,60px);max-width:1080px}
@@ -312,40 +323,47 @@ a:hover .ph img{transform:scale(1.035)}
 .kfig b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(40px,4.6vw,62px);line-height:1;color:var(--cream);letter-spacing:-.01em}
 .kfig small{display:block;font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:14px;line-height:1.6}
 
-/* pull figure */
-.pull{margin:52px 0;padding:34px 0 30px;border-top:1px solid var(--cream);border-bottom:1px solid rgba(245,242,235,.12);display:grid;grid-template-columns:auto 1fr;gap:12px 36px;align-items:end}
-.pull b{font-family:var(--wm);font-weight:400;font-size:clamp(52px,7vw,92px);line-height:.9;color:var(--cream);letter-spacing:-.01em}
-.pull p{font-size:14px!important;line-height:1.65!important;color:var(--warm);max-width:30ch;padding-bottom:6px}
-.pull-bar{grid-column:1/-1;display:flex;height:6px;margin-top:22px;gap:2px}
-.pull-bar span:first-child{background:rgba(245,242,235,.22)}
-.pull-bar span:last-child{background:var(--cream)}
-.pull-key{grid-column:1/-1;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+/* key takeaways */
+.ktk{margin:0 0 clamp(40px,5vw,56px);padding:clamp(26px,3vw,34px) clamp(24px,3vw,36px) clamp(24px,3vw,32px);background:#11100E;border:1px solid rgba(245,242,235,.12);border-top:1px solid var(--cream)}
+.ktk h2{font-family:var(--sans)!important;font-size:10.5px!important;font-weight:400!important;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)!important;margin:0 0 18px!important;line-height:1.4!important}
+.ktk ul{list-style:none;display:grid;gap:14px}
+.ktk li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.65;color:var(--cream)}
+.ktk li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:var(--cream)}
 
-/* figures / charts */
-.fig{margin:40px 0 8px;padding:28px 0 0;border-top:1px solid rgba(245,242,235,.12)}
-.fig-cap{display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:26px;line-height:1.6}
-.fig-cap span:first-child{color:var(--cream)}
-.stack{display:flex;height:54px;gap:3px}
-.stack span{display:block;height:100%;min-width:3px}
-.c1{background:#F4EFE6}.c2{background:#B8B0A4}.c3{background:#7E766C}.c4{background:#4C4740}.c5{background:#2A2724}
-.axis{display:flex;justify-content:space-between;font-size:10px;color:var(--faint);margin-top:10px;letter-spacing:.06em}
-.leg{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;border-top:1px solid rgba(245,242,235,.12)}
-.leg>div{padding:20px 18px 4px 0}
-.leg>div+div{padding-left:18px;border-left:1px solid rgba(245,242,235,.12)}
-.leg i{display:block;width:22px;height:4px;margin-bottom:16px}
-.leg b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(34px,3.4vw,44px);line-height:1;color:var(--cream)}
-.leg em{font-style:normal;font-size:12px;color:var(--muted);margin-left:6px;font-family:var(--sans)}
-.leg small{display:block;font-size:13px;color:var(--warm);margin-top:10px;line-height:1.45}
-.leg-3{grid-template-columns:repeat(3,1fr)}
-
-.tim{display:grid;gap:0}
-.tim>div{display:grid;grid-template-columns:110px 1fr;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid rgba(245,242,235,.12)}
-.tim>div:first-child{padding-top:0}
-.tim b{font-family:var(--serif);font-weight:300;font-size:clamp(36px,3.6vw,48px);line-height:1;color:var(--cream)}
-.tim small{display:block;font-size:13px;color:var(--warm);margin-bottom:12px}
-.tim .trk{height:12px;background:rgba(245,242,235,.07);position:relative}
-.tim .trk span{position:absolute;left:0;top:0;bottom:0;width:var(--w)}
-.tim .ind small::before{content:"";display:inline-block;width:10px;height:8px;border-left:1px solid var(--muted);border-bottom:1px solid var(--muted);margin:0 10px 3px 0;vertical-align:middle}
+/* charts */
+.chart{margin:48px 0 12px;padding:30px 0 0;border-top:1px solid rgba(245,242,235,.12)}
+.chart-n{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.art .chart-t{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.3vw,28px);line-height:1.2;color:var(--cream);margin:0 0 8px;max-width:none}
+.art .chart-s{font-size:13px;line-height:1.6;color:var(--warm);margin:0 0 30px}
+.bars{display:grid;gap:20px;border-left:1px solid rgba(245,242,235,.22);padding:4px 0 4px 0}
+.br{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:0 20px}
+.br-l{font-size:13.5px;line-height:1.35;color:var(--cream);padding-left:18px}
+.br-l small{display:block;font-size:11.5px;color:var(--warm);margin-top:2px}
+.br-b{display:flex;align-items:center;gap:14px;min-width:0}
+.br-b i{display:block;flex:0 0 auto;height:30px;width:calc((100% - 120px) * var(--p));min-width:3px;background:#5F594F}
+.br-b i.hi{background:#F4EFE6}
+.br-b i.lo{background:#3B3730}
+.br-v{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.br-v b{font-family:var(--serif);font-weight:300;font-size:28px;line-height:1;color:var(--cream)}
+.br-v em{font-style:normal;font-size:12px;color:var(--warm)}
+.br-sub .br-l{padding-left:34px;position:relative}
+.br-sub .br-l::before{content:"";position:absolute;left:18px;top:2px;width:9px;height:9px;border-left:1px solid var(--muted);border-bottom:1px solid var(--muted)}
+.art .chart-c{font-size:14px;line-height:1.65;color:var(--cream);margin:28px 0 0;padding-top:16px;border-top:1px solid rgba(245,242,235,.12)}
+.art .chart-src{font-size:11.5px;line-height:1.6;color:var(--muted);margin:8px 0 0}
+/* single split bar */
+.split{margin:6px 0 0}
+.split-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px}
+.split-top div{display:flex;flex-direction:column;gap:8px}
+.split-top div:last-child{align-items:flex-end;text-align:right}
+.split-top b{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,48px);line-height:1;color:var(--cream)}
+.split-top div:last-child b{color:var(--warm)}
+.split-top small{font-size:12px;color:var(--warm);line-height:1.4}
+.split-bar{display:flex;height:34px;gap:3px}
+.split-bar span:first-child{background:#F4EFE6}
+.split-bar span:last-child{background:#5F594F}
+.split-key{display:flex;justify-content:space-between;margin-top:10px;font-size:11.5px;color:var(--warm)}
+.split-key span{display:flex;align-items:center;gap:8px}
+.split-key i{display:inline-block;width:10px;height:10px}
 
 .note{font-size:13px!important;color:var(--muted)!important;line-height:1.7!important;margin-top:20px}
 
@@ -425,13 +443,15 @@ main .stage .meta{font-size:10px}
   .kfig{grid-template-columns:1fr}
   .kfig>div,.kfig>div+div{padding:22px 0;border-left:none}
   .kfig>div+div{border-top:1px solid rgba(245,242,235,.12)}
-  .leg,.leg-3{grid-template-columns:1fr 1fr}
-  .leg>div,.leg>div+div{padding:18px 12px 14px 0;border-left:none}
-  .leg>div:nth-child(2n){padding-left:16px;border-left:1px solid rgba(245,242,235,.12)}
-  .leg>div:nth-child(n+3){border-top:1px solid rgba(245,242,235,.12)}
-  .stack{height:40px}
-  .tim>div{grid-template-columns:76px 1fr;gap:14px}
-  .pull{grid-template-columns:1fr}
+  .bars{gap:20px;border-left:none}
+  .br{grid-template-columns:1fr;gap:8px}
+  .br-l{padding-left:0}
+  .br-sub .br-l{padding-left:16px}
+  .br-sub .br-l::before{left:0}
+  .br-b i{height:24px;width:calc((100% - 104px) * var(--p))}
+  .br-v b{font-size:24px}
+  .split-top b{font-size:32px}
+  .split-bar{height:28px}
   .view4{grid-template-columns:1fr}
   .view4>div,.view4>div:nth-child(2n){padding:24px 0;border-left:none}
   .stage{grid-template-columns:48px 1fr;gap:16px}
@@ -445,7 +465,6 @@ main .stage .meta{font-size:10px}
   .fact{grid-template-columns:1fr;gap:16px;padding:24px}
   .fields{grid-template-columns:1fr}
   .fields>div,.fields>div:nth-child(2n){padding:18px 0;border-left:none}
-  .fig-cap{flex-direction:column;gap:6px}
   .art p{font-size:15.5px}
 }
 </style>
@@ -500,10 +519,10 @@ main .stage .meta{font-size:10px}
         <p class="meta"><span>November 2026</span><span>6 min read</span></p>
         <h2>Open private raises: $129.8 billion still unraised.</h2>
         <p>Of 951 private offerings of $50 million or more still open, most report little or nothing sold. A look at how much remains, and for how long.</p>
-        <div class="feat-figs">
-          <div><b>951</b><small>Open offerings</small></div>
-          <div><b>$149.3bn</b><small>Sought</small></div>
-          <div><b>$129.8bn</b><small>Unraised</small></div>
+        <div class="fviz" role="img" aria-label="$129.8 billion of the $149.3 billion sought is still unraised, across 951 open offerings">
+          <div class="fviz-top"><span><b>$129.8bn</b><small>Still unraised</small></span><span><b>$149.3bn</b><small>Sought in total</small></span></div>
+          <div class="fviz-bar" aria-hidden="true"><span style="width:86.9%"></span><span style="width:13.1%"></span></div>
+          <p class="fviz-cap">Across 951 open offerings of $50 million or more.</p>
         </div>
         <span class="go">Read the analysis</span>
       </div>
@@ -566,6 +585,15 @@ main .stage .meta{font-size:10px}
   <div class="ph art-img"><img src="images/towers.webp" alt="" loading="lazy"></div>
 
   <div class="art-col">
+    <aside class="ktk" aria-label="Key takeaways">
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>Six in ten of the 951 open offerings of $50 million or more have reported nothing sold.</li>
+        <li>$129.8 billion of the $149.3 billion sought is still to be raised.</li>
+        <li>Time alone does not close a raise. 414 of the 470 offerings open six months or longer have sold less than a quarter of their target.</li>
+      </ul>
+    </aside>
+
     <p class="lede">Across Form D filings made in the twelve months to July 2026, 951 private offerings of $50 million or more remain open. Together they sought $149.3 billion. On the most recent filings, $129.8 billion of that is still to be raised.</p>
 
     <div class="kfig">
@@ -577,50 +605,64 @@ main .stage .meta{font-size:10px}
     <h2><span class="sn">01 &middot; Progress</span>How much has been sold</h2>
     <p>Most of these raises have made little progress on paper. <b>567 of the 951</b> reported nothing sold on their latest filing. A further 253 had sold less than a quarter of their target. Only 46 had sold more than half.</p>
 
-    <figure class="fig" aria-label="The 951 open offerings by share of target sold">
-      <figcaption class="fig-cap"><span>The 951 open offerings, by share of target sold</span><span>Count of offerings</span></figcaption>
-      <div class="stack" aria-hidden="true"><span class="c1" style="width:59.6%"></span><span class="c2" style="width:26.6%"></span><span class="c3" style="width:8.9%"></span><span class="c4" style="width:4.8%"></span></div>
-      <div class="axis" aria-hidden="true"><span>0</span><span>951</span></div>
-      <div class="leg">
-        <div><i class="c1"></i><b>567<em>60%</em></b><small>Nothing sold</small></div>
-        <div><i class="c2"></i><b>253<em>27%</em></b><small>Under 25% sold</small></div>
-        <div><i class="c3"></i><b>85<em>9%</em></b><small>25% to 50% sold</small></div>
-        <div><i class="c4"></i><b>46<em>5%</em></b><small>50% to 80% sold</small></div>
+    <figure class="chart" aria-label="Open offerings by share of target sold: nothing sold 567, under 25% sold 253, 25% to 50% sold 85, 50% to 80% sold 46">
+      <p class="chart-n">Figure 1</p>
+      <h3 class="chart-t">Six in ten open raises have reported nothing sold</h3>
+      <p class="chart-s">The 951 open offerings of $50 million or more, by share of target sold. Number of offerings and share of the 951.</p>
+      <div class="bars" aria-hidden="true">
+        <div class="br"><span class="br-l">Nothing sold</span><span class="br-b"><i class="hi" style="--p:1"></i><span class="br-v"><b>567</b><em>60%</em></span></span></div>
+        <div class="br"><span class="br-l">Under 25% sold</span><span class="br-b"><i class="" style="--p:.446"></i><span class="br-v"><b>253</b><em>27%</em></span></span></div>
+        <div class="br"><span class="br-l">25% to 50% sold</span><span class="br-b"><i class="" style="--p:.15"></i><span class="br-v"><b>85</b><em>9%</em></span></span></div>
+        <div class="br"><span class="br-l">50% to 80% sold</span><span class="br-b"><i class="" style="--p:.081"></i><span class="br-v"><b>46</b><em>5%</em></span></span></div>
       </div>
+      <figcaption class="chart-c">567 of the 951 offerings reported no sales at all on their most recent Form D.</figcaption>
+      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
     </figure>
 
-    <div class="pull">
-      <b>$129.8bn</b>
-      <p>of the $149.3 billion sought by these offerings is still to be raised on their most recent filings.</p>
-      <div class="pull-bar" aria-hidden="true"><span style="width:13.1%"></span><span style="width:86.9%"></span></div>
-      <div class="pull-key" aria-hidden="true"><span>Reported sold</span><span>Still unraised</span></div>
-    </div>
+    <figure class="chart" aria-label="$129.8 billion of the $149.3 billion sought is still unraised">
+      <p class="chart-n">Figure 2</p>
+      <h3 class="chart-t">Most of the money sought has not yet been raised</h3>
+      <p class="chart-s">Total sought by the 951 open offerings, and the part still to be raised. US dollars.</p>
+      <div class="split" aria-hidden="true">
+        <div class="split-top"><div><b>$129.8bn</b><small>Still unraised</small></div><div><b>$149.3bn</b><small>Sought in total</small></div></div>
+        <div class="split-bar"><span style="width:86.9%"></span><span style="width:13.1%"></span></div>
+        <div class="split-key"><span><i style="background:#F4EFE6"></i>Still unraised</span><span><i style="background:#5F594F"></i>Reported sold</span></div>
+      </div>
+      <figcaption class="chart-c">On their most recent filings, $129.8 billion of the $149.3 billion sought is still to be raised.</figcaption>
+      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
+    </figure>
 
     <h2><span class="sn">02 &middot; Duration</span>Time in market</h2>
     <p>Time alone does not close a raise. <b>470</b> of these offerings have been open for six months or longer, and <b>414</b> of those have sold less than a quarter of their target.</p>
 
-    <figure class="fig" aria-label="Open offerings by time in market">
-      <figcaption class="fig-cap"><span>Open offerings and time in market</span><span>Count of offerings</span></figcaption>
-      <div class="tim">
-        <div><b>951</b><div><small>All open offerings</small><div class="trk"><span class="c4" style="--w:100%"></span></div></div></div>
-        <div><b>470</b><div><small>Open six months or longer</small><div class="trk"><span class="c2" style="--w:49.4%"></span></div></div></div>
-        <div><b>414</b><div class="ind"><small>Of those, under 25% sold</small><div class="trk"><span class="c4" style="--w:49.4%"></span><span class="c1" style="--w:43.5%"></span></div></div></div>
+    <figure class="chart" aria-label="All open offerings 951; open six months or longer 470; of those, under 25% sold 414">
+      <p class="chart-n">Figure 3</p>
+      <h3 class="chart-t">Most raises open six months or longer have sold under a quarter</h3>
+      <p class="chart-s">Open offerings by time in market. Number of offerings and share of the 951.</p>
+      <div class="bars" aria-hidden="true">
+        <div class="br"><span class="br-l">All open offerings</span><span class="br-b"><i class="lo" style="--p:1"></i><span class="br-v"><b>951</b></span></span></div>
+        <div class="br"><span class="br-l">Open six months or longer</span><span class="br-b"><i class="" style="--p:0.494"></i><span class="br-v"><b>470</b><em>49%</em></span></span></div>
+        <div class="br br-sub"><span class="br-l">Of those, under 25% sold</span><span class="br-b"><i class="hi" style="--p:0.435"></i><span class="br-v"><b>414</b><em>44%</em></span></span></div>
       </div>
+      <figcaption class="chart-c">414 of the 470 offerings open six months or longer have sold less than a quarter of their target.</figcaption>
+      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
     </figure>
 
     <h2><span class="sn">03 &middot; Sector</span>By industry</h2>
     <p>The pattern is broad. Among the 951, real estate accounts for 440 offerings and investing for 233. Technology and health care together account for 69.</p>
 
-    <figure class="fig" aria-label="Selected industry groups among the 951 open offerings">
-      <figcaption class="fig-cap"><span>Selected industry groups among the 951</span><span>Count of offerings</span></figcaption>
-      <div class="stack" aria-hidden="true"><span class="c1" style="width:46.3%"></span><span class="c2" style="width:24.5%"></span><span class="c3" style="width:7.3%"></span><span class="c5" style="width:21.9%"></span></div>
-      <div class="axis" aria-hidden="true"><span>0</span><span>951</span></div>
-      <div class="leg">
-        <div><i class="c1"></i><b>440</b><small>Real estate</small></div>
-        <div><i class="c2"></i><b>233</b><small>Investing</small></div>
-        <div><i class="c3"></i><b>69</b><small>Technology and health care</small></div>
-        <div><i class="c5"></i><b>209</b><small>All other industries</small></div>
+    <figure class="chart" aria-label="Open offerings by industry: real estate 440, investing 233, technology and health care 69, all other industries 209">
+      <p class="chart-n">Figure 4</p>
+      <h3 class="chart-t">Real estate accounts for nearly half of open raises</h3>
+      <p class="chart-s">The 951 open offerings by industry group. Number of offerings and share of the 951.</p>
+      <div class="bars" aria-hidden="true">
+        <div class="br"><span class="br-l">Real estate</span><span class="br-b"><i class="hi" style="--p:1"></i><span class="br-v"><b>440</b><em>46%</em></span></span></div>
+        <div class="br"><span class="br-l">Investing</span><span class="br-b"><i class="" style="--p:.53"></i><span class="br-v"><b>233</b><em>25%</em></span></span></div>
+        <div class="br"><span class="br-l">Technology and health care</span><span class="br-b"><i class="" style="--p:.157"></i><span class="br-v"><b>69</b><em>7%</em></span></span></div>
+        <div class="br"><span class="br-l">All other industries</span><span class="br-b"><i class="lo" style="--p:.475"></i><span class="br-v"><b>209</b><em>22%</em></span></span></div>
       </div>
+      <figcaption class="chart-c">440 of the 951 open offerings are in real estate, the largest group by a wide margin.</figcaption>
+      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
     </figure>
     <p class="note">Amounts are as reported on each issuer's most recent Form D. Issuers are not required to amend a Form D for every sale, so reported figures can lag what has been raised.</p>
 
