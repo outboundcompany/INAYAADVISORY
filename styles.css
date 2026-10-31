@@ -1560,3 +1560,16 @@ nav .wordmark { line-height: 32px; display: block; view-transition-name: inaya-l
   .mrow.mhead span:last-child { display: none; }
 }
 .funnel-flow .mstrip { max-width: 760px; margin: 48px auto 0; }
+
+/* ---------- News & Insights dropdown in the main menu ---------- */
+.nav-drop { position: relative; display: inline-flex; align-items: center; }
+.nav-drop .drop { position: absolute; top: calc(100% + 14px); left: -20px; min-width: 300px; padding: 10px; background: rgba(11, 11, 9, 0.97); border: 1px solid rgba(245, 242, 235, 0.12); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s; z-index: 120; }
+.nav-drop::after { content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 16px; }
+.nav-drop:hover .drop, .nav-drop:focus-within .drop { opacity: 1; visibility: visible; transform: none; transition: opacity .18s ease, transform .18s ease; }
+.nav-links .nav-drop .drop a { display: block; padding: 11px 14px; color: var(--cream); text-decoration: none; border-radius: 0; transition: background .15s ease; }
+.nav-links .nav-drop .drop a::after { display: none !important; }
+.nav-drop .drop a:hover { background: rgba(245, 242, 235, 0.06); }
+.nav-drop .drop b { display: block; font-weight: 400; font-size: 14px; letter-spacing: .01em; }
+.nav-drop .drop span { display: block; font-size: 12px; color: #8A8277; margin-top: 3px; letter-spacing: 0; }
+.nav-drop .drop .drop-all { border-top: 1px solid rgba(245, 242, 235, 0.10); margin-top: 6px; padding-top: 12px; }
+.nav-drop .drop .drop-all b { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #A79E92; }
