@@ -7,7 +7,7 @@
 //   { start, name, email, timeZone, firm, companyType, capitalTarget, timeline, description }
 
 const CAL_API = 'https://api.cal.com/v2';
-const USERNAME = 'abbas-chothia-strmar';
+const USERNAME = 'abbas-chothia';
 const EVENT_SLUG = 'introductory-call';
 
 function clip(v) { return String(v == null ? '' : v).slice(0, 500); }

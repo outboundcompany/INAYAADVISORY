@@ -6,7 +6,7 @@
 // starts with "cal_", created on the Cal.com account that owns the event below).
 
 const CAL_API = 'https://api.cal.com/v2';
-const USERNAME = 'abbas-chothia-strmar';   // Cal.com username that owns the event
+const USERNAME = 'abbas-chothia';   // Cal.com username that owns the event
 const EVENT_SLUG = 'introductory-call';    // the event type slug
 const DAYS_AHEAD = 21;                      // how far out to offer times
 
