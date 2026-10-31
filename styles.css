@@ -1559,3 +1559,4 @@ nav .wordmark { line-height: 32px; display: block; view-transition-name: inaya-l
   .mrow p { grid-column: 2; }
   .mrow.mhead span:last-child { display: none; }
 }
+.funnel-flow .mstrip { max-width: 760px; margin: 48px auto 0; }
