@@ -23,3 +23,7 @@
 .ifoot-li{display:inline-flex;color:#C9C1B5;transition:color .2s}
 .ifoot-li:hover{color:#F4EFE6}
 .ifoot-li svg{width:20px;height:20px;fill:currentColor}
+.ifoot-reg{margin:6px 0 18px!important}
+.ifoot-reg a{text-decoration:none!important;color:#C9C1B5}
+.ifoot-reg a:hover{color:#F4EFE6}
+.ifoot-reg span{margin:0 12px;color:#4A453E}
