@@ -1,0 +1,267 @@
+/* Inaya Advisory: site shell (header, mega menus, mobile menu), design system v3 (1 Nov 2026).
+   Modelled on blackstone.com: white bar, black wordmark, 16px navigation with chevrons, white mega panels
+   with 20px / 500 column titles and 16px links, a thin rule under the bar when a panel is open.
+   Loaded last on every page by tools/shell.py; every rule is namespaced .ix-* and reads fonts/fonts.css.
+   Bar height = var(--hdr-h): 72px phones, 96px tablet, 128px desktop. The wordmark is 19px Marcellus on a
+   32px line (14px / 24px on phones) with view-transition-name inaya-logo, so it never moves between pages.
+   Optional boxed wordmark (white on a black box, like Blackstone's logo): <html data-logo="box">. */
+
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+::view-transition-group(inaya-logo) { animation-duration: 0s; }
+
+.ix-hdr, .ix-hdr * { box-sizing: border-box; }
+:where(.ix-hdr) ul { list-style: none; margin: 0; padding: 0; }
+:where(.ix-hdr) p { margin: 0; }
+:where(.ix-hdr) a { text-decoration: none; }
+:where(.ix-hdr) a::after { content: none; }
+:where(.ix-hdr) button { -webkit-appearance: none; appearance: none; background: none; border: 0; margin: 0; padding: 0; color: inherit; font: inherit; cursor: pointer; border-radius: 0; }
+.ix-hdr a:focus-visible, .ix-hdr button:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+
+.ix-skip { position: absolute; left: 12px; top: -80px; z-index: 300; background: #000; color: #FFF; padding: 10px 16px; font: 400 14px/1.2 var(--font-ui); text-decoration: none; }
+.ix-skip:focus { top: 12px; }
+#ix-content { height: 0; outline: none; }
+
+/* ---------- bar ---------- */
+header.ix-hdr {
+  position: sticky; top: 0; z-index: 100; margin: 0; padding: 0;
+  color: var(--fg); font-family: var(--font-ui); font-weight: var(--fw-text);
+  background: transparent; border-bottom: 1px solid transparent;
+  transition: border-color var(--dur) ease; opacity: 1; animation: none;
+  -webkit-font-smoothing: antialiased; letter-spacing: 0;
+}
+/* the fill sits on a pseudo-element so the header never becomes a containing block for the fixed mobile menu */
+header.ix-hdr::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--bg); pointer-events: none; }
+header.ix-hdr.is-scrolled { border-bottom-color: var(--line); }
+header.ix-hdr.is-open, header.ix-hdr.is-menu { border-bottom-color: transparent; }
+
+/* homepage intro: the header fades in with the curtain */
+html.has-intro header.ix-hdr { opacity: 0; animation: ixDrop .8s ease 2.1s forwards; }
+@keyframes ixDrop { to { opacity: 1; } }
+
+.ix-bar { position: static; display: flex; align-items: center; justify-content: space-between; gap: 32px; height: var(--hdr-h); width: var(--container); margin: 0 auto; padding: 0; }
+.ix-hdr .ix-mark {
+  display: block; flex-shrink: 0; font-family: var(--font-wordmark); font-weight: 400; font-size: 19px;
+  line-height: 32px; letter-spacing: .42em; margin-right: -.42em; text-transform: uppercase; white-space: nowrap;
+  color: var(--fg); view-transition-name: inaya-logo;
+}
+/* boxed wordmark variant: white letters in a black box, the way Blackstone sets its logo */
+html[data-logo="box"] .ix-hdr .ix-mark { background: #000; color: #FFF; padding: 13px 4px 13px 18px; margin-right: 0; }
+.ix-right { display: flex; align-items: center; gap: 32px; height: 100%; }
+
+/* ---------- desktop menu ---------- */
+.ix-hdr nav.ix-nav { position: static; height: 100%; background: none; border: 0; opacity: 1; animation: none; z-index: auto; }
+.ix-menu { display: flex; align-items: stretch; gap: 24px; height: 100%; }
+.ix-item { position: static; display: flex; align-items: center; height: 100%; }
+.ix-top { position: relative; display: inline-flex; align-items: center; gap: 12px; height: 100%; font-size: var(--fs-nav); font-weight: var(--fw-ui); letter-spacing: var(--ls-nav); line-height: 1.5; color: var(--fg); white-space: nowrap; }
+.ix-top > :first-child, .ix-top { background-image: none; }
+.ix-top::after { content: ''; position: absolute; left: 0; right: 24px; bottom: calc(50% - 16px); height: 1px; background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease); }
+.ix-top:hover::after, .ix-item.is-open .ix-top::after, .ix-item.is-current .ix-top::after { transform: scaleX(1); }
+/* chevron: a thin open V, as on blackstone.com */
+.ix-chev { display: inline-block; width: 8px; height: 8px; border-right: 1.25px solid currentColor; border-bottom: 1.25px solid currentColor; transform: translateY(-3px) rotate(45deg); transition: transform .25s ease; opacity: 1; }
+.ix-item.is-open .ix-chev { transform: translateY(2px) rotate(225deg); }
+
+/* header call to action: a black pill */
+.ix-hdr .ix-cta {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--fg); border-radius: 100px;
+  padding: 6px 22px; font-family: var(--font-ui); font-weight: var(--fw-strong); font-size: 15px; line-height: 1.5; letter-spacing: var(--ls-btn);
+  text-transform: none; color: var(--bg); background: var(--fg); white-space: nowrap;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+.ix-hdr .ix-cta:hover, .ix-hdr .ix-cta:focus-visible { background: transparent; color: var(--fg); border-color: var(--fg); }
+
+/* ---------- mega panels: white, a hairline at the top of the content, columns of 16px links ---------- */
+.ix-panel {
+  position: absolute; left: 0; right: 0; top: 100%; z-index: 2; background: var(--bg);
+  max-height: calc(100vh - var(--hdr-h)); overflow-y: auto; cursor: default;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+}
+.ix-item.is-open .ix-panel { opacity: 1; visibility: visible; transform: none; transition: opacity .3s ease, transform .3s ease; }
+html:not(.ix-js) .ix-item:hover .ix-panel, html:not(.ix-js) .ix-item:focus-within .ix-panel { opacity: 1; visibility: visible; transform: none; }
+
+/* layout as blackstone.com: link columns from the left edge of the grid; a boxed feature card on the right,
+   flush with the rule under the bar (text block left, image right). One font in the menus: DM Sans. */
+.ix-panel-in { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; width: var(--container); margin: 0 auto; border-top: 1px solid var(--line); padding: 0; }
+.ix-cols { display: flex; align-items: flex-start; gap: 0 56px; padding: 48px 0 64px; }
+.ix-col { min-width: 160px; max-width: 240px; }
+.ix-h { font-family: var(--font-ui); font-weight: 500; font-size: 20px; line-height: 1.5; letter-spacing: 0; text-transform: none; color: var(--fg); padding: 0; margin: 0 0 20px !important; border: 0; }
+.ix-col ul + .ix-h { margin-top: 36px !important; }
+.ix-col li + li { margin-top: 16px; }
+.ix-col a { display: inline; padding: 0; font-family: var(--font-ui); font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: var(--fg); }
+.ix-col a[aria-current="page"] { background-size: 100% 1px; }
+
+.ix-feat { flex: 0 0 auto; width: min(47%, 600px); display: grid; grid-template-columns: minmax(0, 1fr) 38%; align-items: stretch; padding: 0; border: 0; background: var(--bg-2); color: var(--fg); text-decoration: none; }
+.ix-feat-body { display: flex; flex-direction: column; padding: 32px; min-height: 290px; }
+.ix-feat-title { font-family: var(--font-ui); font-weight: 500; font-size: 20px; line-height: 1.5; letter-spacing: 0; color: var(--fg); }
+.ix-feat-sub { display: block; font-family: var(--font-ui); font-weight: 300; font-size: 18px; line-height: 1.5; color: var(--text); margin-top: 16px; }
+.ix-feat-go { margin-top: auto; padding-top: 32px; display: inline-flex; align-items: center; gap: 16px; font-family: var(--font-ui); font-size: 18px; font-weight: 400; line-height: 1.5; color: var(--fg); }
+.ix-feat-go::after { content: none; }
+.ix-feat-ic { width: 40px; height: 40px; flex-shrink: 0; border: 1px solid var(--fg); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease); }
+.ix-feat-ic svg { width: 16px; height: 16px; fill: none; stroke: var(--fg); stroke-width: 1.3; transition: stroke var(--dur) var(--ease); }
+.ix-feat:hover .ix-feat-ic, .ix-feat:focus-visible .ix-feat-ic { transform: scale(1.2); background: var(--fg); }
+.ix-feat:hover .ix-feat-ic svg, .ix-feat:focus-visible .ix-feat-ic svg { stroke: var(--bg); }
+.ix-feat-go-t { background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 1px; transition: background-size var(--dur) var(--ease); }
+.ix-feat:hover .ix-feat-go-t { background-size: 100% 1px; }
+.ix-feat-img { display: block; overflow: hidden; background: var(--img-bg); min-height: 100%; }
+.ix-feat-img img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.06) brightness(.8); }
+.ix-kicker, .ix-lead, .ix-intro, .ix-feat-tag, .ix-feat-faces { display: none !important; }
+
+.ix-scrim { position: fixed; left: 0; right: 0; top: var(--hdr-h); bottom: 0; z-index: -2; background: rgba(0, 0, 0, .3); opacity: 0; visibility: hidden; pointer-events: none; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: opacity .25s ease, visibility 0s linear .25s; }
+header.ix-hdr.is-open .ix-scrim { opacity: 1; visibility: visible; transition: opacity .25s ease; }
+header.ix-hdr.is-open .ix-item.is-current:not(.is-open) .ix-top::after { transform: scaleX(0); }
+
+@media (max-width: 1359px) { .ix-cols { gap: 0 40px; } .ix-feat { width: min(44%, 520px); grid-template-columns: minmax(0, 1fr) 34%; } .ix-feat-body { padding: 24px; } }
+}
+@media (min-width: 1200px) and (max-width: 1359px) { .ix-menu { gap: 20px; } .ix-right { gap: 24px; } }
+
+/* ---------- burger + mobile menu (below 1200px): white sheet, large light links ---------- */
+.ix-burger { display: none; position: relative; width: 44px; height: 44px; margin-right: -10px; }
+.ix-burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: var(--fg); transition: transform var(--dur) var(--ease), top var(--dur) var(--ease); }
+.ix-burger span:first-child { top: 17px; }
+.ix-burger span:last-child { top: 26px; }
+header.ix-hdr.is-menu .ix-burger span:first-child { top: 21.5px; transform: rotate(45deg); }
+header.ix-hdr.is-menu .ix-burger span:last-child { top: 21.5px; transform: rotate(-45deg); }
+.ix-mnav { display: none; }
+
+@media (max-width: 1199px) {
+  .ix-hdr nav.ix-nav { display: none; }
+  .ix-burger { display: block; }
+  .ix-right { gap: 16px; }
+  .ix-scrim { display: none; }
+  .ix-mnav {
+    display: block; position: fixed; left: 0; right: 0; top: var(--hdr-h); bottom: 0; z-index: 1;
+    background: var(--bg); border-top: 1px solid var(--line); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+    opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility 0s linear .25s;
+  }
+  header.ix-hdr.is-menu .ix-mnav { opacity: 1; visibility: visible; transition: opacity .25s ease; }
+  .ix-hdr nav.ix-mnav-in { position: static; display: block; width: var(--container); margin: 0 auto; padding: 8px 0 56px; background: none; border: 0; opacity: 1; animation: none; z-index: auto; }
+  .ix-macc { border-bottom: 1px solid var(--line); }
+  .ix-mtop { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 24px 0; text-align: left; font-family: var(--font-ui); font-weight: 400; font-size: 24px; line-height: 1.5; letter-spacing: var(--ls-text); color: var(--fg); }
+  .ix-pm { position: relative; width: 14px; height: 14px; flex-shrink: 0; }
+  .ix-pm::before, .ix-pm::after { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1.25px; background: var(--fg); transition: transform var(--dur) var(--ease); }
+  .ix-pm::after { transform: rotate(90deg); }
+  .ix-macc.is-open .ix-pm::after { transform: rotate(0deg); }
+  .ix-mpanel { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows .32s var(--ease), visibility 0s linear .32s; }
+  .ix-macc.is-open .ix-mpanel { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows .32s var(--ease); }
+  .ix-mpanel-in { min-height: 0; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .ix-mgrp { padding-bottom: 24px; }
+  .ix-msub { font-family: var(--font-ui); font-size: 18px; line-height: 1.5; font-weight: 500; letter-spacing: var(--ls-text); color: var(--fg); margin: 0 0 8px !important; }
+  .ix-mgrp a { display: block; padding: 8px 0; font-size: var(--fs-small); font-weight: var(--fw-ui); line-height: 1.5; color: var(--fg); }
+  .ix-mgrp a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .ix-mfoot { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; margin-top: 40px; }
+  .ix-hdr .ix-cta--block { display: flex; width: 100%; max-width: 360px; min-height: 48px; }
+  .ix-mmail { font-size: var(--fs-small); color: var(--fg); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  html.ix-lock, html.ix-lock body { overflow: hidden; }
+}
+@media (max-width: 640px) { .ix-mpanel-in { grid-template-columns: 1fr; } }
+@media (max-width: 767px) {
+  .ix-hdr .ix-mark { font-size: 14px; letter-spacing: .26em; margin-right: -.26em; line-height: 24px; }
+  html[data-logo="box"] .ix-hdr .ix-mark { padding: 8px 2px 8px 12px; }
+  .ix-right > .ix-cta { display: none; }
+  .ix-mtop { font-size: 22px; padding: 20px 0; }
+  .ix-hdr .ix-cta--block { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.has-intro header.ix-hdr { opacity: 1; animation: none; }
+  .ix-panel, .ix-mnav, .ix-mpanel, .ix-scrim, .ix-burger span, .ix-pm::after { transition: none !important; }
+}
+
+/* hover underline for menu links (the same grow-from-left line as every other link) */
+.ix-col a, .ix-mgrp a:not([aria-current]) { background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 1px; transition: background-size var(--dur) var(--ease); }
+.ix-col a:hover, .ix-col a:focus-visible, .ix-mgrp a:hover { background-size: 100% 1px; }
+.ix-mgrp a { display: inline-block !important; }
+.ix-mgrp li { padding: 4px 0; }
+
+/* 1 Nov 2026 QA: the live site's pages carried a page-level rule `footer { padding: 72px 0 40px }` that the live footer
+   rendered with on every page (live backup: insights.html, privacy.html, index.html). The rebuilt inner pages lost it, so
+   their footer was 112px shorter than live at 1440. Restored here once, same values, so the footer matches live on all pages. */
+footer.ifoot { padding: 72px 0 40px; }
+
+/* 1 Nov 2026 (owner): inner-page footers are white with black text. The homepage
+   receives its documented black exception below. Content, layout and spacing are unchanged; only colours change.
+   Contrast on #F4EFE6: #0B0B09 17.6:1, #3A3732 11.2:1, #5E584F 6.3:1 (AA for the 12px legal text). */
+footer.ifoot { background: #fff; color: #3A3732; border-top-color: rgba(11, 11, 9, .25); }
+footer.ifoot .ifoot-mark { color: #0B0B09; }
+footer.ifoot .ifoot-brand a { color: #0B0B09; border-bottom-color: rgba(11, 11, 9, .35); }
+footer.ifoot .ifoot-brand a:hover { border-color: #0B0B09; }
+footer.ifoot .ifoot-li, footer.ifoot .ifoot-li:hover { color: #0B0B09; }
+footer.ifoot .ifoot-legal p { color: #5E584F; }
+footer.ifoot .ifoot-legal a { color: #0B0B09; }
+footer.ifoot .ifoot-reg a { color: #0B0B09; }
+footer.ifoot .ifoot-reg a:hover { color: #3A3732; }
+footer.ifoot .ifoot-reg span { color: rgba(11, 11, 9, .35); }
+footer.ifoot .ifoot-base { color: #5E584F; }
+footer.ifoot .ifoot-base nav a { color: #3A3732; }
+footer.ifoot .ifoot-base nav a:hover { color: #0B0B09; }
+footer.ifoot .ifoot-wm { color: #0B0B09; opacity: .05; }
+
+/* Homepage only: the footer returns to the black closing field. Inner pages
+   retain the white footer set above. */
+body.home footer.ifoot { background: #0B0B09; color: #A79E92; border-top-color: #2A2724; }
+body.home footer.ifoot .ifoot-mark { color: #F4EFE6; }
+body.home footer.ifoot .ifoot-brand a { color: #F4EFE6; border-bottom-color: #3B3730; }
+body.home footer.ifoot .ifoot-brand a:hover { border-color: #F4EFE6; }
+body.home footer.ifoot .ifoot-li { color: #C9C1B5; }
+body.home footer.ifoot .ifoot-li:hover { color: #F4EFE6; }
+body.home footer.ifoot .ifoot-legal p { color: #8A8277; }
+body.home footer.ifoot .ifoot-legal a { color: #C9C1B5; }
+body.home footer.ifoot .ifoot-reg a { color: #C9C1B5; }
+body.home footer.ifoot .ifoot-reg a:hover { color: #F4EFE6; }
+body.home footer.ifoot .ifoot-reg span { color: #4A453E; }
+body.home footer.ifoot .ifoot-base { color: #7E766C; }
+body.home footer.ifoot .ifoot-base nav a { color: #A79E92; }
+body.home footer.ifoot .ifoot-base nav a:hover { color: #F4EFE6; }
+body.home footer.ifoot .ifoot-wm { color: #F4EFE6; opacity: .035; }
+
+/* Sitewide composition guardrail, 1 Nov 2026:
+   five editorial points never leave a vacant third slot. They form a complete
+   three-across opening row and a balanced pair beneath it. This is deliberately
+   editorial spacing, not a boxed table treatment. */
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) > * { grid-column: span 2; }
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) > :nth-child(4),
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) > :nth-child(5) { grid-column: span 3; }
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) .item-h,
+main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) h3 { max-width: 26ch; }
+@media (max-width: 767px) {
+  main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) { grid-template-columns: 1fr !important; }
+  /* 2 Nov 2026 QA: the span-3 rule above is more specific than this reset, so items 4 and 5 kept spanning three tracks
+     in a one-column grid and widened the page to 435px at 390 (/firm). The reset must win below 768. */
+  main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) > * { grid-column: auto !important; }
+}
+
+/* Editorial media/copy pairs share their lower baseline on wide screens. This
+   keeps the copy visually attached to the image instead of leaving a detached
+   text block at the top while the image falls below it. */
+@media (min-width: 768px) {
+  main :is(.pp-feat, .pf-split, .pw-split, .ir-split, .ct-split, .pc-split, .cs-split, .ma-split, .fc-split) {
+    align-items: end !important;
+  }
+  main :is(.pp-feat-body, .pf-list, .pw-split-body, .ir-split-body, .ct-split-body, .pc-split-body, .cs-split-body, .ma-split-body, .fc-split-body) {
+    align-self: end;
+  }
+}
+
+/* Data callouts: numbers and their labels must read as one composed fact, not
+   as a detached headline followed by a number stranded lower on the page. */
+main :is(.cr-big-f, .ct-big-fig, .pw-fig, .ma-big-f, .pp-big p, .ti-big-f, .pf-fig, .cf-fig, .ef-fig, .al-big-f, .sw-fig, .em-fig, .est-big-f) {
+  margin-top: clamp(24px, 2vw, 36px) !important;
+  line-height: .95 !important;
+}
+@media (min-width: 768px) {
+  main .pg-clients-emerging .em-stats .em-g16 { align-items: end; }
+  main .pg-clients-emerging .em-stats .em-big { grid-column: 1 / span 9; }
+  main .pg-clients-emerging .em-stats .em-sm {
+    grid-column: 12 / span 5;
+    align-self: end;
+    border-top: 1px solid var(--fg);
+    border-bottom: 0;
+    padding: 20px 0 0;
+  }
+  main .pg-clients-emerging .em-stats .em-sm-l { min-height: 0; }
+  main .pg-clients-emerging .em-stats .em-sf { font-size: clamp(52px, 4.2vw, 76px); line-height: 1; margin-top: 16px; }
+  main .pg-clients-emerging .em-stats .em-note { margin-top: 32px; }
+}

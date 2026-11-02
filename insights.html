@@ -4,830 +4,108 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>News &amp; Insights | Inaya Advisory</title>
-<meta name="description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<meta name="description" content="Research on private capital formation from public filings, guides to how a raise runs, patterns across raises and news from Inaya Advisory.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.inayaadvisory.com/insights">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Inaya Advisory">
 <meta property="og:title" content="News &amp; Insights | Inaya Advisory">
-<meta property="og:description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<meta property="og:description" content="Research on private capital formation from public filings, guides to how a raise runs, patterns across raises and news from Inaya Advisory.">
 <meta property="og:url" content="https://www.inayaadvisory.com/insights">
 <meta property="og:image" content="https://www.inayaadvisory.com/images/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="News &amp; Insights | Inaya Advisory">
-<meta name="twitter:description" content="Research on private capital formation from Inaya Advisory, drawn from public filings and our own analysis.">
+<meta name="twitter:description" content="Research on private capital formation from public filings, guides to how a raise runs, patterns across raises and news from Inaya Advisory.">
 <link rel="preload" href="/fonts/Marcellus-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css?v=2">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-:root{
-  --ink:#0B0B09;
-  --panel:#141311;
-  --line:#2A2724;
-  --line-2:#3B3730;
-  --cream:#F4EFE6;
-  --warm:#A79E92;
-  --muted:#7E766C;
-  --faint:#5F594F;
-  --err:#C58A70;
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --wm:"Marcellus",Georgia,serif;
-  --gut:clamp(20px,5vw,64px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
-section{scroll-margin-top:86px}
-
-.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.15}
-h1{font-size:clamp(34px,4.6vw,58px)}
-h2{font-size:clamp(28px,3.4vw,42px)}
-h3{font-size:clamp(18px,1.6vw,22px)}
-p{font-size:15px;line-height:1.75;color:var(--warm)}
-a{color:inherit}
-
-header{position:sticky;top:0;z-index:50;background:transparent;transition:background .3s ease}
-header{border-bottom:1px solid transparent}
-header.scrolled{background:rgba(11,11,9,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:rgba(245,242,235,.12)}
-.hdr{display:flex;align-items:center;justify-content:space-between;padding:26px 6vw}
-.mark{font-family:var(--wm);font-size:19px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-right:-.42em}
-.hdr-r{display:flex;align-items:center;gap:14px}
-.hdr-r span{font-size:12px;color:var(--muted)}
-
-.btn{display:inline-block;font-family:var(--sans);font-size:13px;letter-spacing:.04em;padding:13px 26px;border:1px solid var(--cream);background:var(--cream);color:var(--ink);text-decoration:none;text-align:center;cursor:pointer;transition:opacity .2s}
-.btn:hover{opacity:.86}
-.btn-ghost{background:transparent;color:var(--cream);border-color:var(--line-2)}
-.btn-ghost:hover{border-color:var(--warm);opacity:1}
-.btn-sm{padding:9px 18px;font-size:12px}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
-
-.hero{padding:clamp(56px,7vw,104px) 0 clamp(44px,5vw,72px)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:start}
-.hero h1{margin:20px 0 22px;max-width:14ch}
-.hero p.lede{max-width:52ch}
-.agenda{margin:30px 0;border-top:1px solid var(--line)}
-.agenda div{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-.agenda i{font-style:normal;font-size:11px;color:var(--faint);padding-top:4px}
-.agenda p{font-size:14px;color:var(--warm)}
-.agenda b{font-weight:400;color:var(--cream)}
-.cta-row{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.cta-row .btn{min-width:220px}
-.microline{font-size:12px;color:var(--muted)}
-.textlink{font-size:13px;color:var(--warm);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
-.textlink:hover{color:var(--cream)}
-
-.card{border:1px solid var(--line);background:var(--panel);padding:26px}
-.card-label{font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
-.rule{height:1px;background:var(--line);margin:16px 0}
-.prole{font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:3px}
-
-/* stat band grouped and centred */
-.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.band-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.band-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:148px;padding:34px clamp(20px,3vw,42px);border-right:1px solid var(--line);text-align:center}
-.band-grid>div:last-child{border-right:none}
-.stat{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);color:var(--cream);line-height:1}
-.stat-l{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:12px}
-
-.sec{padding:clamp(64px,8vw,116px) 0}
-.sec-head{max-width:640px;margin-bottom:clamp(32px,4vw,52px)}
-.sec-head h2{margin:16px 0 16px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.step-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
-.step-n{font-size:12px;color:var(--faint)}
-.step-t{font-size:10px;letter-spacing:.14em;color:var(--muted)}
-.card h3{margin-bottom:12px}
-.card p{font-size:14px}
-.grid3>.card{display:flex;flex-direction:column;min-height:400px}
-.who{display:flex;gap:11px;align-items:flex-start;margin-top:auto;height:74px;padding-top:18px;border-top:1px solid var(--line)}
-.av{width:32px;height:32px;border-radius:50%;overflow:hidden;background:#1D1B18;border:1px solid var(--line);flex-shrink:0}
-.av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
-.av-stack{display:flex}
-.av-stack .av:not(:first-child){margin-left:-10px}
-
-.handoff{display:grid;grid-template-columns:.85fr 1.4fr;gap:clamp(20px,4vw,48px);align-items:center;margin-top:16px}
-.bio{margin-bottom:16px}
-.bio-grid{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center}
-.bio-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.bio-sub{font-size:13px;color:var(--muted);margin:6px 0 14px}
-.means{border-left:2px solid var(--line-2);padding:2px 0 2px 16px;margin-top:18px}
-.means p{font-size:14px;color:var(--cream);margin-top:5px}
-.pname{font-family:var(--serif);font-size:24px;color:var(--cream)}
-.ph-lg{width:200px;height:250px;overflow:hidden;background:#1D1B18;border:1px solid var(--line)}
-.ph-lg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
-
-.form-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
-.slots{display:grid;gap:8px;margin-bottom:10px}
-.slots-day{grid-template-columns:repeat(4,88px);justify-content:start;margin-bottom:12px}
-.slots-time{grid-template-columns:repeat(6,minmax(0,1fr))}
-.slot{border:1px solid var(--line);background:transparent;color:var(--warm);font-family:var(--sans);font-size:12px;font-weight:300;padding:12px 4px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
-.slot:hover{border-color:var(--line-2);color:var(--cream)}
-.slot[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
-.slot-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px 4px}
-.slot-day .d-wd,.slot-day .d-mo{font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
-.slot-day .d-dd{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1;color:var(--cream)}
-.slot-day:hover .d-dd{color:var(--cream)}
-.slot-day[aria-pressed="true"] .d-wd,.slot-day[aria-pressed="true"] .d-mo{color:var(--faint)}
-.slot-day[aria-pressed="true"] .d-dd{color:var(--ink)}
-.fee-line{font-size:13px;line-height:1.6;color:var(--warm);margin:-2px 0 20px;padding-left:14px;border-left:2px solid var(--line-2)}
-.fee-line b{color:var(--cream);font-weight:400}
-.tz{font-size:12px;color:var(--faint);margin-bottom:22px}
-.tz a{color:var(--cream)}
-.frow{display:grid;gap:18px;margin-bottom:18px}
-.f2{grid-template-columns:1fr 1fr}
-.f3{grid-template-columns:repeat(3,1fr)}
-label{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
-input,select,textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:14px;padding:6px 0}
-select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 13px,calc(100% - 4px) 13px;background-size:5px 5px;background-repeat:no-repeat}
-select option{background:var(--ink)}
-::placeholder{color:var(--faint)}
-.check{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);padding:16px;margin-bottom:6px}
-.check input{width:14px;height:14px;flex-shrink:0;margin-top:3px;accent-color:var(--cream)}
-.check span{font-size:13px;color:var(--warm);line-height:1.6}
-.field-err{font-size:12px;color:var(--err);margin:8px 0 16px}
-.card.is-confirmed{display:flex;align-items:center;justify-content:center}
-.confirmed{display:flex;flex-direction:column;align-items:center;text-align:center;padding:16px 0}
-.conf-badge{width:58px;height:58px;margin-bottom:22px;animation:conf-pop .55s cubic-bezier(.22,1,.36,1) both}
-.conf-badge circle{fill:none;stroke:var(--line-2);stroke-width:1.5}
-.conf-badge path{fill:none;stroke:var(--cream);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:44;stroke-dashoffset:44;animation:conf-draw .5s ease .35s forwards}
-.confirmed .card-label{animation:conf-up .5s ease .25s both}
-.confirmed h3{animation:conf-up .5s ease .4s both}
-.confirmed>p{animation:conf-up .5s ease .55s both}
-@keyframes conf-pop{0%{transform:scale(.85);opacity:0}60%{transform:scale(1.03)}100%{transform:scale(1);opacity:1}}
-@keyframes conf-draw{to{stroke-dashoffset:0}}
-@keyframes conf-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.side .card{margin-bottom:16px}
-.side .card:last-child{margin-bottom:0}
-.mini{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--warm)}
-.mini:last-child{border-bottom:none;padding-bottom:0}
-.mini:first-of-type{padding-top:0}
-.mini i{font-style:normal;font-size:10px;color:var(--faint);padding-top:3px}
-
-/* footer as on the website */
-footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;overflow:hidden}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:52px}
-.footer-brand .fmark{font-family:var(--wm);font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:var(--cream)}
-.footer-brand a{display:block;font-size:14px;color:var(--muted);margin-top:12px;text-decoration:none}
-.footer-brand a:hover{color:var(--warm)}
-.footer-social a{display:inline-block;color:var(--warm)}
-.footer-social a:hover{color:var(--cream)}
-.footer-social svg{display:block;width:20px;height:20px;fill:currentColor}
-.footer-legal p{font-size:11px;line-height:1.85;color:var(--faint);margin-bottom:12px;max-width:1000px}
-.footer-legal a{color:inherit;text-decoration:underline;text-underline-offset:3px}
-.footer-wm{font-family:var(--serif);font-weight:300;font-size:clamp(80px,15vw,210px);line-height:.9;letter-spacing:.1em;text-indent:.1em;text-align:center;color:var(--cream);opacity:.04;user-select:none;margin-top:56px}
-
-@media(max-width:900px){
-  .hero-grid,.form-grid,.handoff,.bio-grid{grid-template-columns:1fr}
-  .grid3,.band-grid,.f3,.f2{grid-template-columns:1fr}
-  .band-grid>div{border-right:none;border-bottom:1px solid var(--line);min-height:0;padding:26px 0}
-  .band-grid>div:last-child{border-bottom:none}
-  .slots-day{grid-template-columns:repeat(4,1fr)}
-  .slots-time{grid-template-columns:repeat(3,1fr)}
-  .hdr-r span{display:none}
-  .ph-lg{width:150px;height:188px}
-  .footer-top{flex-direction:column}
-  .grid3>.card{min-height:0}
-  .who{height:auto;margin-top:24px}
-}
-@media(max-width:560px){
-  .hdr{padding:18px 24px}
-  .mark{font-size:14px;letter-spacing:.26em;margin-right:-.26em}
-  .hdr-home{display:none}
-  .hdr-r .btn{padding:10px 16px;font-size:12px}
-}
-</style>
-<link rel="stylesheet" href="/footer.css?v=4">
-<style>
-/* Header locked to the homepage geometry, so the logo never moves between pages */
-.hdr{height:96px;padding-top:0!important;padding-bottom:0!important}
-.mark{line-height:32px;font-weight:400;display:block;view-transition-name:inaya-logo}
-@media(max-width:560px){.hdr{height:72px}.mark{line-height:24px}}
-@view-transition{navigation:auto}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
-::view-transition-group(inaya-logo){animation-duration:0s}
-</style>
-<style>
-/* News & Insights hub */
-main{font-variant-numeric:lining-nums}
-main img{display:block}
-.ph{position:relative;overflow:hidden;background:#151411}
-.ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.06) brightness(.78);transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
-.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,9,.05) 0%,rgba(11,11,9,.18) 45%,rgba(11,11,9,.78) 100%);pointer-events:none}
-.ph-bright img{filter:grayscale(1) contrast(1.1) brightness(.6)}
-.tag{display:inline-block;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);font-weight:400}
-main .meta{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);line-height:1.7}
-main .meta span+span::before{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;background:var(--faint);margin:0 10px;vertical-align:middle}
-
-/* hero band */
-.hub-hero{position:relative;overflow:hidden;padding:clamp(64px,8vw,120px) 0 clamp(52px,6vw,88px);border-bottom:1px solid rgba(245,242,235,.12)}
-.hub-mark{position:absolute;right:-6vw;top:50%;transform:translateY(-50%);height:128%;width:auto;fill:var(--cream);opacity:.022;pointer-events:none}
-.hub-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(36px,6vw,96px);align-items:end}
-.hub-hero h1{font-family:var(--wm);font-weight:400;font-size:clamp(40px,5.6vw,78px);line-height:1.02;letter-spacing:-.005em;margin:22px 0 26px;color:var(--cream)}
-.hub-hero .lede{font-size:16px;line-height:1.75;max-width:50ch}
-.hub-index{border-top:1px solid rgba(245,242,235,.12)}
-.hub-index button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:30px 1fr auto;gap:14px;align-items:baseline;width:100%;padding:18px 0;border-bottom:1px solid rgba(245,242,235,.12);cursor:pointer}
-.hub-index i{font-style:normal;font-size:11px;color:var(--faint)}
-.hub-index b{display:block;font-family:var(--serif);font-weight:300;font-size:22px;color:var(--cream);line-height:1.2}
-.hub-index small{display:block;font-size:13px;color:var(--muted);margin-top:4px;line-height:1.55}
-.hub-index em{font-style:normal;font-size:16px;color:var(--faint);transition:transform .25s,color .25s}
-.hub-index button:hover em{transform:translateX(4px);color:var(--cream)}
-.hub-index button:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
-
-/* category bar */
-.catbar{position:sticky;top:96px;z-index:40;background:rgba(11,11,9,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,242,235,.12)}
-.catbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.cats{display:flex;gap:clamp(18px,3vw,40px);overflow-x:auto;scrollbar-width:none}
-.cats::-webkit-scrollbar{display:none}
-.cats button{all:unset;cursor:pointer;position:relative;padding:20px 0 19px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .2s}
-.cats button:hover{color:var(--warm)}
-.cats button[aria-pressed="true"]{color:var(--cream)}
-.cats button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--cream);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.cats button[aria-pressed="true"]::after{transform:scaleX(1)}
-.cats button:focus-visible{outline:2px solid var(--warm);outline-offset:2px}
-.cat-count{font-size:11px;color:var(--faint);white-space:nowrap}
-
-/* featured */
-.hub-body{padding:clamp(44px,5vw,72px) 0 clamp(72px,8vw,120px)}
-.sec-lab{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}
-.feat{display:grid;grid-template-columns:1.35fr 1fr;border:1px solid rgba(245,242,235,.12);background:#11100E;text-decoration:none;color:inherit}
-.feat .ph{min-height:460px}
-.feat-tag{position:absolute;left:28px;top:26px;z-index:1}
-.feat-body{display:flex;flex-direction:column;padding:clamp(28px,3.4vw,48px)}
-.feat h2{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.3vw,46px);line-height:1.08;color:var(--cream);margin:18px 0 18px;transition:color .2s}
-.feat p{font-size:15px}
-.feat-figs{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:30px;border-top:1px solid rgba(245,242,235,.12)}
-.feat-figs div{padding:18px 26px 0 0;margin-right:26px;border-right:1px solid rgba(245,242,235,.12)}
-.feat-figs div:last-child{border-right:none;margin-right:0;padding-right:0}
-.feat-figs b{display:block;font-family:var(--serif);font-weight:300;font-size:30px;line-height:1;color:var(--cream)}
-.feat-figs small{display:block;white-space:nowrap;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:9px}
-.fviz{margin-top:30px;padding-top:22px;border-top:1px solid rgba(245,242,235,.12)}
-.fviz-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:12px}
-.fviz-top span{display:flex;flex-direction:column;gap:7px}
-.fviz-top span:last-child{align-items:flex-end;text-align:right}
-.fviz-top b{font-family:var(--serif);font-weight:300;font-size:32px;line-height:1;color:var(--cream)}
-.fviz-top span:last-child b{font-size:22px;color:var(--warm)}
-.fviz-top small{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.fviz-bar{display:flex;height:14px;gap:2px}
-.fviz-bar span:first-child{background:#F4EFE6}
-.fviz-bar span:last-child{background:#5F594F}
-.feat .fviz-cap{font-size:12px;color:var(--warm);margin-top:12px;line-height:1.5}
-.go{margin-top:auto;padding-top:30px;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.06em;color:var(--warm)}
-.go::after{content:"";width:28px;height:1px;background:currentColor;transition:width .3s cubic-bezier(.22,1,.36,1)}
-a:hover .go{color:var(--cream)}
-a:hover .go::after{width:44px}
-.feat:hover h2,.crd:hover h3{color:#fff}
-a:hover .ph img{transform:scale(1.035)}
-
-/* card grid */
-.grid-wrap{margin-top:clamp(52px,6vw,84px)}
-.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2vw,28px)}
-.crd{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-top:1px solid rgba(245,242,235,.12);padding-top:18px}
-.crd .ph{aspect-ratio:3/2;margin-bottom:22px}
-.crd .ph .tag{position:absolute;left:18px;bottom:16px;z-index:1}
-.crd h3{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2vw,28px);line-height:1.15;color:var(--cream);margin:12px 0 12px;transition:color .2s}
-.crd p{font-size:14px;line-height:1.7}
-.crd .go{padding-top:22px}
-.crd-david .ph img{object-position:50% 22%}
-.crd-wide{grid-column:span 2}
-.crd-wide .panel{position:relative;overflow:hidden;aspect-ratio:auto;height:100%;min-height:100%;background:#11100E;border:1px solid rgba(245,242,235,.12);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column}
-.crd-wide .panel svg{position:absolute;right:-70px;bottom:-60px;height:150%;fill:var(--cream);opacity:.028}
-.crd-wide h3{font-size:clamp(28px,2.6vw,36px);max-width:18ch;margin-top:16px}
-.crd-wide p{max-width:46ch;position:relative}
-.crd-wide .go{position:relative}
-[hidden]{display:none!important}
-
-/* articles */
-.art{border-top:1px solid rgba(245,242,235,.12);padding:clamp(72px,9vw,128px) 0;scroll-margin-top:150px}
-.art-col{max-width:700px;margin:0 auto}
-.art-wide{max-width:900px;margin-left:auto;margin-right:auto}
-.art-head{max-width:700px;margin:0 auto;position:static!important;z-index:auto!important;background:none!important;border-bottom:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-.art h1{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.6vw,60px);line-height:1.06;color:var(--cream);margin:22px 0 22px;max-width:20ch}
-.art .meta{display:flex;flex-wrap:wrap;align-items:center}
-.art-img{aspect-ratio:21/9;margin:clamp(36px,4vw,52px) auto clamp(40px,5vw,60px);max-width:1080px}
-.art .lede{font-family:var(--serif);font-weight:300;font-size:clamp(21px,2vw,25px);line-height:1.5;color:var(--cream)}
-.art h2{font-family:var(--serif);font-weight:300;font-size:clamp(27px,2.8vw,36px);color:var(--cream);margin:clamp(56px,6vw,80px) 0 16px;line-height:1.15}
-.art h2 .sn{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.art p{font-size:16px;line-height:1.8}
-.art p+p{margin-top:16px}
-.art p b{font-weight:400;color:var(--cream)}
-
-/* key figures */
-.kfig{display:grid;grid-template-columns:repeat(3,1fr);margin:48px auto 0;border-top:1px solid rgba(245,242,235,.12);border-bottom:1px solid rgba(245,242,235,.12)}
-.kfig>div{padding:30px 26px 28px 0}
-.kfig>div+div{padding-left:26px;border-left:1px solid rgba(245,242,235,.12)}
-.kfig b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(40px,4.6vw,62px);line-height:1;color:var(--cream);letter-spacing:-.01em}
-.kfig small{display:block;font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:14px;line-height:1.6}
-
-/* key takeaways */
-.ktk{margin:0 0 clamp(40px,5vw,56px);padding:clamp(26px,3vw,34px) clamp(24px,3vw,36px) clamp(24px,3vw,32px);background:#11100E;border:1px solid rgba(245,242,235,.12);border-top:1px solid var(--cream)}
-.ktk h2{font-family:var(--sans)!important;font-size:10.5px!important;font-weight:400!important;letter-spacing:.22em;text-transform:uppercase;color:var(--cream)!important;margin:0 0 18px!important;line-height:1.4!important}
-.ktk ul{list-style:none;display:grid;gap:14px}
-.ktk li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.65;color:var(--cream)}
-.ktk li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:var(--cream)}
-
-/* charts */
-.chart{margin:48px 0 12px;padding:30px 0 0;border-top:1px solid rgba(245,242,235,.12)}
-.chart-n{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-.art .chart-t{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.3vw,28px);line-height:1.2;color:var(--cream);margin:0 0 8px;max-width:none}
-.art .chart-s{font-size:13px;line-height:1.6;color:var(--warm);margin:0 0 30px}
-.bars{display:grid;gap:20px;border-left:1px solid rgba(245,242,235,.22);padding:4px 0 4px 0}
-.br{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:0 20px}
-.br-l{font-size:13.5px;line-height:1.35;color:var(--cream);padding-left:18px}
-.br-l small{display:block;font-size:11.5px;color:var(--warm);margin-top:2px}
-.br-b{display:flex;align-items:center;gap:14px;min-width:0}
-.br-b i{display:block;flex:0 0 auto;height:30px;width:calc((100% - 120px) * var(--p));min-width:3px;background:#5F594F}
-.br-b i.hi{background:#F4EFE6}
-.br-b i.lo{background:#3B3730}
-.br-v{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
-.br-v b{font-family:var(--serif);font-weight:300;font-size:28px;line-height:1;color:var(--cream)}
-.br-v em{font-style:normal;font-size:12px;color:var(--warm)}
-.br-sub .br-l{padding-left:34px;position:relative}
-.br-sub .br-l::before{content:"";position:absolute;left:18px;top:2px;width:9px;height:9px;border-left:1px solid var(--muted);border-bottom:1px solid var(--muted)}
-.art .chart-c{font-size:14px;line-height:1.65;color:var(--cream);margin:28px 0 0;padding-top:16px;border-top:1px solid rgba(245,242,235,.12)}
-.art .chart-src{font-size:11.5px;line-height:1.6;color:var(--muted);margin:8px 0 0}
-/* single split bar */
-.split{margin:6px 0 0}
-.split-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:14px}
-.split-top div{display:flex;flex-direction:column;gap:8px}
-.split-top div:last-child{align-items:flex-end;text-align:right}
-.split-top b{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,48px);line-height:1;color:var(--cream)}
-.split-top div:last-child b{color:var(--warm)}
-.split-top small{font-size:12px;color:var(--warm);line-height:1.4}
-.split-bar{display:flex;height:34px;gap:3px}
-.split-bar span:first-child{background:#F4EFE6}
-.split-bar span:last-child{background:#5F594F}
-.split-key{display:flex;justify-content:space-between;margin-top:10px;font-size:11.5px;color:var(--warm)}
-.split-key span{display:flex;align-items:center;gap:8px}
-.split-key i{display:inline-block;width:10px;height:10px}
-
-.note{font-size:13px!important;color:var(--muted)!important;line-height:1.7!important;margin-top:20px}
-
-/* our view */
-.view4{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px;border-top:1px solid rgba(245,242,235,.12)}
-.view4>div{padding:28px 28px 30px 0;border-bottom:1px solid rgba(245,242,235,.12)}
-.view4>div:nth-child(2n){padding:28px 0 30px 28px;border-left:1px solid rgba(245,242,235,.12)}
-.view4 i{font-style:normal;font-family:var(--serif);font-size:15px;color:var(--faint)}
-.view4 h3{font-family:var(--serif);font-weight:300;font-size:24px;color:var(--cream);margin:10px 0 10px;line-height:1.2}
-.view4 p{font-size:14.5px!important;line-height:1.7!important}
-
-/* stages */
-.stages{margin-top:40px;position:relative}
-.stage{display:grid;grid-template-columns:76px 1fr;gap:22px;position:relative;padding-bottom:40px}
-.stage:last-child{padding-bottom:0}
-.stage::before{content:"";position:absolute;left:27px;top:62px;bottom:6px;width:1px;background:rgba(245,242,235,.12)}
-.stage:last-child::before{display:none}
-.stage-n{width:56px;height:56px;border:1px solid var(--line-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;color:var(--cream)}
-.stage-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 18px;padding-top:12px}
-.stage h3{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.2vw,29px);color:var(--cream);line-height:1.15}
-main .stage .meta{font-size:10px}
-.stage p{margin-top:12px;font-size:15.5px!important}
-.art .phase{font-size:10px;line-height:1.4;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:46px 0 26px 98px;display:flex;align-items:center;gap:14px}
-.art .phase::after{content:"";flex:1;height:1px;background:rgba(245,242,235,.12)}
-.art .phase:first-child{margin-top:0}
-
-/* questions */
-.qs{margin-top:36px;border-top:1px solid rgba(245,242,235,.12)}
-.q{display:grid;grid-template-columns:84px 1fr;gap:20px;padding:32px 0;border-bottom:1px solid rgba(245,242,235,.12)}
-.q-n{font-family:var(--serif);font-weight:300;font-size:46px;line-height:.9;color:rgba(244,239,230,.28)}
-.q h3{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.2vw,29px);color:var(--cream);line-height:1.18}
-.q .ask{font-family:var(--serif);font-style:italic;font-weight:500;font-size:20px;color:var(--warm);margin:10px 0 12px;line-height:1.45}
-.q p{font-size:15.5px!important}
-
-/* form d */
-.fact{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin:40px 0;padding:30px 32px;background:#11100E;border:1px solid rgba(245,242,235,.12)}
-.fact b{font-family:var(--wm);font-weight:400;font-size:clamp(64px,8vw,96px);line-height:.85;color:var(--cream)}
-.fact small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.fact p{font-size:15px!important;color:var(--cream)!important;line-height:1.6!important}
-.fields{display:grid;grid-template-columns:1fr 1fr;margin-top:30px;border-top:1px solid rgba(245,242,235,.12)}
-.fields>div{padding:22px 24px 22px 0;border-bottom:1px solid rgba(245,242,235,.12)}
-.fields>div:nth-child(2n){padding-left:24px;padding-right:0;border-left:1px solid rgba(245,242,235,.12)}
-.fields small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.fields p{font-size:14.5px!important;line-height:1.65!important}
-.limits{margin-top:26px;border-left:1px solid var(--cream);padding-left:26px}
-.limits p{position:relative}
-
-.src{margin-top:clamp(52px,6vw,76px);padding-top:22px;border-top:1px solid rgba(245,242,235,.12);font-size:12px!important;line-height:1.8!important;color:var(--muted)!important}
-.art-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:22px;align-items:center}
-
-@media(max-width:1000px){
-  .feat{grid-template-columns:1fr}
-  .feat .ph{min-height:0;aspect-ratio:16/9}
-  .cgrid{grid-template-columns:1fr 1fr}
-  .crd-wide{grid-column:span 2}
-  .crd-wide .panel{min-height:300px}
-}
-@media(max-width:900px){
-  .hub-grid{grid-template-columns:1fr;align-items:start}
-}
-@media(max-width:560px){
-  .catbar{top:72px}
-  .cat-count{display:none}
-  .cats{gap:20px}
-  .cats button{letter-spacing:.14em;font-size:10.5px}
-  .hub-mark{display:none}
-}
-@media(max-width:680px){
-  .cgrid{grid-template-columns:1fr;gap:36px}
-  .crd-wide{grid-column:auto}
-  .feat-tag{left:18px;top:16px}
-  .feat-figs{grid-template-columns:1fr 1fr 1fr}
-  .feat-figs div{padding-right:12px;margin-right:12px}
-  .feat-figs b{font-size:24px}
-  .feat-figs small{font-size:8.5px;letter-spacing:.12em}
-  .art-img{aspect-ratio:4/3}
-  .kfig{grid-template-columns:1fr}
-  .kfig>div,.kfig>div+div{padding:22px 0;border-left:none}
-  .kfig>div+div{border-top:1px solid rgba(245,242,235,.12)}
-  .bars{gap:20px;border-left:none}
-  .br{grid-template-columns:1fr;gap:8px}
-  .br-l{padding-left:0}
-  .br-sub .br-l{padding-left:16px}
-  .br-sub .br-l::before{left:0}
-  .br-b i{height:24px;width:calc((100% - 104px) * var(--p))}
-  .br-v b{font-size:24px}
-  .split-top b{font-size:32px}
-  .split-bar{height:28px}
-  .view4{grid-template-columns:1fr}
-  .view4>div,.view4>div:nth-child(2n){padding:24px 0;border-left:none}
-  .stage{grid-template-columns:48px 1fr;gap:16px}
-  .stage-n{width:42px;height:42px;font-size:16px}
-  .stage::before{left:20px;top:48px}
-  .art .phase{margin-left:64px}
-  .q{grid-template-columns:1fr;gap:10px;padding:26px 0}
-  .q-n{font-size:34px}
-  .stage-top{flex-direction:column;align-items:flex-start;gap:6px;padding-top:9px}
-  main .art .meta{letter-spacing:.14em}
-  .fact{grid-template-columns:1fr;gap:16px;padding:24px}
-  .fields{grid-template-columns:1fr}
-  .fields>div,.fields>div:nth-child(2n){padding:18px 0;border-left:none}
-  .art p{font-size:15.5px}
-}
-</style>
-<style>body,main{background:#0B0B09}header:not(.scrolled){background:#0B0B09}</style>
+<link rel="stylesheet" href="/fonts/fonts.css?v=10">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/education.css?v=3">
+<link rel="stylesheet" href="/components.css?v=16">
+<link rel="stylesheet" href="/insights.css?v=27">
+<script>
+/* Old single-page links (/insights#section) move to the new pages. */
+(function(){var h=(location.hash||'').slice(1);if(!h)return;var m={"market":"/insights/market-views","education":"/education","inside":"/insights/inside-inaya","pattern":"/insights/pattern-recognition","market-news":"/insights/in-the-market","open-private-raises":"/insights/open-private-raises","how-a-raise-runs":"/education/how-a-raise-runs","investment-committee":"/education/what-a-committee-asks","reading-a-form-d":"/education/reading-a-form-d","where-raises-stall":"/insights/where-raises-stall","advent-gpe-xi":"/insights/advent-gpe-xi","fewer-larger-funds":"/insights/fewer-larger-funds","mena-sovereign-deployment":"/insights/mena-sovereign-deployment","sec-retail-access-proposal":"/insights/sec-retail-access-proposal","blackstone-q3-2026":"/insights/blackstone-q3-2026","eqt-q3-2026":"/insights/eqt-q3-2026","pantheon-secondaries-viii":"/insights/pantheon-secondaries-viii","concentration-and-smaller-managers":"/insights/concentration-and-smaller-managers","gulf-sovereign-capital":"/insights/gulf-sovereign-capital","secondaries-and-continuation-vehicles":"/insights/secondaries-and-continuation-vehicles","after-the-first-close":"/insights/after-the-first-close","reaching-a-first-close":"/insights/reaching-a-first-close","how-we-run-a-mandate":"/insights/how-we-run-a-mandate","preparing-for-committee":"/insights/preparing-for-committee","private-placements":"/education/private-placements"};if(m[h])location.replace(m[h]);})();
+</script>
+<!-- ix:head -->
+<link rel="stylesheet" href="/footer.css?v=7">
+<link rel="stylesheet" href="/shell.css?v=14">
+<script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
+<!-- /ix:head -->
 </head>
-<body>
-<header>
-  <div class="hdr">
-    <a class="mark" href="/" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
-    <span class="hdr-r">
-      <a class="btn btn-ghost hdr-home" href="/">Home</a>
-      <a class="btn btn-ghost" href="/mandateconsultation#book">Book the call</a>
-    </span>
-  </div>
-</header>
-<main>
-<section class="hub-hero" id="hub">
-  <svg class="hub-mark" viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M56 280 L56 0 L8 0 Q22 13 40 16 L40 264 Q22 267 8 280 Z"/><rect x="70" y="0" width="10" height="280"/><rect x="95" y="0" width="10" height="280"/><rect x="120" y="0" width="10" height="280"/><path d="M144 280 L144 0 L192 0 Q178 13 160 16 L160 264 Q178 267 192 280 Z"/></svg>
-  <div class="wrap hub-grid">
-    <div>
-      <p class="eyebrow">Inaya Advisory</p>
-      <h1>News &amp; Insights</h1>
-      <p class="lede">Research on private capital formation drawn from public filings, explainers on how a raise runs and how allocators decide, and news from the firm.</p>
+<body class="ni">
+<!-- ix:header -->
+<a class="ix-skip" href="#ix-content">Skip to content</a>
+<header class="ix-hdr" id="ix-hdr">
+  <div class="ix-bar">
+    <a class="ix-mark" href="/" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
+    <div class="ix-right">
+      <nav class="ix-nav" aria-label="Main">
+        <ul class="ix-menu"><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-firm">The Firm<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-firm" role="region" aria-label="The Firm"><div class="ix-panel-in" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">The Firm</p><ul><li><a href="/firm">Overview</a></li><li><a href="/firm/leadership">Our People</a></li><li><a href="/firm/principles">Our Principles</a></li></ul></div><div class="ix-col"><p class="ix-h">Our Clients</p><ul><li><a href="/clients/emerging-managers">Emerging Managers</a></li><li><a href="/clients/established-managers">Established Managers</a></li><li><a href="/clients/companies-and-sponsors">Companies &amp; Sponsors</a></li><li><a href="/clients/real-assets">Real Assets Sponsors</a></li></ul></div></div></div></div></li><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-services">What We Do<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-services" role="region" aria-label="What We Do"><div class="ix-panel-in" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Services</p><ul><li><a href="/what-we-do/capital-raising">Capital Raising Mandates</a></li><li><a href="/what-we-do/investor-relations">Investor Relations</a></li><li><a href="/what-we-do/targeted-introductions">Targeted Introductions</a></li><li><a href="/what-we-do/mergers-acquisitions">Mergers &amp; Acquisitions</a></li><li><a href="/what-we-do/positioning">Positioning &amp; Materials</a></li></ul></div><div class="ix-col"><p class="ix-h">How We Work</p><ul><li><a href="/firm/how-we-work">How We Work</a></li><li><a href="/firm/mandate-selection">Mandate Selection</a></li></ul></div></div></div></div></li><li class="ix-item is-current" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-insights">News &amp; Insights<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-insights" role="region" aria-label="News &amp; Insights"><div class="ix-panel-in has-feat" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Insights</p><ul><li><a href="/insights" aria-current="page">View All</a></li><li><a href="/insights/market-views">Market Views</a></li><li><a href="/insights/inside-inaya">Inside Inaya</a></li><li><a href="/insights/pattern-recognition">Pattern Recognition</a></li></ul></div><div class="ix-col"><p class="ix-h">Education</p><ul><li><a href="/education">Overview</a></li><li><a href="/education/private-equity">Private Equity</a></li><li><a href="/education/private-real-estate">Private Real Estate</a></li><li><a href="/education/private-infrastructure">Private Infrastructure</a></li><li><a href="/education/hedge-funds">Hedge Funds</a></li></ul></div></div><a class="ix-feat" href="/insights/open-private-raises"><span class="ix-feat-body"><span class="ix-feat-title">Open private raises</span><span class="ix-feat-sub">Of 951 private offerings of $50 million or more still open, most report little or nothing sold.</span><span class="ix-feat-go"><span class="ix-feat-go-t">Learn More</span><span class="ix-feat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></span><span class="ix-feat-img"><img src="/images/library/city-new-york-fog-portrait-1200.webp" alt="" loading="lazy"></span></a></div></div></li><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-allocators">Allocators<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-allocators" role="region" aria-label="Allocators"><div class="ix-panel-in has-feat" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Institutions</p><ul><li><a href="/allocators">Overview</a></li><li><a href="/allocators/pension-funds">Pension Funds</a></li><li><a href="/allocators/sovereign-wealth">Sovereign Wealth Funds</a></li><li><a href="/allocators/endowments-foundations">Endowments &amp; Foundations</a></li><li><a href="/allocators/consultants-and-funds-of-funds">Consultants &amp; Funds of Funds</a></li></ul></div><div class="ix-col"><p class="ix-h">Families and Wealth</p><ul><li><a href="/allocators/family-offices">Family Offices</a></li><li><a href="/allocators/private-wealth">Private Wealth</a></li></ul></div></div><a class="ix-feat" href="/education/what-a-committee-asks"><span class="ix-feat-body"><span class="ix-feat-title">What a committee asks</span><span class="ix-feat-sub">Six questions an institutional allocator puts to a fund manager, and what sits behind each.</span><span class="ix-feat-go"><span class="ix-feat-go-t">Learn More</span><span class="ix-feat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></span><span class="ix-feat-img"><img src="/images/gulf-skyline.webp" alt="" loading="lazy"></span></a></div></div></li></ul>
+      </nav>
+      <a class="ix-cta" href="/mandateconsultation">Partner With Us</a>
+      <button class="ix-burger" type="button" aria-expanded="false" aria-controls="ix-mnav" aria-label="Menu"><span></span><span></span></button>
     </div>
-    <nav class="hub-index" aria-label="Sections">
-      <button type="button" data-goto="market"><i>01</i><span><b>Market Views</b><small>Analysis of private capital formation from public filings.</small></span><em aria-hidden="true">&rarr;</em></button>
-      <button type="button" data-goto="education"><i>02</i><span><b>Education</b><small>How a raise runs and what allocators ask.</small></span><em aria-hidden="true">&rarr;</em></button>
-      <button type="button" data-goto="inside"><i>03</i><span><b>Inside Inaya</b><small>The people and the way we work.</small></span><em aria-hidden="true">&rarr;</em></button>
+  </div>
+  <div class="ix-mnav" id="ix-mnav" role="dialog" aria-modal="true" aria-label="Menu">
+    <nav class="ix-mnav-in" aria-label="Main">
+      <div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-firm"><span>The Firm</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-firm"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">The Firm</p><ul><li><a href="/firm">Overview</a></li><li><a href="/firm/leadership">Our People</a></li><li><a href="/firm/principles">Our Principles</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Our Clients</p><ul><li><a href="/clients/emerging-managers">Emerging Managers</a></li><li><a href="/clients/established-managers">Established Managers</a></li><li><a href="/clients/companies-and-sponsors">Companies &amp; Sponsors</a></li><li><a href="/clients/real-assets">Real Assets Sponsors</a></li></ul></div></div></div></div><div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-services"><span>What We Do</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-services"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Services</p><ul><li><a href="/what-we-do/capital-raising">Capital Raising Mandates</a></li><li><a href="/what-we-do/investor-relations">Investor Relations</a></li><li><a href="/what-we-do/targeted-introductions">Targeted Introductions</a></li><li><a href="/what-we-do/mergers-acquisitions">Mergers &amp; Acquisitions</a></li><li><a href="/what-we-do/positioning">Positioning &amp; Materials</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">How We Work</p><ul><li><a href="/firm/how-we-work">How We Work</a></li><li><a href="/firm/mandate-selection">Mandate Selection</a></li></ul></div></div></div></div><div class="ix-macc is-current"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-insights"><span>News &amp; Insights</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-insights"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Insights</p><ul><li><a href="/insights" aria-current="page">View All</a></li><li><a href="/insights/market-views">Market Views</a></li><li><a href="/insights/inside-inaya">Inside Inaya</a></li><li><a href="/insights/pattern-recognition">Pattern Recognition</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Education</p><ul><li><a href="/education">Overview</a></li><li><a href="/education/private-equity">Private Equity</a></li><li><a href="/education/private-real-estate">Private Real Estate</a></li><li><a href="/education/private-infrastructure">Private Infrastructure</a></li><li><a href="/education/hedge-funds">Hedge Funds</a></li></ul></div></div></div></div><div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-allocators"><span>Allocators</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-allocators"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Institutions</p><ul><li><a href="/allocators">Overview</a></li><li><a href="/allocators/pension-funds">Pension Funds</a></li><li><a href="/allocators/sovereign-wealth">Sovereign Wealth Funds</a></li><li><a href="/allocators/endowments-foundations">Endowments &amp; Foundations</a></li><li><a href="/allocators/consultants-and-funds-of-funds">Consultants &amp; Funds of Funds</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Families and Wealth</p><ul><li><a href="/allocators/family-offices">Family Offices</a></li><li><a href="/allocators/private-wealth">Private Wealth</a></li></ul></div></div></div></div>
+      <div class="ix-mfoot">
+        <a class="ix-cta ix-cta--block" href="/mandateconsultation">Partner With Us</a>
+        <a class="ix-mmail" href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
+      </div>
     </nav>
   </div>
-</section>
-
-<div class="catbar" id="browse">
-  <div class="wrap">
-    <div class="cats" role="group" aria-label="Filter by category">
-      <button type="button" data-filter="all" aria-pressed="true">All</button>
-      <button type="button" data-filter="market" aria-pressed="false">Market Views</button>
-      <button type="button" data-filter="inside" aria-pressed="false">Inside Inaya</button>
-      <button type="button" data-filter="education" aria-pressed="false">Education</button>
-    </div>
-    <span class="cat-count" aria-live="polite"><span id="catN">6</span> items</span>
-  </div>
-</div>
-
-<section class="hub-body"><div class="wrap">
-
-  <div class="feat-wrap" data-cat="market">
-    <div class="sec-lab"><p class="eyebrow">Featured</p><p class="meta"><span>Market Views</span><span>November 2026</span></p></div>
-    <a class="feat" href="#open-private-raises">
-      <div class="ph"><img src="images/towers.webp" alt="" loading="eager"><span class="tag feat-tag">Market Views</span></div>
-      <div class="feat-body">
-        <p class="meta"><span>November 2026</span><span>6 min read</span></p>
-        <h2>Open private raises: $129.8 billion still unraised.</h2>
-        <p>Of 951 private offerings of $50 million or more still open, most report little or nothing sold. A look at how much remains, and for how long.</p>
-        <div class="fviz" role="img" aria-label="$129.8 billion of the $149.3 billion sought is still unraised, across 951 open offerings">
-          <div class="fviz-top"><span><b>$129.8bn</b><small>Still unraised</small></span><span><b>$149.3bn</b><small>Sought in total</small></span></div>
-          <div class="fviz-bar" aria-hidden="true"><span style="width:86.9%"></span><span style="width:13.1%"></span></div>
-          <p class="fviz-cap">Across 951 open offerings of $50 million or more.</p>
-        </div>
-        <span class="go">Read the analysis</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="grid-wrap" id="grid">
-    <div class="sec-lab"><p class="eyebrow">Latest</p></div>
-    <div class="cgrid">
-      <a class="crd" href="#how-a-raise-runs" data-cat="education">
-        <div class="ph"><img src="images/gulf-skyline.webp" alt="" loading="lazy"><span class="tag">Education</span></div>
-        <p class="meta"><span>November 2026</span><span>5 min read</span></p>
-        <h3>How a capital raise runs, from first conversation to investor relations</h3>
-        <p>The eight stages of a mandate, in the order they run, and what happens at each.</p>
-        <span class="go">Read</span>
-      </a>
-      <a class="crd" href="#investment-committee" data-cat="education">
-        <div class="ph"><img src="images/svc-ma.webp" alt="" loading="lazy"><span class="tag">Education</span></div>
-        <p class="meta"><span>November 2026</span><span>4 min read</span></p>
-        <h3>What an investment committee asks before it commits</h3>
-        <p>Six questions an institutional allocator puts to a fund manager, and what sits behind each.</p>
-        <span class="go">Read</span>
-      </a>
-      <a class="crd" href="#reading-a-form-d" data-cat="education">
-        <div class="ph ph-bright"><img src="images/svc-capital.webp" alt="" loading="lazy"><span class="tag">Education</span></div>
-        <p class="meta"><span>November 2026</span><span>4 min read</span></p>
-        <h3>Reading a Form D</h3>
-        <p>What the SEC filing is, when it is made, what it shows, and where its figures fall short.</p>
-        <span class="go">Read</span>
-      </a>
-      <a class="crd crd-david" href="/?profile=david-hunter" data-david data-cat="inside">
-        <div class="ph"><img src="images/david.webp" alt="David Hunter" loading="lazy"><span class="tag">Inside Inaya</span></div>
-        <p class="meta"><span>The People</span><span>Profile</span></p>
-        <h3>Our Senior Advisor: David Hunter</h3>
-        <p>Former Chief Investment Officer of the Texas Municipal Retirement System and the North Dakota Retirement and Investment Office.</p>
-        <span class="go">View the profile</span>
-      </a>
-      <a class="crd crd-wide" href="/mandateconsultation" data-cat="inside">
-        <div class="panel">
-          <svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M56 280 L56 0 L8 0 Q22 13 40 16 L40 264 Q22 267 8 280 Z"/><rect x="70" y="0" width="10" height="280"/><rect x="95" y="0" width="10" height="280"/><rect x="120" y="0" width="10" height="280"/><path d="M144 280 L144 0 L192 0 Q178 13 160 16 L160 264 Q178 267 192 280 Z"/></svg>
-          <span class="tag">Inside Inaya</span>
-          <h3>The mandate consultation</h3>
-          <p>A first conversation with our Client Advisor about what you are raising and the timeline you are working to.</p>
-          <span class="go">Book a Consultation</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
+  <div class="ix-scrim" aria-hidden="true"></div>
+</header>
+<div id="ix-content" tabindex="-1"></div>
+<!-- /ix:header -->
+<main id="main" class="ni-main">
+<section class="ni-head"><div class="ni-wrap">
+  <h1 class="ni-h1">News &amp; Insights</h1>
 </div></section>
 
-<!-- Article 1 -->
-<article class="art" id="open-private-raises">
-<div class="wrap">
-  <header class="art-head">
-    <p class="meta"><span>Market Views</span><span>Form D analysis</span></p>
-    <h1>Open private raises: $129.8 billion still unraised.</h1>
-    <p class="meta"><span>Inaya Advisory</span><span>November 2026</span><span>6 min read</span></p>
-  </header>
-  <div class="ph art-img"><img src="images/towers.webp" alt="" loading="lazy"></div>
-
-  <div class="art-col">
-    <aside class="ktk" aria-label="Key takeaways">
-      <h2>Key takeaways</h2>
-      <ul>
-        <li>Six in ten of the 951 open offerings of $50 million or more have reported nothing sold.</li>
-        <li>$129.8 billion of the $149.3 billion sought is still to be raised.</li>
-        <li>Time alone does not close a raise. 414 of the 470 offerings open six months or longer have sold less than a quarter of their target.</li>
-      </ul>
-    </aside>
-
-    <p class="lede">Across Form D filings made in the twelve months to July 2026, 951 private offerings of $50 million or more remain open. Together they sought $149.3 billion. On the most recent filings, $129.8 billion of that is still to be raised.</p>
-
-    <div class="kfig">
-      <div><b>951</b><small>Open offerings of<br>$50 million or more</small></div>
-      <div><b>$149.3bn</b><small>Sought in total</small></div>
-      <div><b>$129.8bn</b><small>Still unraised</small></div>
-    </div>
-
-    <h2><span class="sn">01 &middot; Progress</span>How much has been sold</h2>
-    <p>Most of these raises have made little progress on paper. <b>567 of the 951</b> reported nothing sold on their latest filing. A further 253 had sold less than a quarter of their target. Only 46 had sold more than half.</p>
-
-    <figure class="chart" aria-label="Open offerings by share of target sold: nothing sold 567, under 25% sold 253, 25% to 50% sold 85, 50% to 80% sold 46">
-      <p class="chart-n">Figure 1</p>
-      <h3 class="chart-t">Six in ten open raises have reported nothing sold</h3>
-      <p class="chart-s">The 951 open offerings of $50 million or more, by share of target sold. Number of offerings and share of the 951.</p>
-      <div class="bars" aria-hidden="true">
-        <div class="br"><span class="br-l">Nothing sold</span><span class="br-b"><i class="hi" style="--p:1"></i><span class="br-v"><b>567</b><em>60%</em></span></span></div>
-        <div class="br"><span class="br-l">Under 25% sold</span><span class="br-b"><i class="" style="--p:.446"></i><span class="br-v"><b>253</b><em>27%</em></span></span></div>
-        <div class="br"><span class="br-l">25% to 50% sold</span><span class="br-b"><i class="" style="--p:.15"></i><span class="br-v"><b>85</b><em>9%</em></span></span></div>
-        <div class="br"><span class="br-l">50% to 80% sold</span><span class="br-b"><i class="" style="--p:.081"></i><span class="br-v"><b>46</b><em>5%</em></span></span></div>
-      </div>
-      <figcaption class="chart-c">567 of the 951 offerings reported no sales at all on their most recent Form D.</figcaption>
-      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
-    </figure>
-
-    <figure class="chart" aria-label="$129.8 billion of the $149.3 billion sought is still unraised">
-      <p class="chart-n">Figure 2</p>
-      <h3 class="chart-t">Most of the money sought has not yet been raised</h3>
-      <p class="chart-s">Total sought by the 951 open offerings, and the part still to be raised. US dollars.</p>
-      <div class="split" aria-hidden="true">
-        <div class="split-top"><div><b>$129.8bn</b><small>Still unraised</small></div><div><b>$149.3bn</b><small>Sought in total</small></div></div>
-        <div class="split-bar"><span style="width:86.9%"></span><span style="width:13.1%"></span></div>
-        <div class="split-key"><span><i style="background:#F4EFE6"></i>Still unraised</span><span><i style="background:#5F594F"></i>Reported sold</span></div>
-      </div>
-      <figcaption class="chart-c">On their most recent filings, $129.8 billion of the $149.3 billion sought is still to be raised.</figcaption>
-      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
-    </figure>
-
-    <h2><span class="sn">02 &middot; Duration</span>Time in market</h2>
-    <p>Time alone does not close a raise. <b>470</b> of these offerings have been open for six months or longer, and <b>414</b> of those have sold less than a quarter of their target.</p>
-
-    <figure class="chart" aria-label="All open offerings 951; open six months or longer 470; of those, under 25% sold 414">
-      <p class="chart-n">Figure 3</p>
-      <h3 class="chart-t">Most raises open six months or longer have sold under a quarter</h3>
-      <p class="chart-s">Open offerings by time in market. Number of offerings and share of the 951.</p>
-      <div class="bars" aria-hidden="true">
-        <div class="br"><span class="br-l">All open offerings</span><span class="br-b"><i class="lo" style="--p:1"></i><span class="br-v"><b>951</b></span></span></div>
-        <div class="br"><span class="br-l">Open six months or longer</span><span class="br-b"><i class="" style="--p:0.494"></i><span class="br-v"><b>470</b><em>49%</em></span></span></div>
-        <div class="br br-sub"><span class="br-l">Of those, under 25% sold</span><span class="br-b"><i class="hi" style="--p:0.435"></i><span class="br-v"><b>414</b><em>44%</em></span></span></div>
-      </div>
-      <figcaption class="chart-c">414 of the 470 offerings open six months or longer have sold less than a quarter of their target.</figcaption>
-      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
-    </figure>
-
-    <h2><span class="sn">03 &middot; Sector</span>By industry</h2>
-    <p>The pattern is broad. Among the 951, real estate accounts for 440 offerings and investing for 233. Technology and health care together account for 69.</p>
-
-    <figure class="chart" aria-label="Open offerings by industry: real estate 440, investing 233, technology and health care 69, all other industries 209">
-      <p class="chart-n">Figure 4</p>
-      <h3 class="chart-t">Real estate accounts for nearly half of open raises</h3>
-      <p class="chart-s">The 951 open offerings by industry group. Number of offerings and share of the 951.</p>
-      <div class="bars" aria-hidden="true">
-        <div class="br"><span class="br-l">Real estate</span><span class="br-b"><i class="hi" style="--p:1"></i><span class="br-v"><b>440</b><em>46%</em></span></span></div>
-        <div class="br"><span class="br-l">Investing</span><span class="br-b"><i class="" style="--p:.53"></i><span class="br-v"><b>233</b><em>25%</em></span></span></div>
-        <div class="br"><span class="br-l">Technology and health care</span><span class="br-b"><i class="" style="--p:.157"></i><span class="br-v"><b>69</b><em>7%</em></span></span></div>
-        <div class="br"><span class="br-l">All other industries</span><span class="br-b"><i class="lo" style="--p:.475"></i><span class="br-v"><b>209</b><em>22%</em></span></span></div>
-      </div>
-      <figcaption class="chart-c">440 of the 951 open offerings are in real estate, the largest group by a wide margin.</figcaption>
-      <p class="chart-src">Source: SEC EDGAR Form D filings, twelve months to July 2026. Inaya Advisory analysis.</p>
-    </figure>
-    <p class="note">Amounts are as reported on each issuer's most recent Form D. Issuers are not required to amend a Form D for every sale, so reported figures can lag what has been raised.</p>
-
-    <h2><span class="sn">04 &middot; Perspective</span>Our view</h2>
-    <p>The filings do not say why any single raise has not closed. In our experience, the raises that do close tend to have four things in place.</p>
-    <div class="view4">
-      <div><i>01</i><h3>Materials that answer the committee</h3><p>An investment committee comes to a raise with a familiar set of questions. Materials that answer them before the first meeting allow that meeting to be spent on the decision rather than on the basics.</p></div>
-      <div><i>02</i><h3>A considered sequence</h3><p>The order in which allocators see a raise shapes how the market reads it. A raise shown to everyone at once reads differently from one introduced in a deliberate order, to the right allocators first.</p></div>
-      <div><i>03</i><h3>An introduction from someone known</h3><p>Allocators give their time to people they know. An introduction from someone the allocator already knows is read and answered in a way that an unsolicited approach rarely is.</p></div>
-      <div><i>04</i><h3>Follow-through to terms</h3><p>Interest is not a commitment. Diligence requests, follow-up questions and the commitment conversations need to be carried through, without gaps, until terms are agreed.</p></div>
-    </div>
-
-    <p class="src">Source: SEC EDGAR Form D filings, twelve months to July 2026, Inaya Advisory analysis. For information only. Nothing here constitutes an offer or solicitation to buy or sell any security.</p>
-    <div class="art-cta">
-      <a class="btn" href="/mandateconsultation">Book a Consultation</a>
-      <a class="textlink" href="#browse">Back to News &amp; Insights</a>
-    </div>
+<section class="ni-sec ni-sec--feat"><div class="ni-wrap">
+  <article class="ni-feat ni-feat--img">
+    <figure class="ni-feat-img"><img src="/images/color/ins-market-views-street-1200.webp" srcset="/images/color/ins-market-views-street-1200.webp 1200w, /images/color/ins-market-views-street-2400.webp 2400w" sizes="(min-width:1280px) 1264px, 100vw" alt="" width="1200" height="375" loading="eager" fetchpriority="high"></figure>
+    <h2 class="ni-feat-t"><a class="ni-stretch" href="/insights/open-private-raises"><span class="ni-u">Open private raises: $129.8 billion still unraised</span></a></h2>
+    <p class="ni-more ni-feat-go"><span class="ni-u">Read More</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></p>
+  </article>
+</div></section>
+<section class="ni-sec"><div class="ni-wrap">
+  <div class="ni-sec-head"><h2 class="ni-sec-t">Market Views</h2><a class="ni-viewall" href="/insights/market-views"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="ni-sr"> Market Views</span></a></div>
+  <div class="ni-grid ni-grid--lead3"><article class="ni-card ni-card--lead ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-office-night-1200.webp" srcset="/images/color/ins-office-night-1200.webp 1200w, /images/color/ins-office-night-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/concentration-and-smaller-managers"><span class="ni-u">Fewer, larger funds: what concentration means for first-time and mid-size managers</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-gulf-palm-avenue-1200.webp" srcset="/images/color/ins-gulf-palm-avenue-1200.webp 1200w, /images/color/ins-gulf-palm-avenue-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/gulf-sovereign-capital"><span class="ni-u">Gulf sovereign capital: what US managers should prepare before the first meeting</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-secondaries-files-1200.webp" srcset="/images/color/ins-secondaries-files-1200.webp 1200w, /images/color/ins-secondaries-files-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/secondaries-and-continuation-vehicles"><span class="ni-u">Secondaries and continuation vehicles: a route back to the next raise</span></a></h3><p class="ni-card-date">November 1, 2026</p></article></div>
+  <div class="ni-viewall-m"><a class="ni-viewall" href="/insights/market-views"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class=ni-sr> Market Views</span></a></div>
+</div></section>
+<section class="ni-sec"><div class="ni-wrap">
+  <div class="ni-sec-head"><h2 class="ni-sec-t">In the Market</h2><a class="ni-viewall" href="/insights/in-the-market"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="ni-sr"> In the Market</span></a></div>
+  <div class="ni-grid ni-grid--4"><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ac-re-office-1200.webp" srcset="/images/color/ac-re-office-1200.webp 1200w, /images/color/ac-re-office-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/fewer-larger-funds"><span class="ni-u">Fewer funds are closing, and the largest take a bigger share</span></a></h3><p class="ni-card-date">October 29, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ac-re-logistics-1200.webp" srcset="/images/color/ac-re-logistics-1200.webp 1200w, /images/color/ac-re-logistics-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/advent-gpe-xi"><span class="ni-u">Advent closes its eleventh flagship buyout fund at close to $27 billion</span></a></h3><p class="ni-card-date">October 27, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/firm-office-skyline-1200.webp" srcset="/images/color/firm-office-skyline-1200.webp 1200w, /images/color/firm-office-skyline-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/blackstone-q3-2026"><span class="ni-u">Blackstone reports $63.3 billion of inflows in the third quarter</span></a></h3><p class="ni-card-date">October 22, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-quiet-office-floor-1200.webp" srcset="/images/color/ins-quiet-office-floor-1200.webp 1200w, /images/color/ins-quiet-office-floor-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/pantheon-secondaries-viii"><span class="ni-u">Pantheon closes its largest secondaries fund at $6 billion</span></a></h3><p class="ni-card-date">October 22, 2026</p></article></div>
+  <div class="ni-viewall-m"><a class="ni-viewall" href="/insights/in-the-market"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class=ni-sr> In the Market</span></a></div>
+</div></section>
+<section class="ni-sec"><div class="ni-wrap ni-pair">
+  <div class="ni-pair-col">
+    <div class="ni-sec-head"><h2 class="ni-sec-t">Pattern Recognition</h2><a class="ni-viewall" href="/insights/pattern-recognition"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="ni-sr"> Pattern Recognition</span></a></div>
+    <div class="ni-grid ni-grid--2"><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-waiting-window-1200.webp" srcset="/images/color/ins-waiting-window-1200.webp 1200w, /images/color/ins-waiting-window-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/where-raises-stall"><span class="ni-u">Where private raises stall</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-meeting-from-above-1200.webp" srcset="/images/color/ins-meeting-from-above-1200.webp 1200w, /images/color/ins-meeting-from-above-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/after-the-first-close"><span class="ni-u">After the first close: why raises slow down, and what keeps them moving</span></a></h3><p class="ni-card-date">November 1, 2026</p></article></div>
+    <div class="ni-viewall-m"><a class="ni-viewall" href="/insights/pattern-recognition"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class=ni-sr> Pattern Recognition</span></a></div>
   </div>
-</div>
-</article>
-
-<!-- Article 2 -->
-<article class="art" id="how-a-raise-runs">
-<div class="wrap">
-  <header class="art-head">
-    <p class="meta"><span>Education</span><span>The mandate</span></p>
-    <h1>How a capital raise runs, from first conversation to investor relations.</h1>
-    <p class="meta"><span>Inaya Advisory</span><span>November 2026</span><span>5 min read</span></p>
-  </header>
-  <div class="ph art-img"><img src="images/gulf-skyline.webp" alt="" loading="lazy"></div>
-
-  <div class="art-col">
-    <p class="lede">A raise runs in a set order. Most of the work that decides it happens before any investor sees the materials, and the relationships it opens continue after the capital is in.</p>
-    <p>Below are the eight stages of a mandate as we run it, from the first conversation through to investor relations after the close.</p>
-
-    <div class="stages">
-      <p class="phase">Before the market</p>
-      <div class="stage"><span class="stage-n">1</span><div><div class="stage-top"><h3>The First Conversation</h3><span class="meta">30 Minutes</span></div><p>A conversation with our Client Advisor about what you are raising and the timeline you are working to. You come away with a direct first read on how the raise is likely to land with allocators.</p></div></div>
-      <div class="stage"><span class="stage-n">2</span><div><div class="stage-top"><h3>Senior Review</h3><span class="meta">48 to 72 Hours</span></div><p>Our senior team works through your materials and terms. Within 48 to 72 hours you have a clear answer on whether we would take the mandate, and what we would change before any investor sees it.</p></div></div>
-      <div class="stage"><span class="stage-n">3</span><div><div class="stage-top"><h3>Positioning</h3><span class="meta">Before Outreach</span></div><p>We shape the materials and the terms around the questions an investment committee asks before it commits, so your mandate is defensible on every point before it reaches a single allocator.</p></div></div>
-      <p class="phase">In the market</p>
-      <div class="stage"><span class="stage-n">4</span><div><div class="stage-top"><h3>Our Network</h3><span class="meta">First</span></div><p>The raise goes first to the pension funds, family offices, endowments and institutions we work with across the United States, Europe and the Gulf, in the order most likely to bring early commitments.</p></div></div>
-      <div class="stage"><span class="stage-n">5</span><div><div class="stage-top"><h3>Meetings and Diligence</h3><span class="meta">Alongside You</span></div><p>We prepare every investor meeting with you and attend the ones that decide the outcome. Diligence questions are handled as they arrive, so momentum holds from the first meeting to the commitment.</p></div></div>
-      <div class="stage"><span class="stage-n">6</span><div><div class="stage-top"><h3>Terms and Close</h3><span class="meta">To Close</span></div><p>We stay in the conversations that decide the commitment, from the first indications of interest through to final terms and side letters, until the capital is committed and the raise is closed.</p></div></div>
-      <div class="stage"><span class="stage-n">7</span><div><div class="stage-top"><h3>Wider Reach</h3><span class="meta">Only If Needed</span></div><p>Where our network does not cover the full raise, we extend it to further investors selected for the fund, with an approach written for each of them and the same preparation behind every meeting.</p></div></div>
-      <p class="phase">After the close</p>
-      <div class="stage"><span class="stage-n">8</span><div><div class="stage-top"><h3>Investor Relations</h3><span class="meta">After Close</span></div><p>Once the capital is in, we keep the relationships we opened working for you through regular contact on your behalf, so your next raise starts with investors who already know you and how you deliver.</p></div></div>
-    </div>
-
-    <div class="art-cta" style="margin-top:56px">
-      <a class="btn" href="/mandateconsultation">Book a Consultation</a>
-      <a class="textlink" href="#browse">Back to News &amp; Insights</a>
-    </div>
+  <div class="ni-pair-col">
+    <div class="ni-sec-head"><h2 class="ni-sec-t">Inside Inaya</h2><a class="ni-viewall" href="/insights/inside-inaya"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="ni-sr"> Inside Inaya</span></a></div>
+    <div class="ni-grid ni-grid--2"><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/alloc-private-wealth-office-1200.webp" srcset="/images/color/alloc-private-wealth-office-1200.webp 1200w, /images/color/alloc-private-wealth-office-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/how-we-run-a-mandate"><span class="ni-u">How we run a mandate, and who runs it</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-committee-boardroom-1200.webp" srcset="/images/color/ins-committee-boardroom-1200.webp 1200w, /images/color/ins-committee-boardroom-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/insights/preparing-for-committee"><span class="ni-u">How we prepare a manager for an investment committee</span></a></h3><p class="ni-card-date">November 1, 2026</p></article></div>
+    <div class="ni-viewall-m"><a class="ni-viewall" href="/insights/inside-inaya"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class=ni-sr> Inside Inaya</span></a></div>
   </div>
-</div>
-</article>
+</div></section>
+<section class="ni-sec"><div class="ni-wrap">
+  <div class="ni-sec-head"><h2 class="ni-sec-t">Education</h2><a class="ni-viewall" href="/education"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class="ni-sr"> Education</span></a></div>
+  <div class="ni-grid ni-grid--4"><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/svc-presentation-room-1200.webp" srcset="/images/color/svc-presentation-room-1200.webp 1200w, /images/color/svc-presentation-room-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/education/how-a-raise-runs"><span class="ni-u">How a capital raise runs, from first conversation to investor relations</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/svc-boardroom-1200.webp" srcset="/images/color/svc-boardroom-1200.webp 1200w, /images/color/svc-boardroom-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/education/what-a-committee-asks"><span class="ni-u">What an investment committee asks before it commits</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-private-placement-paper-1200.webp" srcset="/images/color/ins-private-placement-paper-1200.webp 1200w, /images/color/ins-private-placement-paper-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/education/reading-a-form-d"><span class="ni-u">Reading a Form D</span></a></h3><p class="ni-card-date">November 1, 2026</p></article><article class="ni-card ni-card--img"><figure class="ni-card-img"><img src="/images/color/ins-private-placement-binders-1200.webp" srcset="/images/color/ins-private-placement-binders-1200.webp 1200w, /images/color/ins-private-placement-binders-2400.webp 2400w" sizes="(min-width:1280px) 420px, (min-width:768px) 50vw, 100vw" alt="" width="1200" height="675" loading="lazy"></figure><h3 class="ni-card-t"><a class="ni-stretch" href="/education/private-placements"><span class="ni-u">Private placements under Regulation D</span></a></h3><p class="ni-card-date">November 1, 2026</p></article></div>
+  <div class="ni-viewall-m"><a class="ni-viewall" href="/education"><span class="ni-u">View All</span><span class="ni-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span><span class=ni-sr> Education</span></a></div>
+</div></section>
 
-<!-- Article 3 -->
-<article class="art" id="investment-committee">
-<div class="wrap">
-  <header class="art-head">
-    <p class="meta"><span>Education</span><span>Allocators</span></p>
-    <h1>What an investment committee asks before it commits.</h1>
-    <p class="meta"><span>Inaya Advisory</span><span>November 2026</span><span>4 min read</span></p>
-  </header>
-  <div class="ph art-img"><img src="images/svc-ma.webp" alt="" loading="lazy" style="object-position:50% 40%"></div>
-
-  <div class="art-col">
-    <p class="lede">An institutional allocator does not commit on a meeting alone. Before a fund reaches its investment committee, the staff presenting it will need answers to a familiar set of questions.</p>
-    <p>The order and the emphasis vary from one allocator to the next. The questions themselves change very little. These are six that come up in most committee reviews of a fund manager.</p>
-
-    <div class="qs">
-      <div class="q"><span class="q-n">01</span><div><h3>Team and continuity</h3><p class="ask">Who makes the decisions, and will they still be here?</p><p>Committees look at who sits on the investment committee of the manager, how long the senior team has worked together, and who owns the management company. They read key person provisions closely, and they ask how carried interest is shared, since that tends to decide whether a team stays together for the life of the fund.</p></div></div>
-      <div class="q"><span class="q-n">02</span><div><h3>Track record and attribution</h3><p class="ask">What has been achieved, and by whom?</p><p>Allocators separate realised results from unrealised marks and ask for deal-level data alongside fund totals. They then ask which of the people now in the room were responsible for each result. A record built by a team that has since changed is weighed accordingly.</p></div></div>
-      <div class="q"><span class="q-n">03</span><div><h3>Strategy and edge</h3><p class="ask">Why this strategy, why this team, and why now?</p><p>The committee wants to understand where the deals come from and why the manager can win them at a sensible price. It also checks that past investments match the strategy now being described. Drift between the two raises questions that are difficult to answer late in a process.</p></div></div>
-      <div class="q"><span class="q-n">04</span><div><h3>Fund terms and alignment</h3><p class="ask">Do the terms put the manager and the investor on the same side?</p><p>Management fees, carried interest, the hurdle and the commitment of the general partner are compared against the market for that strategy. Fund size is tested against the opportunity, and governance, including the role of an advisory committee, is read for how conflicts will be handled.</p></div></div>
-      <div class="q"><span class="q-n">05</span><div><h3>Pipeline</h3><p class="ask">What will the capital be invested in first?</p><p>Allocators ask to see the transactions the manager expects to complete in the early part of the investment period, and how far along they are. A credible pipeline shows that the strategy can be deployed at the pace the fund terms assume.</p></div></div>
-      <div class="q"><span class="q-n">06</span><div><h3>Operations and reporting</h3><p class="ask">Will the fund be run and reported to institutional standard?</p><p>Operational diligence covers the administrator, the auditor, the valuation policy, compliance and cyber security. Committees also ask what investors will receive, how often, and in what format, since reporting is how the relationship is conducted once the capital is committed.</p></div></div>
-    </div>
-
-    <p class="src">For information only. The questions above reflect general practice among institutional investors and vary between allocators. Nothing here constitutes an offer or solicitation to buy or sell any security.</p>
-    <div class="art-cta">
-      <a class="btn" href="/mandateconsultation">Book a Consultation</a>
-      <a class="textlink" href="#browse">Back to News &amp; Insights</a>
-    </div>
-  </div>
-</div>
-</article>
-
-<!-- Article 4 -->
-<article class="art" id="reading-a-form-d">
-<div class="wrap">
-  <header class="art-head">
-    <p class="meta"><span>Education</span><span>Regulation D</span></p>
-    <h1>Reading a Form D.</h1>
-    <p class="meta"><span>Inaya Advisory</span><span>November 2026</span><span>4 min read</span></p>
-  </header>
-  <div class="ph ph-bright art-img"><img src="images/svc-capital.webp" alt="" loading="lazy"></div>
-
-  <div class="art-col">
-    <p class="lede">Private funds and companies raising capital in the United States commonly rely on Regulation D. The public record of those raises is a short notice filed with the SEC, known as Form D.</p>
-
-    <h2><span class="sn">01</span>What it is</h2>
-    <p>Form D is a notice of an exempt offering of securities. An issuer relying on Regulation D files it with the Securities and Exchange Commission through EDGAR, where it is published and can be read by anyone. As a notice, it carries far less information than a registration statement or a prospectus, and the SEC does not review or approve the offering it describes.</p>
-
-    <h2><span class="sn">02</span>When it is filed</h2>
-    <div class="fact">
-      <b>15</b>
-      <div><small>Days</small><p>A Form D is due within 15 days after the first sale of securities in the offering.</p></div>
-    </div>
-    <p>The first sale is generally taken as the date on which the first investor is irrevocably committed to invest. Where an offering continues for more than a year, the issuer files an annual amendment. Amendments are also filed to correct a material mistake and to reflect certain changes in the information previously given.</p>
-
-    <h2><span class="sn">03</span>What it shows</h2>
-    <p>The form is brief. The parts most read are these.</p>
-    <div class="fields">
-      <div><small>The issuer</small><p>Name, place of organisation, address, industry group and the people related to it, such as executive officers and directors.</p></div>
-      <div><small>Amount sought</small><p>The total offering amount the issuer intends to raise. It may also be reported as indefinite.</p></div>
-      <div><small>Amount sold</small><p>The amount sold to date as at the filing, with the amount that remains to be sold and the number of investors.</p></div>
-      <div><small>Open or closed</small><p>Whether the offering is expected to last more than one year, and, through later amendments, whether it is still continuing.</p></div>
-    </div>
-
-    <h2><span class="sn">04</span>Its limits</h2>
-    <div class="limits">
-      <p><b>Figures can lag.</b> The amount sold is the figure at the date of the filing. It is not updated as each investor commits.</p>
-      <p><b>Not every sale triggers an amendment.</b> A change in the amount sold or in the number of investors does not, on its own, require a new filing, so a raise can be further along than its last Form D suggests.</p>
-      <p><b>It is a notice.</b> The form says nothing about the terms of the offering, the identity of the investors, or why a raise has or has not progressed.</p>
-    </div>
-
-    <p class="src">Source: SEC, Regulation D and Form D. For information only. This is a general summary and not legal advice. Nothing here constitutes an offer or solicitation to buy or sell any security.</p>
-    <div class="art-cta">
-      <a class="btn" href="/mandateconsultation">Book a Consultation</a>
-      <a class="textlink" href="#browse">Back to News &amp; Insights</a>
-    </div>
-  </div>
-</div>
-</article>
 </main>
-<script>
-(function(){
-  var btns=[].slice.call(document.querySelectorAll('.cats button'));
-  var items=[].slice.call(document.querySelectorAll('.hub-body [data-cat]'));
-  var feat=document.querySelector('.feat-wrap'),grid=document.getElementById('grid'),n=document.getElementById('catN');
-  function apply(f){
-    var c=0;
-    btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-filter')===f?'true':'false')});
-    items.forEach(function(el){var on=f==='all'||el.getAttribute('data-cat')===f;el.hidden=!on;if(on)c++});
-    var anyCard=[].some.call(grid.querySelectorAll('[data-cat]'),function(el){return !el.hidden});
-    grid.hidden=!anyCard;
-    grid.style.marginTop=feat.hidden?'0':'';
-    if(n)n.textContent=c;
-  }
-  btns.forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-filter'))})});
-  [].forEach.call(document.querySelectorAll('[data-goto]'),function(b){b.addEventListener('click',function(){
-    apply(b.getAttribute('data-goto'));
-    var bar=document.getElementById('browse');window.scrollTo({top:bar.getBoundingClientRect().top+window.scrollY-(window.innerWidth<=560?72:96)+1,behavior:'smooth'});
-  })});
-  var h=(location.hash||'').slice(1);
-  if(['market','education','inside'].indexOf(h)>-1){apply(h);setTimeout(function(){var bar=document.getElementById('browse');if(bar)window.scrollTo({top:bar.getBoundingClientRect().top+window.scrollY-(window.innerWidth<=560?72:96)+1});},60)}else apply('all');
-})();
-</script>
-
+<!-- ix:footer -->
 <footer class="ifoot">
   <div class="ifw ifoot-top">
     <div class="ifoot-brand">
-      <div class="ifoot-mark">INAYA&nbsp; ADVISORY</div>
+      <div class="ifoot-mark">INAYA ADVISORY</div>
       <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
     </div>
     <a class="ifoot-li" href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="Inaya Advisory on LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
@@ -844,8 +122,10 @@ main .stage .meta{font-size:10px}
   </div>
   <div class="ifoot-wm" aria-hidden="true">INAYA</div>
 </footer>
-<script src="/david-modal.js?v=3"></script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.wordmark,a.mark');if(!a)return;var h=a.getAttribute('href');if((h==='/'||h==='index.html')&&(location.pathname==='/'||location.pathname==='/index.html')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}});</script>
-<script>(function(){var h=document.querySelector('header');function s(){if(h)h.classList.toggle('scrolled',window.scrollY>8)}window.addEventListener('scroll',s,{passive:true});s()})();</script>
+<!-- /ix:footer -->
+<!-- ix:scripts -->
+<script src="/shell.js?v=14" defer></script>
+<script src="/motion.js?v=1" defer></script>
+<!-- /ix:scripts -->
 </body>
 </html>

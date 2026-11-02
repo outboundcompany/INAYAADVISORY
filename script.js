@@ -55,7 +55,7 @@ if ('IntersectionObserver' in window && revealEls.length) {
 function scrollToSection(id, smooth) {
   var el = document.getElementById(id);
   if (!el) return false;
-  var nav = document.querySelector('nav');
+  var nav = document.querySelector('.ix-hdr') || document.querySelector('nav');
   var navH = nav ? nav.offsetHeight : 0;
   var vh = window.innerHeight;
   var secH = el.offsetHeight;
@@ -128,7 +128,7 @@ if (flowSteps.length) {
 }
 
 // Frosted nav on scroll
-var navBar = document.querySelector('nav');
+var navBar = document.querySelector('.ix-hdr') || document.querySelector('nav');
 if (navBar) {
   var onScroll = function () { navBar.classList.toggle('is-scrolled', window.scrollY > 10); };
   window.addEventListener('scroll', onScroll, { passive: true });

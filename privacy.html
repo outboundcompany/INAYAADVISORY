@@ -18,22 +18,15 @@
 <meta name="twitter:description" content="How Inaya Advisory collects, uses and protects personal information.">
 <link rel="preload" href="/fonts/Marcellus-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css?v=2">
+<link rel="stylesheet" href="/fonts/fonts.css?v=10">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
 :root{
-  --ink:#0B0B09;
-  --panel:#141311;
-  --line:#2A2724;
-  --line-2:#3B3730;
-  --cream:#F4EFE6;
-  --warm:#A79E92;
-  --muted:#7E766C;
-  --faint:#5F594F;
+  /* colours come from /fonts/fonts.css (light default, data-theme="dark" for the black theme) */
   --err:#C58A70;
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --wm:"Marcellus",Georgia,serif;
+  --serif:var(--font-display);
+  --sans:var(--font-body);
+  --wm:var(--font-wordmark);
   --gut:clamp(20px,5vw,64px);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -43,7 +36,7 @@ body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weigh
 .wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
 section{scroll-margin-top:86px}
 
-.eyebrow{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.eyebrow{font-size:10px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none}
 h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.15}
 h1{font-size:clamp(34px,4.6vw,58px)}
 h2{font-size:clamp(28px,3.4vw,42px)}
@@ -53,7 +46,7 @@ a{color:inherit}
 
 header{position:sticky;top:0;z-index:50;background:transparent;transition:background .3s ease}
 header{border-bottom:1px solid transparent}
-header.scrolled{background:rgba(11,11,9,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:rgba(245,242,235,.12)}
+header.scrolled{background:var(--bg);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom-color:var(--line)}
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:26px 6vw}
 .mark{font-family:var(--wm);font-size:19px;letter-spacing:.42em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-right:-.42em}
 .hdr-r{display:flex;align-items:center;gap:14px}
@@ -82,9 +75,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .textlink:hover{color:var(--cream)}
 
 .card{border:1px solid var(--line);background:var(--panel);padding:26px}
-.card-label{font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+.card-label{font-size:10px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none}
 .rule{height:1px;background:var(--line);margin:16px 0}
-.prole{font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-top:3px}
+.prole{font-size:9.5px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-top:3px}
 
 /* stat band grouped and centred */
 .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -92,7 +85,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .band-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:148px;padding:34px clamp(20px,3vw,42px);border-right:1px solid var(--line);text-align:center}
 .band-grid>div:last-child{border-right:none}
 .stat{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);color:var(--cream);line-height:1}
-.stat-l{font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:12px}
+.stat-l{font-size:10px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-top:12px}
 
 .sec{padding:clamp(64px,8vw,116px) 0}
 .sec-head{max-width:640px;margin-bottom:clamp(32px,4vw,52px)}
@@ -105,7 +98,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .card p{font-size:14px}
 .grid3>.card{display:flex;flex-direction:column;min-height:400px}
 .who{display:flex;gap:11px;align-items:flex-start;margin-top:auto;height:74px;padding-top:18px;border-top:1px solid var(--line)}
-.av{width:32px;height:32px;border-radius:50%;overflow:hidden;background:#1D1B18;border:1px solid var(--line);flex-shrink:0}
+.av{width:32px;height:32px;border-radius:50%;overflow:hidden;background:var(--img-bg);border:1px solid var(--line);flex-shrink:0}
 .av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
 .av-stack{display:flex}
 .av-stack .av:not(:first-child){margin-left:-10px}
@@ -118,7 +111,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .means{border-left:2px solid var(--line-2);padding:2px 0 2px 16px;margin-top:18px}
 .means p{font-size:14px;color:var(--cream);margin-top:5px}
 .pname{font-family:var(--serif);font-size:24px;color:var(--cream)}
-.ph-lg{width:200px;height:250px;overflow:hidden;background:#1D1B18;border:1px solid var(--line)}
+.ph-lg{width:200px;height:250px;overflow:hidden;background:var(--img-bg);border:1px solid var(--line)}
 .ph-lg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
 
 .form-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
@@ -129,7 +122,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .slot:hover{border-color:var(--line-2);color:var(--cream)}
 .slot[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
 .slot-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:12px 4px}
-.slot-day .d-wd,.slot-day .d-mo{font-size:9px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.slot-day .d-wd,.slot-day .d-mo{font-size:9px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none}
 .slot-day .d-dd{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1;color:var(--cream)}
 .slot-day:hover .d-dd{color:var(--cream)}
 .slot-day[aria-pressed="true"] .d-wd,.slot-day[aria-pressed="true"] .d-mo{color:var(--faint)}
@@ -141,7 +134,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .frow{display:grid;gap:18px;margin-bottom:18px}
 .f2{grid-template-columns:1fr 1fr}
 .f3{grid-template-columns:repeat(3,1fr)}
-label{display:block;font-size:9.5px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+label{display:block;font-size:9.5px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-bottom:8px}
 input,select,textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line);color:var(--cream);font-family:var(--sans);font-weight:300;font-size:14px;padding:6px 0}
 select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 9px) 13px,calc(100% - 4px) 13px;background-size:5px 5px;background-repeat:no-repeat}
 select option{background:var(--ink)}
@@ -212,7 +205,6 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 .legal-doc a{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
 .legal-doc .upd{font-size:13px;color:var(--muted);margin-top:14px}
 </style>
-<link rel="stylesheet" href="/footer.css?v=4">
 <style>
 /* Header locked to the homepage geometry, so the logo never moves between pages */
 .hdr{height:96px;padding-top:0!important;padding-bottom:0!important}
@@ -222,24 +214,59 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
 ::view-transition-group(inaya-logo){animation-duration:0s}
 </style>
-<style>body,main{background:#0B0B09}header:not(.scrolled){background:#0B0B09}</style>
-<style id="legal-fonts">.legal-doc h1{font-family:"Marcellus",serif;font-weight:400;letter-spacing:.01em}.legal-doc p,.legal-doc li{font-family:"DM Sans",sans-serif;font-weight:300}</style>
+<style>body,main{background:var(--bg)}</style>
+<style id="legal-fonts">.legal-doc h1{font-family:var(--font-display);font-weight:300;letter-spacing:var(--ls-display)}.legal-doc p,.legal-doc li{font-family:var(--font-body);font-weight:300}</style>
+<style id="ds-v3">/* design system v3: pills, sentence case, Blackstone type */
+body{font-family:var(--font-body);font-weight:300;color:var(--fg);background:var(--bg)}
+p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text)}
+h1{font-family:var(--font-display);font-weight:300;font-size:var(--fs-title);line-height:var(--lh-title);letter-spacing:var(--ls-display)}
+h2{font-family:var(--font-display);font-weight:300;font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--ls-display)}
+.eyebrow{font-size:var(--fs-eyebrow);color:var(--fg);font-weight:400}
+.btn{border-radius:100px;min-height:48px;padding:8px 28px;font-weight:500;font-size:var(--fs-btn);display:inline-flex;align-items:center;justify-content:center;background:var(--btn-bg);color:var(--btn-fg);border:1px solid var(--btn-line)}
+.btn:hover{opacity:1;background:var(--btn-hover-bg);color:var(--btn-hover-fg);border-color:var(--btn-hover-bg)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--fg)}
+.wrap{width:var(--container);max-width:none;padding:0;margin:0 auto}
+.legal-doc p,.legal-doc li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text)}
+.legal-doc h2{font-size:calc(var(--fs-section)*.75)}
+</style>
+<!-- ix:head -->
+<link rel="stylesheet" href="/footer.css?v=7">
+<link rel="stylesheet" href="/shell.css?v=14">
+<script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
+<!-- /ix:head -->
 </head>
 <body>
-<header>
-  <div class="hdr">
-    <a class="mark" href="/" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
-    <span class="hdr-r">
-      <a class="btn btn-ghost hdr-home" href="/">Home</a>
-      <a class="btn btn-ghost" href="/mandateconsultation#book">Book the call</a>
-    </span>
+<!-- ix:header -->
+<a class="ix-skip" href="#ix-content">Skip to content</a>
+<header class="ix-hdr" id="ix-hdr">
+  <div class="ix-bar">
+    <a class="ix-mark" href="/" aria-label="Inaya Advisory, home">INAYA ADVISORY</a>
+    <div class="ix-right">
+      <nav class="ix-nav" aria-label="Main">
+        <ul class="ix-menu"><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-firm">The Firm<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-firm" role="region" aria-label="The Firm"><div class="ix-panel-in" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">The Firm</p><ul><li><a href="/firm">Overview</a></li><li><a href="/firm/leadership">Our People</a></li><li><a href="/firm/principles">Our Principles</a></li></ul></div><div class="ix-col"><p class="ix-h">Our Clients</p><ul><li><a href="/clients/emerging-managers">Emerging Managers</a></li><li><a href="/clients/established-managers">Established Managers</a></li><li><a href="/clients/companies-and-sponsors">Companies &amp; Sponsors</a></li><li><a href="/clients/real-assets">Real Assets Sponsors</a></li></ul></div></div></div></div></li><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-services">What We Do<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-services" role="region" aria-label="What We Do"><div class="ix-panel-in" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Services</p><ul><li><a href="/what-we-do/capital-raising">Capital Raising Mandates</a></li><li><a href="/what-we-do/investor-relations">Investor Relations</a></li><li><a href="/what-we-do/targeted-introductions">Targeted Introductions</a></li><li><a href="/what-we-do/mergers-acquisitions">Mergers &amp; Acquisitions</a></li><li><a href="/what-we-do/positioning">Positioning &amp; Materials</a></li></ul></div><div class="ix-col"><p class="ix-h">How We Work</p><ul><li><a href="/firm/how-we-work">How We Work</a></li><li><a href="/firm/mandate-selection">Mandate Selection</a></li></ul></div></div></div></div></li><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-insights">News &amp; Insights<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-insights" role="region" aria-label="News &amp; Insights"><div class="ix-panel-in has-feat" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Insights</p><ul><li><a href="/insights">View All</a></li><li><a href="/insights/market-views">Market Views</a></li><li><a href="/insights/inside-inaya">Inside Inaya</a></li><li><a href="/insights/pattern-recognition">Pattern Recognition</a></li></ul></div><div class="ix-col"><p class="ix-h">Education</p><ul><li><a href="/education">Overview</a></li><li><a href="/education/private-equity">Private Equity</a></li><li><a href="/education/private-real-estate">Private Real Estate</a></li><li><a href="/education/private-infrastructure">Private Infrastructure</a></li><li><a href="/education/hedge-funds">Hedge Funds</a></li></ul></div></div><a class="ix-feat" href="/insights/open-private-raises"><span class="ix-feat-body"><span class="ix-feat-title">Open private raises</span><span class="ix-feat-sub">Of 951 private offerings of $50 million or more still open, most report little or nothing sold.</span><span class="ix-feat-go"><span class="ix-feat-go-t">Learn More</span><span class="ix-feat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></span><span class="ix-feat-img"><img src="/images/library/city-new-york-fog-portrait-1200.webp" alt="" loading="lazy"></span></a></div></div></li><li class="ix-item" data-ix-item><button class="ix-top" type="button" aria-expanded="false" aria-controls="ix-p-allocators">Allocators<span class="ix-chev" aria-hidden="true"></span></button><div class="ix-panel" id="ix-p-allocators" role="region" aria-label="Allocators"><div class="ix-panel-in has-feat" style="--cols:2"><div class="ix-cols"><div class="ix-col"><p class="ix-h">Institutions</p><ul><li><a href="/allocators">Overview</a></li><li><a href="/allocators/pension-funds">Pension Funds</a></li><li><a href="/allocators/sovereign-wealth">Sovereign Wealth Funds</a></li><li><a href="/allocators/endowments-foundations">Endowments &amp; Foundations</a></li><li><a href="/allocators/consultants-and-funds-of-funds">Consultants &amp; Funds of Funds</a></li></ul></div><div class="ix-col"><p class="ix-h">Families and Wealth</p><ul><li><a href="/allocators/family-offices">Family Offices</a></li><li><a href="/allocators/private-wealth">Private Wealth</a></li></ul></div></div><a class="ix-feat" href="/education/what-a-committee-asks"><span class="ix-feat-body"><span class="ix-feat-title">What a committee asks</span><span class="ix-feat-sub">Six questions an institutional allocator puts to a fund manager, and what sits behind each.</span><span class="ix-feat-go"><span class="ix-feat-go-t">Learn More</span><span class="ix-feat-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></span><span class="ix-feat-img"><img src="/images/gulf-skyline.webp" alt="" loading="lazy"></span></a></div></div></li></ul>
+      </nav>
+      <a class="ix-cta" href="/mandateconsultation">Partner With Us</a>
+      <button class="ix-burger" type="button" aria-expanded="false" aria-controls="ix-mnav" aria-label="Menu"><span></span><span></span></button>
+    </div>
   </div>
+  <div class="ix-mnav" id="ix-mnav" role="dialog" aria-modal="true" aria-label="Menu">
+    <nav class="ix-mnav-in" aria-label="Main">
+      <div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-firm"><span>The Firm</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-firm"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">The Firm</p><ul><li><a href="/firm">Overview</a></li><li><a href="/firm/leadership">Our People</a></li><li><a href="/firm/principles">Our Principles</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Our Clients</p><ul><li><a href="/clients/emerging-managers">Emerging Managers</a></li><li><a href="/clients/established-managers">Established Managers</a></li><li><a href="/clients/companies-and-sponsors">Companies &amp; Sponsors</a></li><li><a href="/clients/real-assets">Real Assets Sponsors</a></li></ul></div></div></div></div><div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-services"><span>What We Do</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-services"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Services</p><ul><li><a href="/what-we-do/capital-raising">Capital Raising Mandates</a></li><li><a href="/what-we-do/investor-relations">Investor Relations</a></li><li><a href="/what-we-do/targeted-introductions">Targeted Introductions</a></li><li><a href="/what-we-do/mergers-acquisitions">Mergers &amp; Acquisitions</a></li><li><a href="/what-we-do/positioning">Positioning &amp; Materials</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">How We Work</p><ul><li><a href="/firm/how-we-work">How We Work</a></li><li><a href="/firm/mandate-selection">Mandate Selection</a></li></ul></div></div></div></div><div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-insights"><span>News &amp; Insights</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-insights"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Insights</p><ul><li><a href="/insights">View All</a></li><li><a href="/insights/market-views">Market Views</a></li><li><a href="/insights/inside-inaya">Inside Inaya</a></li><li><a href="/insights/pattern-recognition">Pattern Recognition</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Education</p><ul><li><a href="/education">Overview</a></li><li><a href="/education/private-equity">Private Equity</a></li><li><a href="/education/private-real-estate">Private Real Estate</a></li><li><a href="/education/private-infrastructure">Private Infrastructure</a></li><li><a href="/education/hedge-funds">Hedge Funds</a></li></ul></div></div></div></div><div class="ix-macc"><button class="ix-mtop" type="button" aria-expanded="false" aria-controls="ix-m-allocators"><span>Allocators</span><span class="ix-pm" aria-hidden="true"></span></button><div class="ix-mpanel" id="ix-m-allocators"><div class="ix-mpanel-in"><div class="ix-mgrp"><p class="ix-msub">Institutions</p><ul><li><a href="/allocators">Overview</a></li><li><a href="/allocators/pension-funds">Pension Funds</a></li><li><a href="/allocators/sovereign-wealth">Sovereign Wealth Funds</a></li><li><a href="/allocators/endowments-foundations">Endowments &amp; Foundations</a></li><li><a href="/allocators/consultants-and-funds-of-funds">Consultants &amp; Funds of Funds</a></li></ul></div><div class="ix-mgrp"><p class="ix-msub">Families and Wealth</p><ul><li><a href="/allocators/family-offices">Family Offices</a></li><li><a href="/allocators/private-wealth">Private Wealth</a></li></ul></div></div></div></div>
+      <div class="ix-mfoot">
+        <a class="ix-cta ix-cta--block" href="/mandateconsultation">Partner With Us</a>
+        <a class="ix-mmail" href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
+      </div>
+    </nav>
+  </div>
+  <div class="ix-scrim" aria-hidden="true"></div>
 </header>
+<div id="ix-content" tabindex="-1"></div>
+<!-- /ix:header -->
 <main>
 <section class="sec"><div class="wrap"><div class="legal-doc">
 <p class="eyebrow">Legal</p>
 <h1 style="max-width:none">Privacy Policy.</h1>
-<p class="upd">Effective 1 November 2026</p>
+<p class="upd">Effective November 1, 2026</p>
 
 <p style="margin-top:28px">This policy explains how Inaya LLC, a Wyoming limited liability company operating as Inaya Advisory ("Inaya Advisory", "we", "us"), collects and uses personal information through inayaadvisory.com and in the course of our business. Questions about this policy can be sent to <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>.</p>
 
@@ -291,10 +318,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 </div></div></section>
 </main>
 
+<!-- ix:footer -->
 <footer class="ifoot">
   <div class="ifw ifoot-top">
     <div class="ifoot-brand">
-      <div class="ifoot-mark">INAYA&nbsp; ADVISORY</div>
+      <div class="ifoot-mark">INAYA ADVISORY</div>
       <a href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
     </div>
     <a class="ifoot-li" href="https://www.linkedin.com/company/inaya-advisory" target="_blank" rel="noopener" aria-label="Inaya Advisory on LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.16h4.56V23H.22V8.16zM8.34 8.16h4.37v2.02h.06c.61-1.15 2.1-2.37 4.32-2.37 4.62 0 5.47 3.04 5.47 6.99V23h-4.55v-7.21c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.34V8.16z"/></svg></a>
@@ -311,8 +339,11 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
   </div>
   <div class="ifoot-wm" aria-hidden="true">INAYA</div>
 </footer>
+<!-- /ix:footer -->
 <script src="/david-modal.js?v=3"></script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.wordmark,a.mark');if(!a)return;var h=a.getAttribute('href');if((h==='/'||h==='index.html')&&(location.pathname==='/'||location.pathname==='/index.html')){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}});</script>
-<script>(function(){var h=document.querySelector('header');function s(){if(h)h.classList.toggle('scrolled',window.scrollY>8)}window.addEventListener('scroll',s,{passive:true});s()})();</script>
+<!-- ix:scripts -->
+<script src="/shell.js?v=14" defer></script>
+<script src="/motion.js?v=1" defer></script>
+<!-- /ix:scripts -->
 </body>
 </html>
