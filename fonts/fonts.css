@@ -79,3 +79,117 @@
   src: url(CormorantGaramond-300-normal.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+/* =====================================================================================
+   Inaya design system (1 Nov 2026). Layout, grid, spacing, type sizes, cards, menus and link behaviour follow
+   blackstone.com's design language; fonts and colours are Inaya's original look (owner decision 1 Nov 2026):
+   Cormorant Garamond for display and headings, DM Sans for body and interface, Marcellus for the wordmark only,
+   black pages with warm white text, black and white photography. Every stylesheet reads the variables below.
+   ===================================================================================== */
+/* metric-matched fallbacks so the swap from system font to web font barely moves the layout */
+@font-face { font-family: 'Cormorant Fallback'; src: local('Georgia'); size-adjust: 86%; ascent-override: 107%; descent-override: 33%; line-gap-override: 0%; }
+@font-face { font-family: 'DM Sans Fallback'; src: local('Arial'), local('Helvetica'); size-adjust: 98%; ascent-override: 101%; descent-override: 32%; line-gap-override: 0%; }
+
+:root {
+  /* ---- families ---- */
+  --font-display: 'Cormorant Garamond', 'Cormorant Fallback', Georgia, serif;
+  --font-body: 'DM Sans', 'DM Sans Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-ui: var(--font-body);
+  --font-wordmark: 'Marcellus', Georgia, serif;
+  --serif: var(--font-display); --sans: var(--font-body);   /* legacy aliases */
+
+  /* ---- grid: Blackstone containers 328 / 368 / 688 / 1136 / 1264 / 1648, 4 / 8 / 16 columns, 16px gap ---- */
+  --gutter: 16px; --container-max: 1648px; --columns: 4; --col-gap: 16px; --card-gap: 24px;
+  --container: min(calc(100% - 2 * var(--gutter)), var(--container-max));
+  --hdr-h: 72px;
+
+  /* ---- type scale (desktop values at 1440; steps below) ---- */
+  --fs-title: 44px;   --lh-title: 1.15;   /* page H1, serif 300: 40 / 48 / 48 / 56 / 72 */
+  --fs-h1: 40px;      --lh-h1: 1.15;      /* alias of title */
+  --fs-section: 32px; --lh-section: 1.2;  /* section titles, serif 300: 32 / 40 / 40 / 48 / 56 */
+  --fs-h2: var(--fs-section); --lh-h2: 1.2;
+  --fs-h3: 24px;      --lh-h3: 1.3;       /* sub-heads, serif 300 */
+  --fs-h4: 20px;      --lh-h4: 1.5;
+  --fs-display: 64px; --lh-display: 1.08;  /* homepage hero line: 64 / 96 / 128 / 192 */
+  --fs-lead: 20px;    --lh-lead: 1.5;     /* standfirst, sans 300: 16 / 18 / 20 / 20 / 24 */
+  --fs-feature: 20px;                     /* oversized lead paragraph: 20 / 24 / 24 / 32 / 32 */
+  --fs-body: 18px;    --lh-body: 1.65;    /* paragraphs, sans 300 */
+  --fs-small: 16px;   --lh-small: 1.5;
+  --fs-fine: 14px;    --lh-fine: 1.5;
+  --fs-card: 20px;    --lh-card: 1.45;    /* card titles, sans 300 (24 at 1920) */
+  --fs-date: 16px;                        /* card dates, sans 300, sentence case */
+  --fs-label: 14px;                       /* card category, sans 400, plain text */
+  --fs-nav: 16px;                         /* header navigation, sans 400 */
+  --fs-link: 18px;                        /* "Read More" / "View All" arrow links, sans 400 */
+  --fs-eyebrow: 14px;                     /* sentence case here (no capitals), sans 400, 2px rule after */
+  --fs-btn: 16px;                         /* pill buttons, sans 500 */
+  --fw-display: 400; --fw-text: 300; --fw-ui: 400; --fw-strong: 500;
+  --ls-display: 0; --ls-text: .01em; --ls-nav: .02em; --ls-eyebrow: .016em; --ls-btn: .016em;
+  --fs-eyebrow-old: 12px;
+
+  /* ---- spacing (8px base): major section padding 80 / 88 / 96 / 144 / 160 / 192 ---- */
+  --sec: 80px; --sec-head: 48px; --row-gap: 40px; --card-row-gap: 88px; --block-gap: 72px;
+  /* one rhythm for every section (the page header uses the same steps) */
+  --gap-eyebrow: 24px;            /* eyebrow to heading */
+  --gap-lede: 24px;               /* heading to lede */
+  --grid-gap-x: clamp(24px, 3.4vw, 64px);   /* columns in grids, stat rows, card rows: 48px+ at 1440 */
+  --measure-title: 11;            /* headings span at most 11 of 16 columns, like the page title */
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(.22, 1, .36, 1); --dur: .3s;
+}
+@media (min-width: 416px)  { :root { --gutter: 24px; --fs-title: 48px; --fs-h1: 48px; --sec: 88px; } }
+@media (min-width: 1280px) { :root { --fs-title: 56px; } }
+@media (min-width: 768px)  { :root { --gutter: 40px; --container-max: 688px; --columns: 8; --fs-title: 52px; --fs-h1: 52px; --fs-section: 40px; --fs-display: 96px; --fs-lead: 18px; --fs-feature: 24px; --sec: 96px; --sec-head: 64px; --row-gap: 48px; --card-row-gap: 96px; --hdr-h: 96px; } }
+@media (min-width: 1280px) { :root { --gutter: 72px; --container-max: 1136px; --columns: 16; --fs-eyebrow: 16px; --fs-section: 40px; --fs-display: 128px; --fs-lead: 20px; --sec: 144px; --row-gap: 56px; --hdr-h: 128px; } }
+@media (min-width: 1440px) { :root { --gutter: 88px; --container-max: 1264px; --fs-title: 64px; --fs-h1: 64px; --fs-section: 48px; --fs-feature: 32px; --sec: 160px; } }
+@media (min-width: 1920px) { :root { --gutter: 136px; --container-max: 1648px; --fs-title: 80px; --fs-h1: 80px; --fs-section: 56px; --fs-display: 192px; --fs-lead: 24px; --fs-body: 20px; --fs-card: 24px; --fs-link: 20px; --sec: 192px; --sec-head: 80px; --row-gap: 64px; } }
+
+/* ---------- colour: Inaya's original black and white ----------
+   Default: black pages (#0B0B09) with warm white text (#F4EFE6), warm grey secondary text.
+   .band-grey (also .band-panel, .band-cream) = charcoal panel #141311 for contrast; .band-dark = black.
+   Footer: the live footer, untouched (footer.css). No gold, no colour accents. Photography is black and white.
+   Alternate: <html data-theme="light"> = white pages with black copy and light slate bands.
+   Semantic tokens: --bg --bg-2 --fg --text --text-2 --muted --faint --line --line-2 --btn-* --img-bg --focus.
+   Legacy tokens mapped onto them: --ink --panel --cream --warm --accent. */
+:root, .theme-dark, .band-dark {
+  --bg: #0B0B09; --bg-2: #0B0B09; --fg: #F4EFE6; --text: #D9D3C9; --text-2: #A79E92; --muted: #8A8277; --faint: #5F594F;
+  --line: rgba(245, 242, 235, .14); --line-2: rgba(245, 242, 235, .32);
+  --btn-bg: #F4EFE6; --btn-fg: #0B0B09; --btn-line: #F4EFE6; --btn-hover-bg: transparent; --btn-hover-fg: #F4EFE6;
+  --pill-grey: #2A2724; --img-bg: #151411; --focus: #F4EFE6;
+  --ink: var(--bg); --panel: var(--bg-2); --cream: var(--fg); --warm: var(--text-2); --accent: var(--fg);
+  --body-color: var(--text-2);
+  color-scheme: dark;
+}
+/* Contrast sections are WHITE (owner, 1 Nov 2026: black and white only, never grey). The page is black;
+   .band-grey / .band-panel / .band-cream / .band-white, the closing bands, the subscribe band, menu feature cards,
+   key-takeaway and fact boxes and brochure blocks are warm white (#F4EFE6) with black ink. */
+.band-grey, .band-panel, .band-cream, .band-white, .theme-white, .cta-band:not(.cta-band--dark), .subscribe-band, .ix-feat, .ni-band, .ktk, .fact, .ni .bro {
+  --bg: #F4EFE6; --bg-2: #F4EFE6; --fg: #0B0B09; --text: #1C1B18; --text-2: #3A3732; --muted: #5E584F; --faint: #8A8277;
+  --line: rgba(11, 11, 9, .2); --line-2: rgba(11, 11, 9, .45);
+  --btn-bg: #0B0B09; --btn-fg: #F4EFE6; --btn-line: #0B0B09; --btn-hover-bg: transparent; --btn-hover-fg: #0B0B09;
+  --pill-grey: #0B0B09; --img-bg: #E2DCD1; --focus: #0B0B09;
+  --ink: var(--bg); --panel: var(--bg); --cream: var(--fg); --warm: var(--text-2); --accent: var(--fg); --body-color: var(--text-2);
+  color-scheme: light;
+}
+:root[data-theme="light"], .theme-light, :root[data-theme="light"] .band-light, :root[data-theme="light"] .band-dark {
+  --bg: #FFFFFF; --bg-2: #F4F5F7; --fg: #000000; --text: #000000; --text-2: #1C1C1C; --muted: #5C6166; --faint: #A3AAAE;
+  --line: rgba(0, 0, 0, .2); --line-2: rgba(0, 0, 0, .45);
+  --btn-bg: #000000; --btn-fg: #FFFFFF; --btn-line: #000000; --btn-hover-bg: #333333; --btn-hover-fg: #FFFFFF;
+  --pill-grey: #DCDFEF; --img-bg: #E9EBEE; --focus: #000000;
+  --ink: var(--bg); --panel: var(--bg-2); --cream: var(--fg); --warm: var(--text-2); --accent: var(--fg);
+  --body-color: var(--text-2);
+  color-scheme: light;
+}
+:root[data-theme="light"] .band-grey, :root[data-theme="light"] .band-panel, :root[data-theme="light"] .band-cream { --bg: #F4F5F7; --bg-2: #FFFFFF; --img-bg: #E2E5EA; }
+:root[data-theme="light"] .band-dark { --bg: #000000; --fg: #FFFFFF; --text: #FFFFFF; --text-2: rgba(255,255,255,.86); --muted: rgba(255,255,255,.7); --line: rgba(255,255,255,.25); --line-2: rgba(255,255,255,.5); --btn-bg: #FFFFFF; --btn-fg: #000; --btn-line: #FFF; --focus: #FFF; }
+
+/* black and white photography (the original look) */
+:where(main, .ix-hdr) img:not([src$=".svg"]) { filter: grayscale(1) contrast(1.05); }
+
+/* square corners everywhere (the original site): buttons, pills, badges, tabs, inputs, the header button.
+   Round shapes stay only on the allowed circled-arrow icons. */
+:is(button, .btn, input, select, textarea, .ix-cta, [class*="pill"]:not([class*="-ic"]), [class*="badge"], [role="tab"], .chip, .sub-form) { border-radius: 0 !important; }
+
+/* anchor targets land below the sticky header at every width */
+section[id], [id] { scroll-margin-top: calc(var(--hdr-h) + 24px); }
