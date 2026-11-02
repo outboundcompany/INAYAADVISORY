@@ -25,7 +25,7 @@
     },
     {
       "source": "/david-hunter",
-      "destination": "/?profile=david-hunter",
+      "destination": "/firm/leadership/david-hunter",
       "permanent": false
     }
   ],
