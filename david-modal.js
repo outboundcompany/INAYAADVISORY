@@ -1,4 +1,4 @@
-/* David Hunter profile pop-up. Opens in place from any element with data-david. */
+
 (function () {
   var css = `
 .dm-ov,.dm-ov *{box-sizing:border-box}
@@ -47,8 +47,8 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
       <div>
         <div class="dm-ey">Senior Advisor</div>
         <div class="dm-h1">David Hunter.</div>
-        <p class="dm-lede">For most of his career, David decided which managers received pension capital. Today he brings managers to the allocators he knows.</p>
-        <p class="dm-p">Nearly four decades in institutional capital, from HSBC, Citicorp and SMBC to two US public pension systems, which he served as Executive Director and Chief Investment Officer.</p>
+        <p class="dm-lede">As Executive Director and Chief Investment Officer of two US public pension systems, David decided which managers received pension capital. Today he brings managers to the allocators he knows.</p>
+        <p class="dm-p">Close to forty years in institutional capital, twenty-four of them in banking at HSBC, Citibank and Sumitomo, and then as Executive Director and Chief Investment Officer of the North Dakota Retirement and Investment Office and the Texas Municipal Retirement System.</p>
       </div>
       <div class="dm-ph"><img src="images/david.webp" alt="David Hunter" loading="lazy"></div>
     </div>
@@ -57,9 +57,9 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
       <div class="dm-ey">The record</div>
       <div class="dm-h2">The capital David has already been trusted with.</div>
       <div class="dm-g3">
-        <div class="dm-c" style="${d(0)}"><div class="dm-big">$7B+</div><div class="dm-cap">HSBC North America</div><p>Directed more than $7B in pension assets at HSBC North America, within twenty-four years across HSBC, Citicorp and SMBC before he moved to the allocator's side.</p></div>
+        <div class="dm-c" style="${d(0)}"><div class="dm-big">$7B+</div><div class="dm-cap">HSBC North America</div><p>Directed more than $7B in pension assets at HSBC North America, within twenty-four years in banking at HSBC, Citibank and Sumitomo.</p></div>
         <div class="dm-c" style="${d(1)}"><div class="dm-big">$20B</div><div class="dm-cap">North Dakota Retirement &amp; Investment Office</div><p>Grew from approximately $8 billion to nearly $20 billion across 27 portfolios, including the state's sovereign wealth fund, as Executive Director and Chief Investment Officer.</p></div>
-        <div class="dm-c" style="${d(2)}"><div class="dm-big">$40B</div><div class="dm-cap">Texas Municipal Retirement System</div><p>As Chief Investment Officer, led the $40 billion retirement system for Texas cities to two consecutive years of top-quartile returns, a first for the system.</p></div>
+        <div class="dm-c" style="${d(2)}"><div class="dm-big">$40B</div><div class="dm-cap">Texas Municipal Retirement System</div><p>As Executive Director and Chief Investment Officer, led the $40 billion retirement system for Texas cities to two consecutive years of top-quartile returns, a first for the system.</p></div>
       </div>
       <p class="dm-fine">Figures reflect the prior institutional experience of David Hunter and are not transactions of Inaya Advisory.</p>
     </div>
@@ -68,7 +68,7 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
       <div class="dm-ey">Standing</div>
       <div class="dm-h2">Known on the allocator's side of the table.</div>
       <div class="dm-g3">
-        <div class="dm-c" style="${d(3)}"><div class="dm-n">01</div><h3>Former CIO</h3><p>Texas Municipal Retirement System and the North Dakota Retirement and Investment Office.</p></div>
+        <div class="dm-c" style="${d(3)}"><div class="dm-n">01</div><h3>Former Executive Director and CIO</h3><p>Texas Municipal Retirement System and the North Dakota Retirement and Investment Office.</p></div>
         <div class="dm-c" style="${d(4)}"><div class="dm-n">02</div><h3>ISS Power 100</h3><p>Named among the Power 100 Chief Investment Officers in 2023.</p></div>
         <div class="dm-c" style="${d(5)}"><div class="dm-n">03</div><h3>200+ CIO relationships</h3><p>Across US public pensions, consultants, endowments and family offices.</p></div>
       </div>
