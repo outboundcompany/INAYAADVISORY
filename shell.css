@@ -1,10 +1,4 @@
-/* Inaya Advisory: site shell (header, mega menus, mobile menu), design system v3 (1 Nov 2026).
-   Modelled on blackstone.com: white bar, black wordmark, 16px navigation with chevrons, white mega panels
-   with 20px / 500 column titles and 16px links, a thin rule under the bar when a panel is open.
-   Loaded last on every page by tools/shell.py; every rule is namespaced .ix-* and reads fonts/fonts.css.
-   Bar height = var(--hdr-h): 72px phones, 96px tablet, 128px desktop. The wordmark is 19px Marcellus on a
-   32px line (14px / 24px on phones) with view-transition-name inaya-logo, so it never moves between pages.
-   Optional boxed wordmark (white on a black box, like Blackstone's logo): <html data-logo="box">. */
+
 
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
@@ -22,7 +16,7 @@
 .ix-skip:focus { top: 12px; }
 #ix-content { height: 0; outline: none; }
 
-/* ---------- bar ---------- */
+
 header.ix-hdr {
   position: sticky; top: 0; z-index: 100; margin: 0; padding: 0;
   color: var(--fg); font-family: var(--font-ui); font-weight: var(--fw-text);
@@ -30,12 +24,12 @@ header.ix-hdr {
   transition: border-color var(--dur) ease; opacity: 1; animation: none;
   -webkit-font-smoothing: antialiased; letter-spacing: 0;
 }
-/* the fill sits on a pseudo-element so the header never becomes a containing block for the fixed mobile menu */
+
 header.ix-hdr::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--bg); pointer-events: none; }
 header.ix-hdr.is-scrolled { border-bottom-color: var(--line); }
 header.ix-hdr.is-open, header.ix-hdr.is-menu { border-bottom-color: transparent; }
 
-/* homepage intro: the header fades in with the curtain */
+
 html.has-intro header.ix-hdr { opacity: 0; animation: ixDrop .8s ease 2.1s forwards; }
 @keyframes ixDrop { to { opacity: 1; } }
 
@@ -45,11 +39,11 @@ html.has-intro header.ix-hdr { opacity: 0; animation: ixDrop .8s ease 2.1s forwa
   line-height: 32px; letter-spacing: .42em; margin-right: -.42em; text-transform: uppercase; white-space: nowrap;
   color: var(--fg); view-transition-name: inaya-logo;
 }
-/* boxed wordmark variant: white letters in a black box, the way Blackstone sets its logo */
+
 html[data-logo="box"] .ix-hdr .ix-mark { background: #000; color: #FFF; padding: 13px 4px 13px 18px; margin-right: 0; }
 .ix-right { display: flex; align-items: center; gap: 32px; height: 100%; }
 
-/* ---------- desktop menu ---------- */
+
 .ix-hdr nav.ix-nav { position: static; height: 100%; background: none; border: 0; opacity: 1; animation: none; z-index: auto; }
 .ix-menu { display: flex; align-items: stretch; gap: 24px; height: 100%; }
 .ix-item { position: static; display: flex; align-items: center; height: 100%; }
@@ -57,11 +51,11 @@ html[data-logo="box"] .ix-hdr .ix-mark { background: #000; color: #FFF; padding:
 .ix-top > :first-child, .ix-top { background-image: none; }
 .ix-top::after { content: ''; position: absolute; left: 0; right: 24px; bottom: calc(50% - 16px); height: 1px; background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform var(--dur) var(--ease); }
 .ix-top:hover::after, .ix-item.is-open .ix-top::after, .ix-item.is-current .ix-top::after { transform: scaleX(1); }
-/* chevron: a thin open V, as on blackstone.com */
+
 .ix-chev { display: inline-block; width: 8px; height: 8px; border-right: 1.25px solid currentColor; border-bottom: 1.25px solid currentColor; transform: translateY(-3px) rotate(45deg); transition: transform .25s ease; opacity: 1; }
 .ix-item.is-open .ix-chev { transform: translateY(2px) rotate(225deg); }
 
-/* header call to action: a black pill */
+
 .ix-hdr .ix-cta {
   display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--fg); border-radius: 100px;
   padding: 6px 22px; font-family: var(--font-ui); font-weight: var(--fw-strong); font-size: 15px; line-height: 1.5; letter-spacing: var(--ls-btn);
@@ -70,7 +64,7 @@ html[data-logo="box"] .ix-hdr .ix-mark { background: #000; color: #FFF; padding:
 }
 .ix-hdr .ix-cta:hover, .ix-hdr .ix-cta:focus-visible { background: transparent; color: var(--fg); border-color: var(--fg); }
 
-/* ---------- mega panels: white, a hairline at the top of the content, columns of 16px links ---------- */
+
 .ix-panel {
   position: absolute; left: 0; right: 0; top: 100%; z-index: 2; background: var(--bg);
   max-height: calc(100vh - var(--hdr-h)); overflow-y: auto; cursor: default;
@@ -80,8 +74,7 @@ html[data-logo="box"] .ix-hdr .ix-mark { background: #000; color: #FFF; padding:
 .ix-item.is-open .ix-panel { opacity: 1; visibility: visible; transform: none; transition: opacity .3s ease, transform .3s ease; }
 html:not(.ix-js) .ix-item:hover .ix-panel, html:not(.ix-js) .ix-item:focus-within .ix-panel { opacity: 1; visibility: visible; transform: none; }
 
-/* layout as blackstone.com: link columns from the left edge of the grid; a boxed feature card on the right,
-   flush with the rule under the bar (text block left, image right). One font in the menus: DM Sans. */
+
 .ix-panel-in { display: flex; align-items: flex-start; justify-content: space-between; gap: 48px; width: var(--container); margin: 0 auto; border-top: 1px solid var(--line); padding: 0; }
 .ix-cols { display: flex; align-items: flex-start; gap: 0 56px; padding: 48px 0 64px; }
 .ix-col { min-width: 160px; max-width: 240px; }
@@ -115,7 +108,7 @@ header.ix-hdr.is-open .ix-item.is-current:not(.is-open) .ix-top::after { transfo
 }
 @media (min-width: 1200px) and (max-width: 1359px) { .ix-menu { gap: 20px; } .ix-right { gap: 24px; } }
 
-/* ---------- burger + mobile menu (below 1200px): white sheet, large light links ---------- */
+
 .ix-burger { display: none; position: relative; width: 44px; height: 44px; margin-right: -10px; }
 .ix-burger span { position: absolute; left: 11px; right: 11px; height: 1.5px; background: var(--fg); transition: transform var(--dur) var(--ease), top var(--dur) var(--ease); }
 .ix-burger span:first-child { top: 17px; }
@@ -167,20 +160,16 @@ header.ix-hdr.is-menu .ix-burger span:last-child { top: 21.5px; transform: rotat
   .ix-panel, .ix-mnav, .ix-mpanel, .ix-scrim, .ix-burger span, .ix-pm::after { transition: none !important; }
 }
 
-/* hover underline for menu links (the same grow-from-left line as every other link) */
+
 .ix-col a, .ix-mgrp a:not([aria-current]) { background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 1px; transition: background-size var(--dur) var(--ease); }
 .ix-col a:hover, .ix-col a:focus-visible, .ix-mgrp a:hover { background-size: 100% 1px; }
 .ix-mgrp a { display: inline-block !important; }
 .ix-mgrp li { padding: 4px 0; }
 
-/* 1 Nov 2026 QA: the live site's pages carried a page-level rule `footer { padding: 72px 0 40px }` that the live footer
-   rendered with on every page (live backup: insights.html, privacy.html, index.html). The rebuilt inner pages lost it, so
-   their footer was 112px shorter than live at 1440. Restored here once, same values, so the footer matches live on all pages. */
+
 footer.ifoot { padding: 72px 0 40px; }
 
-/* 1 Nov 2026 (owner): inner-page footers are white with black text. The homepage
-   receives its documented black exception below. Content, layout and spacing are unchanged; only colours change.
-   Contrast on #F4EFE6: #0B0B09 17.6:1, #3A3732 11.2:1, #5E584F 6.3:1 (AA for the 12px legal text). */
+
 footer.ifoot { background: #fff; color: #3A3732; border-top-color: rgba(11, 11, 9, .25); }
 footer.ifoot .ifoot-mark { color: #0B0B09; }
 footer.ifoot .ifoot-brand a { color: #0B0B09; border-bottom-color: rgba(11, 11, 9, .35); }
@@ -196,8 +185,7 @@ footer.ifoot .ifoot-base nav a { color: #3A3732; }
 footer.ifoot .ifoot-base nav a:hover { color: #0B0B09; }
 footer.ifoot .ifoot-wm { color: #0B0B09; opacity: .05; }
 
-/* Homepage only: the footer returns to the black closing field. Inner pages
-   retain the white footer set above. */
+
 body.home footer.ifoot { background: #0B0B09; color: #A79E92; border-top-color: #2A2724; }
 body.home footer.ifoot .ifoot-mark { color: #F4EFE6; }
 body.home footer.ifoot .ifoot-brand a { color: #F4EFE6; border-bottom-color: #3B3730; }
@@ -214,10 +202,7 @@ body.home footer.ifoot .ifoot-base nav a { color: #A79E92; }
 body.home footer.ifoot .ifoot-base nav a:hover { color: #F4EFE6; }
 body.home footer.ifoot .ifoot-wm { color: #F4EFE6; opacity: .035; }
 
-/* Sitewide composition guardrail, 1 Nov 2026:
-   five editorial points never leave a vacant third slot. They form a complete
-   three-across opening row and a balanced pair beneath it. This is deliberately
-   editorial spacing, not a boxed table treatment. */
+
 main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) {
   grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
 }
@@ -228,14 +213,11 @@ main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .e
 main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) h3 { max-width: 26ch; }
 @media (max-width: 767px) {
   main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) { grid-template-columns: 1fr !important; }
-  /* 2 Nov 2026 QA: the span-3 rule above is more specific than this reset, so items 4 and 5 kept spanning three tracks
-     in a one-column grid and widened the page to 435px at 390 (/firm). The reset must win below 768. */
+  
   main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .es-flow-ol, .others, .pf-vals, .hww-vgrid, .std-items, .ms-values-grid, .pw-cards, .cr-cards, .ir-cards, .ma-cards, .ti-cards, .pp-cards):has(> :nth-child(5):last-child) > * { grid-column: auto !important; }
 }
 
-/* Editorial media/copy pairs share their lower baseline on wide screens. This
-   keeps the copy visually attached to the image instead of leaving a detached
-   text block at the top while the image falls below it. */
+
 @media (min-width: 768px) {
   main :is(.pp-feat, .pf-split, .pw-split, .ir-split, .ct-split, .pc-split, .cs-split, .ma-split, .fc-split) {
     align-items: end !important;
@@ -245,23 +227,128 @@ main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .e
   }
 }
 
-/* Data callouts: numbers and their labels must read as one composed fact, not
-   as a detached headline followed by a number stranded lower on the page. */
+
+@media (min-width: 768px) {
+  main :is(.al-list, .cf-list, .ef-list, .fo-list, .pw-list, .sw-list, .em-list, .est-list, .ra-body, .std-list, .cs-list, .ps-text,
+           .hww-list, .ms-vlist-items, .cr-list, .pp-list, .ma-list, .ti-list) {
+    align-self: end;
+  }
+}
+@media (min-width: 1024px) {
+  main .es-split:has(> .es-split-img) > :not(.es-split-img),
+  main .es-bro-in > .es-bro-txt { align-self: end; }
+}
+@media (min-width: 901px) {
+  main .bio-grid { align-items: end; }
+}
+
+
 main :is(.cr-big-f, .ct-big-fig, .pw-fig, .ma-big-f, .pp-big p, .ti-big-f, .pf-fig, .cf-fig, .ef-fig, .al-big-f, .sw-fig, .em-fig, .est-big-f) {
   margin-top: clamp(24px, 2vw, 36px) !important;
   line-height: .95 !important;
 }
-@media (min-width: 768px) {
-  main .pg-clients-emerging .em-stats .em-g16 { align-items: end; }
-  main .pg-clients-emerging .em-stats .em-big { grid-column: 1 / span 9; }
-  main .pg-clients-emerging .em-stats .em-sm {
-    grid-column: 12 / span 5;
-    align-self: end;
-    border-top: 1px solid var(--fg);
-    border-bottom: 0;
-    padding: 20px 0 0;
-  }
-  main .pg-clients-emerging .em-stats .em-sm-l { min-height: 0; }
-  main .pg-clients-emerging .em-stats .em-sf { font-size: clamp(52px, 4.2vw, 76px); line-height: 1; margin-top: 16px; }
-  main .pg-clients-emerging .em-stats .em-note { margin-top: 32px; }
+
+.dcmp { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); column-gap: var(--col-gap); }
+.dcmp-h { grid-column: 1 / span 8; font-family: var(--font-body); font-weight: var(--fw-text); font-size: 32px; line-height: 1.35; color: var(--fg); margin: 0; max-width: 20em; }
+.dcmp-take { grid-column: 10 / span 7; align-self: end; font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(24px, 2vw, 30px); line-height: 1.3; letter-spacing: var(--ls-display); color: var(--fg); margin: 0; }
+.dcmp-cols { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); column-gap: var(--col-gap); margin-top: clamp(48px, 5vw, 72px); }
+.dcmp-col { grid-column: span 8; border-top: 1px solid var(--line-2); padding-top: 20px; min-width: 0; }
+.dcmp-l { font-family: var(--font-body); font-weight: var(--fw-text); font-size: var(--fs-small); line-height: 1.5; color: var(--fg); margin: 0; }
+.dcmp-l span { color: var(--text-2); }
+.dcmp-f { display: block; font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(88px, 9vw, 136px); line-height: 1; letter-spacing: var(--ls-display); color: var(--fg); margin: clamp(24px, 2.5vw, 36px) 0 0; white-space: nowrap; font-variant-numeric: lining-nums; }
+.dcmp-bar { position: relative; height: 6px; margin-top: clamp(28px, 3vw, 40px); background: var(--line); }
+.dcmp-bar i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--v); background: var(--fg); }
+.dcmp-sub { font-size: var(--fs-fine); line-height: 1.5; color: var(--text-2); margin: 12px 0 0; }
+.dcmp-wide { grid-column: 1 / -1; margin-top: clamp(40px, 4vw, 56px); }
+.dcmp-wide .dcmp-bar { margin-top: 0; }
+.dcmp-wide .dcmp-sub { display: flex; justify-content: space-between; gap: 16px; }
+.dcmp-src { grid-column: 1 / -1; border-top: 1px solid var(--line); margin: clamp(40px, 4vw, 56px) 0 0; padding-top: 20px; font-size: var(--fs-fine); line-height: 1.6; color: var(--text-2); max-width: none; }
+.dcmp-src b { font-weight: var(--fw-ui); color: var(--fg); }
+.dcmp-src a { color: inherit; }
+
+.dcmp > .dcmp-take:first-child { grid-column: 1 / span 10; }
+.dcmp p.dcmp-f { color: var(--fg); }
+
+.dcmp > .dcmp-cols:first-child, .dcmp > .dcmp-one:first-child { margin-top: 0; }
+
+.dcmp-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 64px); }
+.dcmp-col { grid-column: auto; display: flex; flex-direction: column; }
+.dcmp-col .dcmp-f { order: 1; margin-top: 8px; }
+.dcmp-col .dcmp-bar { order: 2; }
+.dcmp-col .dcmp-l { order: 3; margin-top: 20px; max-width: 30em; }
+.dcmp-col .dcmp-sub { order: 4; }
+.unit { font-size: .36em; letter-spacing: 0; margin-left: .12em; }
+
+.dcmp-cols--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.dcmp-cols--3 .dcmp-col { grid-column: auto; }
+.dcmp-cols--3 .dcmp-f { font-size: clamp(72px, 6.4vw, 104px); }
+
+.dcmp-one { grid-column: 1 / -1; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(40px, 5vw, 96px); border-top: 1px solid var(--line-2); padding-top: 20px; margin-top: clamp(48px, 5vw, 72px); align-items: end; }
+.dcmp-one .dcmp-f { margin: 0; font-size: clamp(120px, 12vw, 180px); }
+.dcmp-one-txt { padding-bottom: 14px; max-width: 34em; }
+.dcmp-one-txt .dcmp-l { font-family: var(--font-display); font-weight: var(--fw-display); font-size: clamp(26px, 2.2vw, 34px); line-height: 1.25; letter-spacing: var(--ls-display); }
+.dcmp-one-txt .dcmp-sub { font-size: var(--fs-small); margin-top: 16px; }
+@media (max-width: 1023px) {
+  .dcmp-cols--3 { grid-template-columns: minmax(0, 1fr); row-gap: 40px; }
+  .dcmp-one { grid-template-columns: minmax(0, 1fr); }
+  .dcmp-one-txt { margin-top: 16px; }
 }
+@media (max-width: 1023px) {
+  .dcmp-h { grid-column: 1 / -1; }
+  .dcmp-take { grid-column: 1 / -1; margin-top: 24px; }
+}
+@media (max-width: 767px) {
+  .dcmp { display: block; }
+  .dcmp-h { font-size: 24px; }
+  .dcmp-cols { display: block; margin-top: 40px; }
+  .dcmp-col + .dcmp-col { margin-top: 40px; }
+  .dcmp-f { font-size: 80px; }
+}
+
+
+.ix-panel-in { align-items: stretch; min-height: 340px; }
+.ix-feat { align-self: stretch; height: auto; }
+.ix-feat-body { min-height: 0; height: 100%; box-sizing: border-box; padding: 32px 36px; }
+.ix-feat-img { height: 100%; min-height: 0; }
+.ix-feat-ic { display: none !important; }
+.ix-feat-go { gap: 14px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.ix-feat-go-t { background-image: none !important; }
+.ix-feat-go::after { content: '' !important; display: block; width: 32px; height: 1px; background: currentColor; transition: width .35s cubic-bezier(.22, 1, .36, 1); }
+.ix-feat:hover .ix-feat-go::after, .ix-feat:focus-visible .ix-feat-go::after { width: 56px; }
+@media (max-width: 1359px) { .ix-panel-in { min-height: 320px; } .ix-feat-body { padding: 28px; } }
+.ix-cols { padding: 36px 0 44px; }
+
+
+main :is(.al-stats, .cf-stats, .ef-stats, .fo-stats, .pf-stats, .pw-stats, .sw-stats, .em-stats, .est-stats, .ra-stats, .pc-stats, .cs-stats-sec, .ct-stats,
+         .al-who, .cf-sec, .ef-sec, .fo-sec, .pf-sec, .pw-sec, .sw-sec, .em-sec, .est-who, .ra-sec, .cs-serve, .pc-sec, .ct-main) {
+  padding-top: var(--sec) !important; padding-bottom: var(--sec) !important;
+}
+main section.band-white + section.blk--top0 { padding-top: var(--sec); }
+main section.band-white { background: var(--bg); color: var(--fg); }
+
+
+main :is(.cs-list, .ra-list, .pc-split-body, .ct-list) p { font-size: var(--fs-body); line-height: 1.5; color: var(--fg); }
+main .ra-list { margin-top: 56px; gap: 56px; }
+main .cs-list { padding-top: 0; }
+
+main .pg-head--plain + .blk--top0 { padding-top: clamp(48px, 5vw, 80px); }
+main .legal-doc { max-width: 46em; }
+
+@media (min-width: 1024px) {
+  .smap-group:has(> ul > li:nth-child(12)) { grid-column: span 2; }
+  .smap-group:has(> ul > li:nth-child(12)) > ul { columns: 2; column-gap: var(--grid-gap-x); }
+  .smap-group:has(> ul > li:nth-child(12)) li { break-inside: avoid; }
+}
+.smap-group h2 { font-weight: var(--fw-ui); }
+
+@media (max-width: 767px) { .art-rail-pills .ni-pill { width: 100%; } }
+
+main :is(.ma-card, .ti-card, .ir-card, .pp-card, .pw-card, .cr-card) .link-arrow { font-size: var(--fs-small); }
+
+@media (max-width: 767px) { .tabs-list { flex-wrap: wrap; gap: 16px 28px; overflow: visible; } }
+
+main .blk:not([class*="band-"]) + .blk.band-dark { padding-top: 0; }
+
+main .pg-leadership .lp-list { padding-bottom: 0; }
+
+main .pg-firm .pf-vals > * { border-top: 1px solid var(--line-2); padding-top: 20px; }
