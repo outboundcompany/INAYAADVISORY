@@ -21,7 +21,7 @@
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css?v=10">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/inaya.css?v=18">
+<link rel="stylesheet" href="/inaya.css?v=22">
 <script>(function(d){d.classList.add("ia-js");setTimeout(function(){if(!d.classList.contains("ia-ready"))d.classList.add("ia-done")},2500)})(document.documentElement)</script>
 <!-- ix:head -->
 <link rel="stylesheet" href="/footer.css?v=7">
@@ -57,17 +57,30 @@
 <div id="ix-content" tabindex="-1"></div>
 <!-- /ix:header -->
 <main>
+<section class="mr-gate" id="mr-gate" hidden><div class="wrap"><div class="mr-gate-box" role="dialog" aria-modal="true" aria-labelledby="mr-gate-t">
+  <p class="xc-label mr-gate-l">The Majlis</p>
+  <h1 class="mr-gate-t" id="mr-gate-t">Before you continue.</h1>
+  <p class="mr-gate-p">This room holds the mandates we are working on, shared with members of the Majlis so you can see each opportunity early and in detail. What follows is confidential and is shared with you personally. By continuing, you agree to the following.</p>
+  <ol class="mr-gate-list">
+    <li>Do not share, forward, copy, screenshot or discuss this information with anyone outside your own investment team.</li>
+    <li>Do not contact, or attempt to identify or approach, any sponsor, company or manager described here, directly or through anyone else. All contact goes through Inaya Advisory.</li>
+    <li>Do not use this information for any purpose other than considering an investment introduced by us.</li>
+    <li>Requests for names and materials are made through us, and are subject to a non-circumvention agreement signed before any name is shared.</li>
+    <li>Your access is personal to you. Do not share your login.</li>
+  </ol>
+  <div class="mr-gate-act"><button class="mr-btn" id="mr-agree" type="button">I understand and agree</button><a class="xc-link mr-gate-out" href="/majlis/login">Sign out</a></div>
+</div></div></section>
+<div id="mr-main">
 <section class="xc xc--plain"><div class="xc-wrap">
   <div class="xc-t">
     <div class="xc-l"><p class="xc-label">The Majlis</p><h1 class="xc-h1">Mandate room</h1></div>
-    <div class="xc-r"><p class="xc-lede">The mandates we are working on, for members only. Each is anonymised; names are shared once an agreement with a non-circumvention clause is signed.</p><p class="xc-meta" id="mr-updated"></p><div class="xc-actions"><a class="xc-link" href="/majlis/login" id="mr-signout">Sign out</a></div></div>
+    <div class="xc-r"><p class="xc-lede">The mandates we are working on, for members only. Each is anonymised; names are shared once an agreement with a non-circumvention clause is signed.</p><p class="mr-conf">Confidential. Shared with you personally. Do not forward.</p><p class="xc-meta" id="mr-updated"></p><div class="xc-actions"><a class="xc-link" href="/majlis/login" id="mr-signout">Sign out</a></div></div>
   </div>
 </div></section>
 <section class="sec mr-sec"><div class="wrap">
-  <div class="mr-head" aria-hidden="true"><span>Reference</span><span>Sector</span><span>Size or target</span><span>Region</span><span></span></div>
   <div class="mr-list" id="mr-list"><p class="mr-loading">Opening the mandate room</p></div>
-  <p class="mr-fine">Figures are as stated by each sponsor or company and have not been verified by Inaya Advisory. This is not an offer to sell or a solicitation of an offer to buy any security. Securities are offered through Finalis Securities LLC, Member FINRA/SIPC.</p>
 </div></section>
+</div>
 </main>
 <!-- ix:footer -->
 <footer class="ifoot">
@@ -92,7 +105,7 @@
 </footer>
 <!-- /ix:footer -->
 <script src="/inaya.js?v=3" defer></script>
-<script src="/majlis/room.js?v=1" defer></script>
+<script src="/majlis/room.js?v=4" defer></script>
 <!-- ix:scripts -->
 <script src="/shell.js?v=18" defer></script>
 <script src="/motion.js?v=1" defer></script>
