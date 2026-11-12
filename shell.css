@@ -745,3 +745,11 @@ body.home .hero-stack .hero-mark-stack { position: absolute; top: 0; bottom: 0; 
 body.home .hero-stack .ar-sec a, body.home .hero-stack .ar-sec [class*="ar-card"] { background: #0B0B09; position: relative; z-index: 1; }
 /* 13 Nov 2026 (owner): pillar lines only, no caps, end to end */
 body.home .hero-stack .hero-mark-stack line { stroke: rgba(245, 242, 235, 0.07); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
+
+/* 13 Nov 2026 (owner): the header is see-through black again, and Member login lives only on the Majlis page */
+header.ix-hdr::before { background: rgba(11, 11, 9, .72) !important; -webkit-backdrop-filter: blur(14px) saturate(120%); backdrop-filter: blur(14px) saturate(120%); }
+.ix-hdr .ix-right > .ix-login, .ix-mfoot .ix-login--block { display: none !important; }
+/* 13 Nov 2026 (owner): one strong Member login button on the Majlis cover */
+.mj-hero-act .mj-hero-btn--solid, body.ia main .mj-hero-act .mj-hero-btn--solid { background: #F4EFE6 !important; color: #0B0B09 !important; border: 1px solid #F4EFE6 !important; }
+.mj-hero-act .mj-hero-btn--solid:hover, body.ia main .mj-hero-act .mj-hero-btn--solid:hover { background: transparent !important; color: #F4EFE6 !important; }
+.mj-hero-act { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
