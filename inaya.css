@@ -466,7 +466,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 .ia .tags--grid span { text-align: center; }
 @media (max-width: 1023px) { .ia .tags--grid { grid-template-columns: repeat(2, max-content); } }
 @media (max-width: 767px) { .ia .tags--grid { grid-template-columns: minmax(0, 1fr); } }
-.ia .foot > div:has(> .tags--grid) { flex: 1 1 100%; }
+.ia .foot > div:has(> .tags--grid) { flex: 1 1 100%; width: 100%; }
 
 /* =====================================================================================================
    v5 (owner, 12 Nov 2026, evening): /firm in the HOMEPAGE design language, not Blackstone's.

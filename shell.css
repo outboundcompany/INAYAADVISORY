@@ -598,3 +598,26 @@ main .xc .xc-row b { font-weight: 400; color: #F4EFE6; }
   main .xc .xc-ph { aspect-ratio: 4 / 3; }
   main .xc .xc-btn { width: 100%; }
 }
+
+/* v6 consistency (13 Nov): one section label everywhere (the homepage .label), one in-page button
+   (the homepage outlined, tracked button), and the space under a plain cover */
+main .eyebrow-rule, main .es-eyebrow, main .es-kicker, body.ia main .label, body.ia main p.label, main .ni-kicker {
+  font-family: var(--font-body) !important; font-weight: 500 !important; font-size: 10px !important; line-height: 1.6 !important;
+  letter-spacing: .4em !important; text-transform: uppercase !important; color: #A6A29A !important;
+}
+main .eyebrow-rule::after, main .es-eyebrow::after { content: none !important; display: none !important; }
+body.ia main .btn:not(.btn-ghost), body:not(.home):not(.pwu) main .btn:not(.btn-ghost):not(button) {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 38px !important;
+  border: 1px solid rgba(245, 242, 235, .35) !important; border-radius: 0 !important; background: transparent !important; color: #F4EFE6 !important;
+  font-family: var(--font-body) !important; font-weight: 300 !important; font-size: 13px !important; letter-spacing: 2px !important; text-transform: uppercase !important; text-decoration: none;
+}
+body.ia main .btn:not(.btn-ghost):hover, body:not(.home):not(.pwu) main .btn:not(.btn-ghost):not(button):hover { background: #F4EFE6 !important; color: #0B0B09 !important; border-color: #F4EFE6 !important; opacity: 1; }
+main .xc--plain + section, main .xc--plain + .sec { padding-top: clamp(40px, 4vw, 64px) !important; }
+
+/* 13 Nov 2026 (owner): tag grids run end to end, three equal columns, no dead space on the right */
+.foot { display: block; width: 100%; }
+.foot > div { width: 100%; }
+.tags.tags--grid { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 16px; width: 100%; max-width: none; }
+.tags.tags--grid span { display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; }
+@media (max-width: 860px) { .tags.tags--grid { grid-template-columns: 1fr !important; } }
+.pm-ov [data-eq]{min-height:0 !important}

@@ -113,7 +113,7 @@ html.pm-lock,html.pm-lock body{overflow:hidden}
 
   function init() {
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
-    var ov = document.createElement('div'); ov.className = 'pm-ov';
+    var ov = document.createElement('div'); ov.className = 'pm-ov'; ov.setAttribute('data-no-eq', '');
     ov.innerHTML = '<div class="pm-pn" role="dialog" aria-modal="true" aria-labelledby="pm-name"><button type="button" class="pm-x" aria-label="Close"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13"/></svg></button><div class="pm-ph"><img alt="" decoding="async"></div><div class="pm-body"></div></div>';
     document.body.appendChild(ov);
     var pn = ov.querySelector('.pm-pn'), body = ov.querySelector('.pm-body'), img = ov.querySelector('.pm-ph img'), xb = ov.querySelector('.pm-x'), last = null;
