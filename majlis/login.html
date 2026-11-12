@@ -20,11 +20,11 @@
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css?v=10">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/inaya.css?v=17">
+<link rel="stylesheet" href="/inaya.css?v=18">
 <script>(function(d){d.classList.add("ia-js");setTimeout(function(){if(!d.classList.contains("ia-ready"))d.classList.add("ia-done")},2500)})(document.documentElement)</script>
 <!-- ix:head -->
 <link rel="stylesheet" href="/footer.css?v=7">
-<link rel="stylesheet" href="/shell.css?v=35">
+<link rel="stylesheet" href="/shell.css?v=36">
 <script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
 <!-- /ix:head -->
 </head>
@@ -58,20 +58,19 @@
 <main>
 <section class="login">
   <figure class="login-ph"><img src="/images/color/fo-office-above-p-1200.webp" alt="" loading="eager" fetchpriority="high" decoding="async"></figure>
-  <div class="login-side"><div class="login-box" data-reveal>
+  <div class="login-side"><div class="login-box">
     <p class="label">The Majlis</p>
-    <h1 class="h2">Member login.</h1>
-    <p>Sign in with the email address your seat was offered to.</p>
-    <form class="login-form" id="ml-form" novalidate>
-      <div class="field"><label for="ml-email">Email</label><input id="ml-email" name="email" type="email" autocomplete="username" required></div>
-      <div class="field"><label for="ml-pass">Password</label><input id="ml-pass" name="password" type="password" autocomplete="current-password" required></div>
-      <button class="btn" type="submit">Sign in</button>
-    </form>
-    <div class="login-msg" id="ml-msg" role="status" tabindex="-1" hidden>
-      <p class="lede">Member access opens shortly. Request a seat and we will be in touch.</p>
-      <a class="btn btn-ghost" href="/majlis#join">Join the Majlis</a>
+    <h1 class="h2">Member login</h1>
+    <p class="login-lede">Sign in with the email address your seat was offered to. The mandate room opens after sign-in.</p>
+    <div class="form-panel">
+      <form class="login-form" id="ml-form" novalidate>
+        <div class="field"><label for="ml-email">Email</label><input id="ml-email" name="email" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="ml-pass">Password</label><input id="ml-pass" name="password" type="password" autocomplete="current-password" required></div>
+        <div class="btn-row"><button class="btn" type="submit">Sign in to the mandate room</button><a class="textlink" href="/majlis#join">Not a member? Join the Majlis</a></div>
+        <p class="form-err" id="ml-err" role="alert" aria-live="polite"></p>
+        <p class="small">Member details are held in confidence. See our <a href="/privacy">Privacy Policy</a>.</p>
+      </form>
     </div>
-    <p class="login-foot small">Not a member? <a class="textlink" href="/majlis#join">Join the Majlis</a></p>
   </div></div>
 </section>
 </main>
@@ -98,12 +97,7 @@
 </footer>
 <!-- /ix:footer -->
 <script src="/inaya.js?v=3" defer></script>
-<script>
-(function () {
-  var f = document.getElementById('ml-form'), m = document.getElementById('ml-msg');
-  f.addEventListener('submit', function (e) { e.preventDefault(); f.hidden = true; m.hidden = false; try { m.focus(); } catch (x) {} });
-})();
-</script>
+<script src="/majlis/room.js?v=1" defer></script>
 <!-- ix:scripts -->
 <script src="/shell.js?v=18" defer></script>
 <script src="/motion.js?v=1" defer></script>
