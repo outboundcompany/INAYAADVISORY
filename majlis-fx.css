@@ -152,3 +152,12 @@ body.ia main #join .mj-submit:hover i { width: 64px; }
   body.ia #join .mj-agenda b { font-size: 21px; }
   body.ia main #join .mj-submit { padding: 0 22px !important; }
 }
+
+/* 13 Nov: no divider lines between form sections; field underlines only */
+body.ia #join .mj-fs { border-top: 0 !important; padding: 0 !important; margin: 0 !important; }
+body.ia #join .mj-fs + .mj-fs { margin-top: 64px !important; }
+body.ia #join .mj-legend { margin-bottom: 28px !important; }
+body.ia #join .mj-fs-grid { row-gap: 32px !important; }
+body.ia main #join .btn-row { margin-top: 64px !important; padding-top: 0 !important; }
+@media (max-width: 760px) { body.ia #join .mj-fs + .mj-fs, body.ia main #join .btn-row { margin-top: 48px !important; } }
+body.ia main #join .btn-row { border-top: 0 !important; }
