@@ -262,6 +262,7 @@ main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .e
 }
 @media (min-width: 901px) {
   main .bio-grid { align-items: end; }
+  body.pwu main .bio-grid { align-items: start; }
 }
 
 /* Data callouts: numbers and their labels must read as one composed fact, not
@@ -828,7 +829,7 @@ body.ia main .dash-row:not(.dash-row--h) { border-top: 1px solid rgba(245, 242, 
 main .band-paper .dash-row:not(.dash-row--h) { border-top-color: rgba(11, 11, 9, .08); }
 .dash-bar > span, .sv-dash-bar > span { display: none !important; }
 .dash-bar em, .sv-dash-bar em { margin-left: 0 !important; }
-main:not(.ni-main) p.eyebrow {
+body:not(.pwu) main:not(.ni-main) p.eyebrow {
   font-family: var(--font-body) !important; font-weight: 500 !important; font-size: 10px !important; line-height: 1.6 !important;
   letter-spacing: .4em !important; text-transform: uppercase !important; color: #A6A29A !important;
 }
