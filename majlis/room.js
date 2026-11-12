@@ -89,8 +89,14 @@
       var upd = d.getElementById('mr-updated'); if (upd && data.updated) upd.textContent = 'Updated ' + data.updated;
       var rows = [['Strategy and thesis', 'strategy', 1], ['Portfolio or pipeline', 'portfolio', 1], ['Fund', 'fund'], ['Raised so far', 'raised'], ['Track record', 'track'], ['Team', 'team'], ['Stage', 'stage'], ['Timeline', 'timeline'], ['Minimum ticket', 'ticket'], ['Structure and terms', 'structure'], ['Geography', 'region'], ['What the raise needs', 'needs', 1]];
       room.innerHTML = data.mandates.map(function (m) {
-        var subj = 'Materials request: ' + m.ref + ', ' + m.sector;
-        var body = 'Please send the materials for ' + m.ref + ' (' + m.sector + ', ' + m.region + ').';
+        var subj = 'The Majlis: request for name and materials, ' + m.ref + ' (' + m.sector + ')';
+        var who = ''; try { who = sessionStorage.getItem('inaya_majlis_e') || ''; } catch (x) {}
+        var body = 'Dear Inaya Advisory,\n\n'
+          + 'I would like to receive the name and the materials for ' + m.ref + ', ' + m.sector + ' (' + m.region + (m.size ? ', ' + m.size : '') + '), which I have reviewed in the Majlis mandate room.\n\n'
+          + 'Please send the non-circumvention agreement for signature, and the materials once it is signed. I am also available for a call to discuss the mandate.\n\n'
+          + 'Name:\nFirm and role:\nPhone:\n\n'
+          + 'Regards,\n'
+          + (who ? '\n(Requested from the Majlis login ' + who + ')' : '');
         var facts = rows.filter(function (r) { return m[r[1]]; }).map(function (r) { return '<div class="mr-f' + (r[2] ? ' mr-f--wide' : '') + '"><dt>' + r[0] + '</dt><dd>' + (m[r[1]] ? esc(m[r[1]]) : '<span class="mr-na">To be confirmed</span>') + '</dd></div>'; }).join('');
         var deck = m.deckUrl ? '<a class="mr-deck" href="#" data-deck="' + esc(m.deckUrl) + '" data-file="' + esc(m.ref) + '.pdf">Download the deck</a>' : '';
         return '<article class="mr-card"><header class="mr-card-h"><p class="mr-kicker"><span class="mr-ref">' + esc(m.ref) + '</span><span class="mr-sector">' + esc(m.sector) + '</span>' + (m.name ? '<span class="mr-name">' + esc(m.name) + '</span>' : '') + '</p>'
