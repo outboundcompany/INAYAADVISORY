@@ -808,9 +808,9 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 }
 /* the room's confidentiality notice, acknowledged once per session before any mandate is shown */
 .ia .mr-gate { padding: clamp(48px, 6vw, 104px) 0; }
-.ia .mr-gate-box { max-width: 880px; border: 1px solid rgba(245, 242, 235, .2); padding: clamp(28px, 4vw, 64px); }
+.ia .mr-gate-box { max-width: none; width: 100%; border: 1px solid rgba(245, 242, 235, .2); padding: clamp(28px, 4vw, 64px); }
 .ia .mr-gate-t { margin: 18px 0 0; font-family: 'Marcellus', Georgia, serif !important; font-weight: 400 !important; font-size: clamp(32px, 3.4vw, 48px) !important; line-height: 1.1 !important; color: #F4EFE6; }
-.ia .mr-gate-p { margin-top: 24px; font-size: 17px; line-height: 1.7; color: #D9D3C9; max-width: 40em; }
+.ia .mr-gate-p { margin-top: 24px; font-size: 17px; line-height: 1.7; color: #D9D3C9; max-width: none; }
 .ia .mr-gate-list { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: g; border-bottom: 1px solid rgba(245, 242, 235, .12); }
 .ia .mr-gate-list li { counter-increment: g; display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 14px 0; border-top: 1px solid rgba(245, 242, 235, .12); font-size: 15px; line-height: 1.65; color: #D9D3C9; }
 .ia .mr-gate-list li::before { content: counter(g, decimal-leading-zero); font-family: var(--font-display); font-size: 16px; color: #8A8277; }
