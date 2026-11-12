@@ -508,21 +508,21 @@ footer.ifoot .ifw { width: var(--container); max-width: none; padding-left: 0; p
    ===================================================================================================== */
 .band-grey, .band-panel, .band-cream, .band-white, .theme-white, .theme-light, .cta-band:not(.cta-band--dark),
 .subscribe-band, .ni-band, .ktk, .fact, .ni .bro, .es-mod--light, .ix-feat {
-  --bg: #121110; --bg-2: #121110; --fg: #F4EFE6; --text: #D9D3C9; --text-2: #A79E92; --muted: #8A8277; --faint: #5F594F;
+  --bg: #0B0B09; --bg-2: #0B0B09; --fg: #F4EFE6; --text: #D9D3C9; --text-2: #A79E92; --muted: #8A8277; --faint: #5F594F;
   --line: rgba(245, 242, 235, .14); --line-2: rgba(245, 242, 235, .32);
   --btn-bg: #F4EFE6; --btn-fg: #0B0B09; --btn-line: #F4EFE6; --btn-hover-bg: transparent; --btn-hover-fg: #F4EFE6;
   --pill-grey: #2A2724; --img-bg: #151411; --focus: #F4EFE6;
   --ink: var(--bg); --panel: var(--bg-2); --cream: var(--fg); --warm: var(--text-2); --accent: var(--fg); --body-color: var(--text-2);
   color-scheme: dark;
 }
-.ia .band-white { background: #121110; color: var(--fg); --ia-tile: #1A1917; }
+.ia .band-white { background: #0B0B09; color: var(--fg); --ia-tile: #1A1917; }
 .ia .band-white a.tile:hover { background: #22201D; }
 .ia .band-white .figs > div { border-top-color: rgba(245, 242, 235, .12); }
 .ia .band-white .tags span { border-color: rgba(245, 242, 235, .18); }
 .band-white .form-err { color: #C58A70; }
 /* image placeholders behind photographs stay dark while loading */
 :root { --img-bg: #151411; }
-.ni-card-img, .es-split-img, .split-media { background-color: #151411 !important; }
+.ni-card-img, .es-split-img, .split-media { background-color: #0B0B09 !important; }
 /* the homepage keeps its own stylesheet: its white Featured Stories go dark. The Global Access split stays
    exactly as on the live site (owner, 12 Nov ~23:25 IST): photo left, cream panel right, dark text. */
 /* 12 Nov 2026 (owner): the In the market section stays white, as before */
@@ -579,7 +579,7 @@ main .xc .xc-btn:hover, main .xc .xc-btn:focus-visible { background: #F4EFE6; co
 main .xc .xc-link { display: inline-flex; align-items: center; gap: 14px; font-family: var(--font-body); font-weight: 400; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: #F4EFE6; text-decoration: none; }
 main .xc .xc-link::after { content: ''; display: block; width: 32px; height: 1px; background: currentColor; transition: width .35s cubic-bezier(.22, 1, .36, 1); }
 main .xc .xc-link:hover::after { width: 56px; }
-main .xc .xc-ph { margin: clamp(64px, 6.5vw, 104px) 0 0; aspect-ratio: 2.2 / 1; overflow: hidden; background: #151411; }
+main .xc .xc-ph { margin: clamp(64px, 6.5vw, 104px) 0 0; aspect-ratio: 2.2 / 1; overflow: hidden; background: #0B0B09; }
 main .xc .xc-ph img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; filter: grayscale(1) contrast(1.04) brightness(.84); }
 main .xc--plain { padding-bottom: clamp(24px, 3vw, 48px); }
 /* a short row under the cover (the consultation agenda) */

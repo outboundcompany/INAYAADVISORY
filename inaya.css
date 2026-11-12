@@ -417,7 +417,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 .ni-x-form label { font-size: 14px; letter-spacing: 0; }
 .ni-x-form input[type="text"], .ni-x-form input[type="email"], .ni-x-form textarea { font-size: 18px; }
 /* client dashboard drawing */
-.ni-x-dash { margin: 8px 0 0; width: 100%; background: #141311; padding: 8px 0 18px; }
+.ni-x-dash { margin: 8px 0 0; width: 100%; background: #0B0B09; padding: 8px 0 18px; }
 .ni-x-dash-h, .ni-x-dash-r { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr .8fr; gap: 14px; align-items: center; padding: 12px 20px; }
 .ni-x-dash-h span { font-family: var(--u); font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ni-x-dash-r i { display: block; height: 6px; width: var(--w); background: rgba(244, 239, 230, .14); }
@@ -475,7 +475,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
    (homepage .label), boxed outline buttons (homepage .btn / .svc-tab), 1px hairlines rgba(245,242,235,.12).
    Every block sits on the header edges (var(--container)). Classes are prefixed fx- and scoped to main.fx.
    ===================================================================================================== */
-.fx { --fx-line: rgba(245, 242, 235, .12); --fx-line-2: rgba(245, 242, 235, .35); --fx-copy: #98948B; --fx-warm: #A79E92; --fx-cream: #F4EFE6; --fx-label: #A6A29A; --fx-lift: #121110; --fx-sec: clamp(96px, 9vw, 150px); }
+.fx { --fx-line: rgba(245, 242, 235, .12); --fx-line-2: rgba(245, 242, 235, .35); --fx-copy: #98948B; --fx-warm: #A79E92; --fx-cream: #F4EFE6; --fx-label: #A6A29A; --fx-lift: #0B0B09; --fx-sec: clamp(96px, 9vw, 150px); }
 .fx .wrap { width: var(--container); margin: 0 auto; }
 .fx .fx-label { margin: 0 0 26px; font-family: var(--font-body); font-weight: 500; font-size: 10px; line-height: 1.6; letter-spacing: .4em; text-transform: uppercase; color: var(--fx-label); }
 .fx .fx-h2 { font-family: var(--font-display); font-weight: 300; font-size: clamp(32px, 3.4vw, 48px) !important; line-height: 1.14 !important; color: var(--fx-cream); max-width: 14.5em; text-wrap: balance; }
@@ -507,7 +507,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 .fx .fx-h1 { margin: 0; }
 .fx .fx-lede { margin-top: 28px; max-width: 600px; font-size: 16px; line-height: 1.75; }
 .fx .fx-actions { margin-top: 40px; }
-.fx .fx-cover-ph { margin: clamp(64px, 6.5vw, 104px) 0 0; aspect-ratio: 2.2 / 1; overflow: hidden; background: #151411; }
+.fx .fx-cover-ph { margin: clamp(64px, 6.5vw, 104px) 0 0; aspect-ratio: 2.2 / 1; overflow: hidden; background: #0B0B09; }
 .fx .fx-cover-ph img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; filter: grayscale(1) contrast(1.04) brightness(.84); }
 /* figures: a hairline above each, as the homepage stat rule */
 .fx .fx-figs { display: grid; gap: 32px clamp(24px, 3vw, 48px); margin-top: clamp(56px, 5.5vw, 88px); }
@@ -548,7 +548,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 .fx .fx-steps p { font-size: 14.5px; line-height: 1.7; }
 .fx .fx-note { margin-top: 32px; font-size: 14.5px; max-width: 38em; }
 .fx .fx-split-t > p:last-child { margin-top: 32px; }
-.fx .fx-split-ph { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: #151411; }
+.fx .fx-split-ph { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; background: #0B0B09; }
 .fx .fx-split-ph img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.04) brightness(.9); }
 /* what we look at: the homepage's boxed tabs */
 .fx .fx-boxes { margin-top: clamp(80px, 8vw, 128px); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
@@ -563,7 +563,7 @@ html.ia-js:not(.ia-done) .ia [data-reveal].is-revealed { opacity: 1; transform: 
 .fx .fx-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px clamp(40px, 6vw, 120px); align-items: center; padding: clamp(56px, 5.5vw, 88px) 0; border-top: 1px solid var(--fx-line); }
 .fx .fx-row:last-child { padding-bottom: 0; }
 .fx .fx-row-t .fx-h2--row { margin: 22px 0 20px; }
-.fx .fx-row-ph { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; background: #151411; }
+.fx .fx-row-ph { margin: 0; aspect-ratio: 3 / 2; overflow: hidden; background: #0B0B09; }
 .fx .fx-row-ph img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.04) brightness(.9); }
 .fx .fx-points { margin-top: 28px; display: grid; gap: 14px; }
 .fx .fx-points li { position: relative; padding-left: 24px; font-size: 14px; line-height: 1.7; color: var(--fx-copy); }
