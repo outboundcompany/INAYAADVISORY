@@ -666,22 +666,10 @@ main .ni-card-guide .ni-dl { position: relative; z-index: 2; font-family: var(--
 main .ni-card-guide .ni-dl:hover, main .ni-card-guide .ni-dl:focus-visible { color: #D9D3C9; border-bottom-color: currentColor; }
 main .band-paper .ni-card-guide .ni-dl:hover { color: #0B0B09; }
 
-/* 13 Nov 2026 (owner): no grey panels anywhere. Tiles, tags and step tags are black with a hairline;
-   the form panel takes the paper white of the Partner With Us button, with dark ink. */
+/* 13 Nov 2026 (owner): no grey panels anywhere. Tiles, tags and step tags are black with a hairline. */
 .ia { --ia-tile: transparent; }
 .ia .tone, .ia .band-white { --ia-tile: transparent; }
 .ia .tile, .ia .tags span, .ia .step-tag { background: transparent !important; border: 1px solid rgba(245, 242, 235, .16); }
-.ia .form-panel, .ia .mj-ok { background: #F4EFE6 !important; color: #0B0B09; }
-.ia .form-panel label, .ia .form-panel .field label, .ia .form-panel .small, .ia .form-panel p { color: #5F594F !important; }
-.ia .form-panel input, .ia .form-panel textarea, .ia .form-panel select { color: #0B0B09 !important; background: transparent !important; border-color: rgba(11, 11, 9, .28) !important; caret-color: #0B0B09; }
-.ia .form-panel input:focus, .ia .form-panel textarea:focus { border-color: #0B0B09 !important; }
-.ia .form-panel input::placeholder, .ia .form-panel textarea::placeholder { color: rgba(11, 11, 9, .4); }
-body.ia main .form-panel .btn:not(.btn-ghost) { background: #0B0B09 !important; color: #F4EFE6 !important; border: 1px solid #0B0B09 !important; }
-body.ia main .form-panel .btn:not(.btn-ghost):hover { background: transparent !important; color: #0B0B09 !important; border-color: #0B0B09 !important; }
-.ia .form-panel a, .ia .form-panel .textlink { color: #0B0B09 !important; border-color: #0B0B09 !important; text-decoration-color: #0B0B09; }
-.ia .mj-ok, .ia .mj-ok * { color: #0B0B09 !important; }
-/* the form's buttons sit on the left */
-body.ia main .form-panel .btn-row, body.ia main .form-panel .ni-x-actions--end { justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; }
 /* the method dashboard drawing on paper */
 main .band-paper .dash { background: #EAE3D7; }
 main .band-paper .dash-bar span { background: #B8B0A4; }
@@ -693,3 +681,42 @@ main :is(.ni-card, .fs-card, .ni-feat) { position: relative; }
 main :is(.ni-cat, .fs-cat, .ni-dl) { position: relative; z-index: 2; }
 body.home main .fs-card:hover h3 .fs-link, body.home .fs-card:hover h3 .fs-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
 body.home .fs-card:hover .fs-go { text-decoration: none; }
+
+/* =====================================================================================================
+   v9 (owner, 13 Nov): every form looks like the /mandateconsultation booking form. A black panel with a
+   1px hairline, small grey labels, underline-only fields with cream text, a full-width cream submit button
+   with dark text, then the secondary link and the privacy line. Used by the Majlis join form and the
+   member sign-in.
+   ===================================================================================================== */
+.ia .form-panel, .ia .login-box.form-panel { background: #0B0B09 !important; border: 1px solid rgba(245, 242, 235, .16); padding: 26px !important; color: #F4EFE6; }
+.ia .form-panel label, .ia .form-panel .field label { display: block; margin: 0 0 8px; font-family: var(--font-body); font-weight: 400; font-size: 9.5px !important; letter-spacing: .02em !important; text-transform: none !important; color: #8A8277 !important; }
+.ia .form-panel :is(input[type="text"], input[type="email"], input[type="password"], textarea, select) {
+  width: 100%; background: transparent !important; border: 0 !important; border-bottom: 1px solid rgba(245, 242, 235, .16) !important; border-radius: 0;
+  color: #F4EFE6 !important; font-family: var(--font-body); font-weight: 300; font-size: 14px !important; padding: 6px 0 !important; caret-color: #F4EFE6;
+}
+.ia .form-panel .form-grid { gap: 18px 16px; }
+.ia .form-panel :is(input, textarea)::placeholder { color: #5F594F; }
+.ia .form-panel .btn-row, .ia .form-panel .ni-x-actions--end { display: flex; flex-direction: column; align-items: stretch !important; justify-content: flex-start !important; gap: 14px; margin: 6px 0 0 !important; text-align: left !important; }
+body.ia main .form-panel button.btn, body.ia main .form-panel .btn:not(.btn-ghost) {
+  width: 100%; min-height: 0; padding: 13px 26px !important; border: 1px solid #F4EFE6 !important; background: #F4EFE6 !important; color: #0B0B09 !important;
+  font-family: var(--font-body) !important; font-weight: 400 !important; font-size: 13px !important; letter-spacing: .04em !important; text-transform: none !important; transition: opacity .2s ease;
+}
+body.ia main .form-panel button.btn:hover, body.ia main .form-panel .btn:not(.btn-ghost):hover { opacity: .86; background: #F4EFE6 !important; color: #0B0B09 !important; }
+.ia .form-panel .textlink { align-self: flex-start; font-size: 13px; color: #F4EFE6 !important; text-decoration-color: rgba(245, 242, 235, .35); }
+.ia .form-panel .small, .ia .form-panel p.small { font-size: 12px !important; color: #8A8277 !important; }
+.ia .form-panel .small a { color: #F4EFE6 !important; }
+.ia .form-panel .form-err { color: #C58A70 !important; font-size: 12px; }
+.ia .mj-ok { background: #0B0B09 !important; border: 1px solid rgba(245, 242, 235, .16); padding: 26px; }
+.ia .mj-ok, .ia .mj-ok * { color: #F4EFE6 !important; }
+
+/* inputs sitewide: no focus box, the underline turns cream (ink on paper); no boxy autofill */
+main :is(input, textarea, select):focus, main :is(input, textarea, select):focus-visible { outline: none !important; box-shadow: none !important; }
+main :is(input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="search"], textarea, select):focus { border-bottom-color: #F4EFE6 !important; }
+main .band-paper :is(input, textarea, select):focus { border-bottom-color: #0B0B09 !important; }
+main input:-webkit-autofill, main input:-webkit-autofill:hover, main input:-webkit-autofill:focus, main textarea:-webkit-autofill {
+  -webkit-text-fill-color: #F4EFE6; caret-color: #F4EFE6; -webkit-box-shadow: 0 0 0 1000px #0B0B09 inset !important; box-shadow: 0 0 0 1000px #0B0B09 inset !important; transition: background-color 9999s ease-out 0s;
+}
+main input::-webkit-credentials-auto-fill-button, main input::-webkit-contacts-auto-fill-button { visibility: hidden; display: none !important; pointer-events: none; }
+main input::-ms-reveal { display: none; }
+main .band-paper .tile { border-color: rgba(11, 11, 9, .18) !important; }
+.ia .mj-tiles .tile-top { margin-bottom: clamp(20px, 2vw, 32px); }

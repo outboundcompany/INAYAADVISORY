@@ -20,11 +20,11 @@
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css?v=10">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/inaya.css?v=17">
+<link rel="stylesheet" href="/inaya.css?v=18">
 <script>(function(d){d.classList.add("ia-js");setTimeout(function(){if(!d.classList.contains("ia-ready"))d.classList.add("ia-done")},2500)})(document.documentElement)</script>
 <!-- ix:head -->
 <link rel="stylesheet" href="/footer.css?v=7">
-<link rel="stylesheet" href="/shell.css?v=35">
+<link rel="stylesheet" href="/shell.css?v=36">
 <script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
 <!-- /ix:head -->
 </head>
@@ -72,65 +72,83 @@
  {
   "sector": "Professional sports",
   "description": "Investment in a team special purpose vehicle and in club stakes.",
-  "size": "",
+  "size": "US$8.1 billion team co-investment",
   "region": "North America and Europe",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Fund target",
+  "v2": "US$7 billion"
  },
  {
   "sector": "Private equity",
   "description": "A lower mid-market buyout fund.",
   "size": "€500 million target",
   "region": "Western Europe",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Timeline",
+  "v2": "First close January 2027"
  },
  {
   "sector": "Venture capital",
   "description": "A fund of funds investing with later-stage Silicon Valley managers.",
   "size": "US$50 million target",
   "region": "United States",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Stage",
+  "v2": "Third fund"
  },
  {
   "sector": "Healthcare services",
   "description": "Acquisition of a clinic network as a platform.",
   "size": "c. US$60 million transaction",
   "region": "United States",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Platform",
+  "v2": "40 clinics"
  },
  {
   "sector": "Life sciences",
   "description": "A venture fund investing in life sciences.",
   "size": "US$250 million target",
   "region": "United States",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Timeline",
+  "v2": "First close early 2027"
  },
  {
   "sector": "Medical devices",
   "description": "A Series B round for a medical device company.",
-  "size": "",
+  "size": "US$10 million Series B",
   "region": "United States",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Stage",
+  "v2": "Clinical stage"
  },
  {
   "sector": "Financial services",
   "description": "The public listing of a venture index platform.",
-  "size": "",
+  "size": "US$100 million raise",
   "region": "United Kingdom",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Minimum ticket",
+  "v2": "GBP 1 million"
  },
  {
   "sector": "Real estate technology",
   "description": "A fund investing in real estate technology and smart cities.",
   "size": "US$50 million target",
   "region": "Gulf",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Stage",
+  "v2": "To be confirmed"
  },
  {
   "sector": "Venture capital",
   "description": "A venture capital fund.",
-  "size": "",
+  "size": "To be confirmed",
   "region": "United States",
-  "year": "2026"
+  "year": "2026",
+  "k2": "Stage",
+  "v2": "To be confirmed"
  }
 ]
 </script>
@@ -145,7 +163,7 @@
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   grid.innerHTML = data.map(function (m, i) {
     var n = (i + 1 < 10 ? '0' : '') + (i + 1);
-    var facts = '<div><dt>Region</dt><dd>' + esc(m.region) + '</dd></div>' + (m.size ? '<div><dt>Size</dt><dd>' + esc(m.size) + '</dd></div>' : '');
+    var facts = '<div><dt>Size</dt><dd>' + esc(m.size) + '</dd></div>' + '<div><dt>' + esc(m.k2) + '</dt><dd>' + esc(m.v2) + '</dd></div>' + '<div class="mn-f-wide"><dt>Region</dt><dd>' + esc(m.region) + '</dd></div>';
     return '<article class="tile mn-card"><div class="tile-top"><span class="num">' + n + '</span><span class="tag">' + esc(m.year) + '</span></div>'
       + '<h3 class="mn-sector">' + esc(m.sector) + '</h3><p>' + esc(m.description) + '</p>'
       + '<dl class="mn-facts">' + facts + '</dl></article>';

@@ -4,3 +4,7 @@
 .env.local
 .vercel
 node_modules/
+
+# private: plaintext Majlis mandate data and member logins (13 Nov)
+tools/majlis_mandates.json
+tools/majlis_members.json
