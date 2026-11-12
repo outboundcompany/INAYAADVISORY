@@ -70,7 +70,7 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
   };
   function html(id) { var p = P[id];
     return '<div class="dm-pn" role="dialog" aria-modal="true" aria-label="' + p.name + ', ' + p.role + '"><div class="dm-x"><button type="button" aria-label="Close">&times;</button></div><div class="dm-in">' +
-      '<div class="dm-hero"><div><div class="dm-ey">' + p.role + '</div><div class="dm-h1">' + p.name + '.</div>' + p.text + '</div><div class="dm-ph"><img src="/' + p.img + '" alt="' + p.name + '" loading="lazy"></div></div>' +
+      '<div class="dm-hero"><div><div class="dm-ey">' + p.role + '</div><div class="dm-h1">' + p.name + '.</div>' + p.text + '</div><div class="dm-ph"><img src="/' + p.img + '" alt="' + p.name + '" loading="eager"></div></div>' +
       p.secs + '</div></div>'; }
   function init() {
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);

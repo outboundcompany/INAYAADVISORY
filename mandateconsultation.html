@@ -83,12 +83,12 @@ input:focus,select:focus,textarea:focus{border-bottom-color:var(--cream)}
 .prole{font-size:9.5px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-top:3px}
 
 /* stat band — grouped and centred */
-.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.band-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.band-grid>div{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:148px;padding:34px clamp(20px,3vw,42px);border-right:1px solid var(--line);text-align:center}
-.band-grid>div:last-child{border-right:none}
-.stat{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.8vw,34px);color:var(--cream);line-height:1}
-.stat-l{font-size:13px;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-top:12px}
+.band{padding-top:clamp(56px,5.5vw,88px)}
+.band-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px clamp(24px,3vw,48px)}
+.band-grid>div{display:flex;flex-direction:column;align-items:flex-start;padding-top:26px;border-top:1px solid var(--line);text-align:left}
+
+.stat{font-family:var(--serif);font-weight:300;font-size:clamp(42px,4vw,60px);color:var(--cream);line-height:1;white-space:nowrap;font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.stat-l{font-size:13.5px;line-height:1.65;max-width:26em;letter-spacing:var(--ls-text);color:var(--muted);text-transform:none;margin-top:14px}
 
 .sec{padding:clamp(64px,8vw,116px) 0}
 .sec-head{max-width:640px;margin-bottom:clamp(32px,4vw,52px)}
@@ -180,8 +180,6 @@ footer{border-top:1px solid var(--line);padding:72px 0 40px;position:relative;ov
 @media(max-width:900px){
   .hero-grid,.form-grid,.handoff,.bio-grid{grid-template-columns:1fr}
   .grid3,.band-grid,.f3,.f2{grid-template-columns:1fr}
-  .band-grid>div{border-right:none;border-bottom:1px solid var(--line);min-height:0;padding:26px 0}
-  .band-grid>div:last-child{border-bottom:none}
   .slots-day{grid-template-columns:repeat(4,1fr)}
   .slots-time{grid-template-columns:repeat(3,1fr)}
   .hdr-r span{display:none}
@@ -221,7 +219,7 @@ h2{font-family:var(--font-display);font-weight:300;font-size:var(--fs-section);l
 </style>
 <!-- ix:head -->
 <link rel="stylesheet" href="/footer.css?v=7">
-<link rel="stylesheet" href="/shell.css?v=53">
+<link rel="stylesheet" href="/shell.css?v=54">
 <script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
 <!-- /ix:head -->
 </head>
@@ -271,7 +269,7 @@ h2{font-family:var(--font-display);font-weight:300;font-size:var(--fs-section);l
 <section class="xc xc--plain"><div class="xc-wrap">
   <div class="xc-t">
     <div class="xc-l"><p class="xc-label">For principals raising equity</p><h1 class="xc-h1">Mandate Consultation</h1></div>
-    <div class="xc-r"><p class="xc-lede">A conversation with Abbas Chothia, our Client Advisor, on what you are raising, the timeline and the constraints in front of it. You leave with a read on where the raise stands with the allocators deploying into your part of the market.</p><p class="xc-meta">Held in confidence</p><div class="xc-actions"><a class="xc-btn" href="#book">Select a time</a><a class="xc-link" href="#how">How it works</a></div></div>
+    <div class="xc-r"><p class="xc-lede">A conversation with Abbas Chothia, our Client Advisor, on what you are raising, the timeline and the constraints in front of it. You leave with a read on where the raise stands with the allocators deploying into your part of the market.</p><div class="xc-actions"><a class="xc-btn" href="#book">Select a time</a><a class="xc-link" href="#how">How it works</a></div></div>
   </div>
   <div class="xc-row"><div><i>01</i><p><b>A read on the raise,</b> covering how it will land with allocators and what is working against it.</p></div><div><i>02</i><p><b>Where the capital is,</b> and which allocators are deploying into mandates like yours.</p></div><div><i>03</i><p><b>The next step.</b> Senior review follows, and our answer comes with reasons.</p></div></div>
 </div></section>
