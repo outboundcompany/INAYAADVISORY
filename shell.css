@@ -753,3 +753,60 @@ header.ix-hdr::before { background: rgba(11, 11, 9, .72) !important; -webkit-bac
 .mj-hero-act .mj-hero-btn--solid, body.ia main .mj-hero-act .mj-hero-btn--solid { background: #F4EFE6 !important; color: #0B0B09 !important; border: 1px solid #F4EFE6 !important; }
 .mj-hero-act .mj-hero-btn--solid:hover, body.ia main .mj-hero-act .mj-hero-btn--solid:hover { background: transparent !important; color: #F4EFE6 !important; }
 .mj-hero-act { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+/* =====================================================================================================
+   v12 (owner, 13 Nov): step timelines in the guides. One continuous rule through every step, the same
+   marker on every step (no filled last square), headings on one line or locked to the same height, and
+   paragraphs starting on one baseline.
+   ===================================================================================================== */
+main .es-flow-ol { position: relative; }
+main .es-flow-ol .es-step::before { display: none !important; }
+main .es-flow-ol .es-step:last-child .es-step-dot { background: var(--bg) !important; }
+main .es-flow-ol .es-step-dot { width: 13px; height: 13px; border: 1px solid var(--fg); background: var(--bg); z-index: 1; }
+main .es .es-flow-ol .es-step-t { font-size: clamp(21px, 1.6vw, 25px) !important; line-height: 1.2 !important; }
+@media (min-width: 768px) {
+  main .es-flow-ol::before { content: ''; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: var(--line-2); }
+  main .es-flow--5 .es-flow-ol::before { display: none; }
+}
+@media (min-width: 1280px) {
+  main .es-flow--5 .es-flow-ol::before { display: block; }
+  main .es-flow-ol .es-step-t { min-height: 2lh; }
+  main .es-flow-ol .es-step-p { max-width: none !important; }
+}
+/* stacked steps (phones, and the five-step timeline below 1280px): one vertical rule */
+@media (max-width: 767.98px) {
+  main .es-flow-ol::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 48px; width: 1px; background: var(--line-2); }
+}
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  main .es-flow--5 .es-flow-ol::after { content: ''; position: absolute; left: 6px; top: 8px; bottom: 40px; width: 1px; background: var(--line-2); }
+}
+/* perspectives: the sources moved from under the figures into one notes block at the foot (13 Nov) */
+main .pv-notes { padding: clamp(48px, 5vw, 80px) 0 clamp(64px, 6vw, 104px); border-top: 1px solid rgba(245, 242, 235, .12); }
+main .pv-notes-h { margin: 0 0 18px; font-family: var(--font-body); font-weight: 500; font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: #A6A29A; }
+main .pv-notes-ol { margin: 0; padding-left: 20px; max-width: 64em; }
+main .pv-notes-ol li { font-size: 13.5px; line-height: 1.7; color: #A79E92; margin-bottom: 8px; }
+/* article sidebars: the old circled-arrow pills become the house button and tracked link (13 Nov) */
+main .ni-pill .ni-pill-ic { display: none !important; }
+main .ni-pill--fill { display: inline-flex !important; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px !important; border: 1px solid rgba(245, 242, 235, .35) !important; border-radius: 0 !important; background: transparent !important; color: #F4EFE6 !important; font-family: var(--font-body); font-weight: 300; font-size: 12px !important; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: background-color .25s ease, color .25s ease; }
+main .ni-pill--fill:hover { background: #F4EFE6 !important; color: #0B0B09 !important; }
+main .ni-pill:not(.ni-pill--fill) { display: inline-flex !important; align-items: center; gap: 14px; padding: 6px 0 !important; border: 0 !important; background: none !important; font-size: 11px !important; letter-spacing: .24em; text-transform: uppercase; color: #F4EFE6 !important; text-decoration: none; }
+main .ni-pill:not(.ni-pill--fill)::after { content: ''; width: 32px; height: 1px; background: currentColor; transition: width .3s ease; }
+main .ni-pill:not(.ni-pill--fill):hover::after { width: 56px; }
+/* timeline fixes: five steps in five columns (not the 3-over-2 six-track rule), visible markers */
+@media (min-width: 1280px) {
+  html body main .es-flow.es-flow--5 .es-flow-ol { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  html body main .es-flow.es-flow--5 .es-flow-ol > * { grid-column: auto !important; }
+}
+html body main .es-flow-ol .es-step-dot { border: 1px solid #F4EFE6 !important; background: #0B0B09 !important; }
+html body main .band-paper .es-flow-ol .es-step-dot { border-color: #0B0B09 !important; background: #F4EFE6 !important; }
+html body main .es-flow-ol .es-step-dot { box-shadow: inset 0 0 0 1px #F4EFE6; }
+html body main .band-paper .es-flow-ol .es-step-dot { box-shadow: inset 0 0 0 1px #0B0B09; }
+@media (min-width: 1280px) { main .es-flow-ol .es-step-t { min-height: 0 !important; } }
+/* stacked timelines: the rule stops at the last marker */
+@media (max-width: 1279.98px) {
+  html body main .es-flow-ol .es-step:last-child::after { content: ''; position: absolute; left: 0; width: 14px; top: 16px; bottom: -60px; background: #0B0B09; z-index: 0; }
+  html body main .band-paper .es-flow-ol .es-step:last-child::after { background: #F4EFE6; }
+}
+@media (min-width: 768px) and (max-width: 1279.98px) { html body main .es-flow:not(.es-flow--5) .es-flow-ol .es-step:last-child::after { display: none; } }
+@media (min-width: 1280px) { html body main .es .es-flow-ol .es-step-t { font-size: clamp(19px, 1.42vw, 22px) !important; } }
+@media (min-width: 1280px) { html body main.es .es-flow-ol .es-step-t, html body main .es-flow-ol h3.es-step-t { font-size: 20px !important; white-space: nowrap; overflow: hidden; text-overflow: clip; } }
