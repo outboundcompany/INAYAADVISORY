@@ -91,6 +91,8 @@
   });
 
   d.addEventListener('click', function (e) { if (current && !current.contains(e.target)) close(); });
+  /* a link inside an open panel (also a same-page anchor) closes the panel */
+  hdr.addEventListener('click', function (e) { var a = e.target.closest && e.target.closest('.ix-panel a'); if (a && current) close(); });
   hdr.addEventListener('mouseenter', function () { if (current) clearTimeout(closeTimer); });
 
   /* ---------- mobile menu ---------- */
@@ -149,4 +151,86 @@
   function reset() { close(); if (hdr.classList.contains('is-menu')) setMenu(false); }
   if (desk.addEventListener) desk.addEventListener('change', reset); else if (desk.addListener) desk.addListener(reset);
   window.addEventListener('pageshow', function (e) { if (e.persisted) reset(); });
+})();
+
+/* v5 (12 Nov 2026): a quiet strip in the footer with the local time in New York, London and Dubai. */
+(function () {
+  var d = document, foot = d.querySelector('footer.ifoot .ifoot-brand');
+  if (!foot || !window.Intl || d.querySelector('.ifoot-time')) return;
+  var zones = [['New York', 'America/New_York'], ['London', 'Europe/London'], ['Dubai', 'Asia/Dubai']];
+  var box = d.createElement('p');
+  box.className = 'ifoot-time';
+  box.setAttribute('aria-label', 'Local time in New York, London and Dubai');
+  var cells = zones.map(function (z) {
+    var s = d.createElement('span'), t = d.createElement('time');
+    s.appendChild(d.createTextNode(z[0]));
+    s.appendChild(t);
+    box.appendChild(s);
+    return [t, new Intl.DateTimeFormat('en-GB', { timeZone: z[1], hour: '2-digit', minute: '2-digit', hour12: false })];
+  });
+  function tick() { var now = new Date(); cells.forEach(function (c) { c[0].textContent = c[1].format(now); }); }
+  tick();
+  foot.appendChild(box);
+  setInterval(tick, 20000);
+})();
+
+/* v5.2 (owner, 12 Nov 2026): side-by-side text blocks align. In every grid row of cards, titles and
+   paragraphs that sit next to each other are locked to the height of the tallest one in that row, in
+   whole lines, so the next element starts on one line across the row. Recomputed on resize and when
+   fonts load. Single-column layouts are untouched. The homepage is excluded (layout locked). Opt out
+   with data-no-eq on a container. */
+(function () {
+  var d = document;
+  if (d.body.classList.contains('home')) return;
+  var SEL = 'h3, h4, p, ul';
+  function cards() {
+    var out = [];
+    [].forEach.call(d.querySelectorAll('main *'), function (c) {
+      if (c.closest('[data-no-eq]')) return;
+      var cs = getComputedStyle(c);
+      if (cs.display !== 'grid' && cs.display !== 'flex') return;
+      if (cs.display === 'flex' && cs.flexDirection.indexOf('column') === 0) return;
+      var kids = [].filter.call(c.children, function (k) { return k.offsetParent !== null && k.getBoundingClientRect().width > 120; });
+      if (kids.length < 2) return;
+      out.push(kids);
+    });
+    return out;
+  }
+  function run() {
+    var groups = cards();
+    groups.forEach(function (kids) {
+      kids.forEach(function (k) { [].forEach.call(k.querySelectorAll(SEL), function (el) { if (el.dataset.eq) { el.style.minHeight = ''; } }); });
+    });
+    groups.forEach(function (kids) {
+      // rows: children sharing a top edge
+      var rows = {};
+      kids.forEach(function (k) { var t = k.offsetTop; (rows[t] = rows[t] || []).push(k); });
+      Object.keys(rows).forEach(function (t) {
+        var row = rows[t]; if (row.length < 2) return;
+        // the n-th block of each tag+class inside each card is compared with its counterparts
+        var slots = {};
+        row.forEach(function (k) {
+          var seen = {};
+          [].forEach.call(k.querySelectorAll(SEL), function (el) {
+            var anc = el.parentElement.closest('p, li'); if (el.closest('[data-no-eq]') || (anc && anc !== k && k.contains(anc))) return;
+            var key = el.tagName + '.' + el.className.replace(/\b(is-[a-z-]+|rv[a-z-]*)\b/g, '').trim();
+            seen[key] = (seen[key] || 0) + 1;
+            (slots[key + '#' + seen[key]] = slots[key + '#' + seen[key]] || []).push(el);
+          });
+        });
+        Object.keys(slots).forEach(function (s) {
+          var els = slots[s]; if (els.length !== row.length) return;
+          var max = 0;
+          els.forEach(function (el) { max = Math.max(max, el.offsetHeight); });
+          els.forEach(function (el) { el.style.minHeight = Math.ceil(max) + 'px'; el.dataset.eq = '1'; });
+        });
+      });
+    });
+  }
+  window.inayaEqualize = run;
+  var t;
+  function later() { clearTimeout(t); t = setTimeout(run, 120); }
+  if (d.readyState === 'complete') run(); else window.addEventListener('load', run);
+  if (d.fonts && d.fonts.ready) d.fonts.ready.then(later);
+  window.addEventListener('resize', later);
 })();

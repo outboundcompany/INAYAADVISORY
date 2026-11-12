@@ -25,8 +25,193 @@
     },
     {
       "source": "/david-hunter",
-      "destination": "/firm/leadership/david-hunter",
-      "permanent": false
+      "destination": "/firm#david-hunter",
+      "permanent": true
+    },
+    {
+      "source": "/firm/leadership",
+      "destination": "/firm#people",
+      "permanent": true
+    },
+    {
+      "source": "/firm/leadership/david-hunter",
+      "destination": "/firm#david-hunter",
+      "permanent": true
+    },
+    {
+      "source": "/firm/leadership/anas-ansar",
+      "destination": "/firm#anas-ansar",
+      "permanent": true
+    },
+    {
+      "source": "/firm/leadership/shayan-mohammed",
+      "destination": "/firm#shayan-mohammed",
+      "permanent": true
+    },
+    {
+      "source": "/firm/leadership/abbas-chothia",
+      "destination": "/firm#abbas-chothia",
+      "permanent": true
+    },
+    {
+      "source": "/firm/principles",
+      "destination": "/firm#principles",
+      "permanent": true
+    },
+    {
+      "source": "/firm/mandate-selection",
+      "destination": "/firm#selection",
+      "permanent": true
+    },
+    {
+      "source": "/firm/standards",
+      "destination": "/firm#standards",
+      "permanent": true
+    },
+    {
+      "source": "/firm/how-we-work",
+      "destination": "/what-we-do#how-we-work",
+      "permanent": true
+    },
+    {
+      "source": "/firm/:path*",
+      "destination": "/firm",
+      "permanent": true
+    },
+    {
+      "source": "/clients",
+      "destination": "/firm#clients",
+      "permanent": true
+    },
+    {
+      "source": "/clients/emerging-managers",
+      "destination": "/firm#established-managers",
+      "permanent": true
+    },
+    {
+      "source": "/clients/established-managers",
+      "destination": "/firm#established-managers",
+      "permanent": true
+    },
+    {
+      "source": "/clients/companies-and-sponsors",
+      "destination": "/firm#companies-and-sponsors",
+      "permanent": true
+    },
+    {
+      "source": "/clients/real-assets",
+      "destination": "/firm#real-assets",
+      "permanent": true
+    },
+    {
+      "source": "/clients/:path*",
+      "destination": "/firm#clients",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/capital-raising",
+      "destination": "/what-we-do#capital-raising",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/investor-relations",
+      "destination": "/what-we-do#investor-relations",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/targeted-introductions",
+      "destination": "/what-we-do#targeted-introductions",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/positioning",
+      "destination": "/what-we-do#positioning",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/investment-committee-review",
+      "destination": "/what-we-do#investment-committee-review",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/mergers-acquisitions",
+      "destination": "/what-we-do#mergers-acquisitions",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/:path*",
+      "destination": "/what-we-do",
+      "permanent": true
+    },
+    {
+      "source": "/allocators",
+      "destination": "/majlis#allocators",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/pension-funds",
+      "destination": "/majlis#pension-funds",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/sovereign-wealth",
+      "destination": "/majlis#sovereign-wealth",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/endowments-foundations",
+      "destination": "/majlis#endowments-foundations",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/family-offices",
+      "destination": "/majlis#family-offices",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/private-wealth",
+      "destination": "/majlis#private-wealth",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/consultants-and-funds-of-funds",
+      "destination": "/majlis#consultants-and-funds-of-funds",
+      "permanent": true
+    },
+    {
+      "source": "/allocators/:path*",
+      "destination": "/majlis",
+      "permanent": true
+    },
+    {
+      "source": "/education",
+      "destination": "/insights#education",
+      "permanent": true
+    },
+    {
+      "source": "/education/how-a-raise-runs",
+      "destination": "/insights#education",
+      "permanent": true
+    },
+    {
+      "source": "/education/what-a-committee-asks",
+      "destination": "/insights#education",
+      "permanent": true
+    },
+    {
+      "source": "/education/reading-a-form-d",
+      "destination": "/insights#education",
+      "permanent": true
+    },
+    {
+      "source": "/education/private-placements",
+      "destination": "/insights#education",
+      "permanent": true
+    },
+    {
+      "source": "/education/preparing-materials",
+      "destination": "/insights#education",
+      "permanent": true
     }
   ],
   "headers": [
