@@ -736,3 +736,12 @@ body.home .ar-card:hover .ar-h { text-decoration: underline; text-decoration-thi
 /* form button rows stack in one column on every width (the link must not wrap into a second column) */
 .ia .form-panel .btn-row, .ia .form-panel .ni-x-actions--end { flex-wrap: nowrap !important; }
 .ia .form-panel .btn-row .btn { flex: none !important; }
+
+/* 13 Nov 2026 (owner): the hero's pillar lines run down through Find your path to the photo band */
+body.home .hero-stack { position: relative; overflow: hidden; background: #0B0B09; }
+body.home .hero-stack .hero-dark, body.home .hero-stack .ar-sec { background: transparent !important; position: relative; z-index: 1; overflow: visible; }
+body.home .hero-stack .hero-mark-stack { position: absolute; top: 0; bottom: 0; right: 0; height: 100%; width: 84vh; transform: translateX(30%); z-index: 0; pointer-events: none; }
+@media (max-width: 860px) { body.home .hero-stack .hero-mark-stack { display: none; } }
+body.home .hero-stack .ar-sec a, body.home .hero-stack .ar-sec [class*="ar-card"] { background: #0B0B09; position: relative; z-index: 1; }
+/* 13 Nov 2026 (owner): pillar lines only, no caps, end to end */
+body.home .hero-stack .hero-mark-stack line { stroke: rgba(245, 242, 235, 0.07); stroke-width: 1; vector-effect: non-scaling-stroke; fill: none; }
