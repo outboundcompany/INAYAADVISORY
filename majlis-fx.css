@@ -126,7 +126,7 @@ body.ia #join .field select { -webkit-appearance: none; appearance: none; cursor
   background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55% !important; background-size: 5px 5px, 5px 5px !important; background-repeat: no-repeat !important; }
 body.ia #join .field select:invalid { color: #8A8277; }
 body.ia #join .field select option { background: #0B0B09; color: #F4EFE6; }
-body.ia #join .field textarea { resize: vertical; min-height: 112px; line-height: 1.6; }
+body.ia #join .field textarea { resize: none; min-height: 112px; line-height: 1.6; }
 /* submit: full width under one rule */
 body.ia main #join .btn-row { display: block; margin-top: 0; padding-top: clamp(32px, 3vw, 44px); border-top: 1px solid rgba(245,242,235,.16); }
 body.ia #join .form-panel .small { margin-top: 18px; font-size: 13px; line-height: 1.6; color: #8A8277; }
