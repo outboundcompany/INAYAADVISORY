@@ -262,7 +262,7 @@ main :is(.grid-3, .stories, .ni-grid--3, .es-tiles--3, .es-figs, .es-grid--3, .e
 }
 @media (min-width: 901px) {
   main .bio-grid { align-items: end; }
-  body.pwu main .bio-grid { align-items: start; }
+  body.pwu main .bio-grid { align-items: center; }
 }
 
 /* Data callouts: numbers and their labels must read as one composed fact, not
