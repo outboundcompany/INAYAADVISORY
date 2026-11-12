@@ -76,7 +76,7 @@
       d.addEventListener('visibilitychange', function () { if (d.hidden) hide(); else show(); });
     })();
     var ACK = 'inaya_majlis_ack';
-    function acked() { try { return sessionStorage.getItem(ACK) === k.slice(0, 16); } catch (x) { return false; } }
+    function acked() { return false; }  // the notice shows on every sign-in and every visit (owner, 13 Nov)
     function gate(done) {
       if (acked()) { done(); return; }
       var g = d.getElementById('mr-gate'), main = d.getElementById('mr-main');
