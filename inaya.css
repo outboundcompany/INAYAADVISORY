@@ -916,3 +916,8 @@ html.mr-away #mr-main, html.mr-away #mr-gate { filter: blur(16px); transition: f
 .ia .if-grid li span { font-family: var(--font-display); font-size: 16px; color: #8A8277; }
 @media (max-width: 1023px) { .ia .if-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .ia .if-grid li { min-height: 120px; padding: 18px; font-size: 19px; } }
+
+/* 13 Nov: even rhythm around the cover figures (photo -> figures -> next section) */
+.fx .fx-cover:has(.fx-figs) { padding-bottom: 0; }
+.fx .fx-cover:has(.fx-figs) .fx-figs { margin-top: clamp(72px, 7vw, 112px); }
+.fx .fx-cover:has(.fx-figs) + .fx-sec:not(.fx-rule):not(.band-paper) { padding-top: clamp(72px, 7vw, 112px); }
