@@ -511,7 +511,7 @@ footer.ifoot .ifw { width: var(--container); max-width: none; padding-left: 0; p
   --bg: #0B0B09; --bg-2: #0B0B09; --fg: #F4EFE6; --text: #D9D3C9; --text-2: #A79E92; --muted: #8A8277; --faint: #5F594F;
   --line: rgba(245, 242, 235, .14); --line-2: rgba(245, 242, 235, .32);
   --btn-bg: #F4EFE6; --btn-fg: #0B0B09; --btn-line: #F4EFE6; --btn-hover-bg: transparent; --btn-hover-fg: #F4EFE6;
-  --pill-grey: #2A2724; --img-bg: #151411; --focus: #F4EFE6;
+  --pill-grey: #2A2724; --img-bg: #0B0B09; --focus: #F4EFE6;
   --ink: var(--bg); --panel: var(--bg-2); --cream: var(--fg); --warm: var(--text-2); --accent: var(--fg); --body-color: var(--text-2);
   color-scheme: dark;
 }
@@ -521,7 +521,7 @@ footer.ifoot .ifw { width: var(--container); max-width: none; padding-left: 0; p
 .ia .band-white .tags span { border-color: rgba(245, 242, 235, .18); }
 .band-white .form-err { color: #C58A70; }
 /* image placeholders behind photographs stay dark while loading */
-:root { --img-bg: #151411; }
+:root { --img-bg: #0B0B09; }
 .ni-card-img, .es-split-img, .split-media { background-color: #0B0B09 !important; }
 /* the homepage keeps its own stylesheet: its white Featured Stories go dark. The Global Access split stays
    exactly as on the live site (owner, 12 Nov ~23:25 IST): photo left, cream panel right, dark text. */
@@ -810,3 +810,33 @@ html body main .band-paper .es-flow-ol .es-step-dot { box-shadow: inset 0 0 0 1p
 @media (min-width: 768px) and (max-width: 1279.98px) { html body main .es-flow:not(.es-flow--5) .es-flow-ol .es-step:last-child::after { display: none; } }
 @media (min-width: 1280px) { html body main .es .es-flow-ol .es-step-t { font-size: clamp(19px, 1.42vw, 22px) !important; } }
 @media (min-width: 1280px) { html body main.es .es-flow-ol .es-step-t, html body main .es-flow-ol h3.es-step-t { font-size: 20px !important; white-space: nowrap; overflow: hidden; text-overflow: clip; } }
+
+/* 13 Nov 2026 sitewide consistency pass: no hover fills or lifted panels (a hairline change instead),
+   no window-chrome dots, one tracked-caps section label, even rhythm between same-ground sections */
+.ia a.tile:hover, .ia .band-white a.tile:hover, main .band-paper a.tile:hover { background: transparent !important; border-color: rgba(245, 242, 235, .55) !important; }
+main .band-paper a.tile:hover, .ia .band-white a.tile:hover { border-color: rgba(11, 11, 9, .55) !important; }
+.ia a.tile { transition: border-color .25s ease; }
+body.home .ar-card:hover, body.home .ar-card:focus-visible, .ia .sv-tab:hover, .ia .sv-tab:focus-visible { background: transparent !important; }
+body.ia main .mj-hero-act .mj-hero-btn:not(.mj-hero-btn--solid):hover { background: transparent; }
+.ix-hdr .ix-top[href="/majlis"] { background: transparent !important; }
+.fx .fx-box { background: transparent; }
+body.ia main .sv-dash { background: transparent; }
+body.ia main .dash, main .band-paper .dash { background: transparent !important; border: 1px solid rgba(245, 242, 235, .14); }
+main .band-paper .dash { border-color: rgba(11, 11, 9, .18); }
+body.ia main .dash-row:nth-child(odd):not(.dash-row--h), main .band-paper .dash-row:nth-child(odd):not(.dash-row--h) { background: transparent !important; }
+body.ia main .dash-row:not(.dash-row--h) { border-top: 1px solid rgba(245, 242, 235, .08); }
+main .band-paper .dash-row:not(.dash-row--h) { border-top-color: rgba(11, 11, 9, .08); }
+.dash-bar > span, .sv-dash-bar > span { display: none !important; }
+.dash-bar em, .sv-dash-bar em { margin-left: 0 !important; }
+main:not(.ni-main) p.eyebrow {
+  font-family: var(--font-body) !important; font-weight: 500 !important; font-size: 10px !important; line-height: 1.6 !important;
+  letter-spacing: .4em !important; text-transform: uppercase !important; color: #A6A29A !important;
+}
+/* one section rhythm: Education and long-form pages use the same section padding as the main pages */
+body.ni main .es-mod:not(:has(+ .es-notes)) { padding-top: clamp(88px, 9vw, 150px); padding-bottom: clamp(88px, 9vw, 150px); }
+body.ni main .es-mod:has(+ .es-notes) { padding-top: clamp(88px, 9vw, 150px); }
+@media (min-width: 1920px) { body.ni main .es-mod:not(:has(+ .es-notes)) { padding-top: 190px; padding-bottom: 190px; } body.ni main .es-mod:has(+ .es-notes) { padding-top: 190px; } }
+body.ia .mj-benefits .mj-ben-n, body.ia #join .mj-agenda i, body.ia #join .mj-legend span { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+body.ni main.es > :is(.es-bro, .es-explore, .es-rel) { padding-top: clamp(88px, 9vw, 150px); padding-bottom: clamp(88px, 9vw, 150px); }
+body.ni main.es > .es-figband { padding-bottom: clamp(88px, 9vw, 150px); }
+@media (min-width: 1920px) { body.ni main.es > :is(.es-bro, .es-explore, .es-rel) { padding-top: 190px; padding-bottom: 190px; } body.ni main.es > .es-figband { padding-bottom: 190px; } }
