@@ -621,3 +621,64 @@ main .xc--plain + section, main .xc--plain + .sec { padding-top: clamp(40px, 4vw
 .tags.tags--grid span { display: flex; align-items: center; justify-content: center; text-align: center; width: 100%; }
 @media (max-width: 860px) { .tags.tags--grid { grid-template-columns: 1fr !important; } }
 .pm-ov [data-eq]{min-height:0 !important}
+
+/* =====================================================================================================
+   v7 (owner, 13 Nov): .band-paper, the one light band. The deck paper #F4EFE6 with ink #0B0B09, used on
+   a few sections per page for rhythm (never the cover, never two in a row). Defined once, here; it resets
+   the colour tokens of every system the pages use (site tokens, the .ia tiles, the /firm fx- parts, the
+   guides' es- modules) so components inside it read dark on paper.
+   ===================================================================================================== */
+main .band-paper.band-paper {
+  --bg: #F4EFE6; --bg-2: #F4EFE6; --fg: #0B0B09; --text: #1C1B18; --text-2: #3A3631; --muted: #5E584F; --faint: #8A8277;
+  --line: rgba(11, 11, 9, .14); --line-2: rgba(11, 11, 9, .4);
+  --btn-bg: #0B0B09; --btn-fg: #F4EFE6; --btn-line: #0B0B09; --btn-hover-bg: transparent; --btn-hover-fg: #0B0B09;
+  --pill-grey: #0B0B09; --img-bg: #E2DCD1; --focus: #0B0B09;
+  --ink: var(--bg); --panel: var(--bg); --cream: #0B0B09; --warm: #3A3631; --accent: #0B0B09; --body-color: #3A3631;
+  --ia-tile: #EAE3D7;
+  --fx-cream: #0B0B09; --fx-copy: #3A3631; --fx-warm: #5E584F; --fx-label: #5E584F; --fx-line: rgba(11, 11, 9, .14); --fx-line-2: rgba(11, 11, 9, .4);
+  background: #F4EFE6 !important; color: #0B0B09; color-scheme: light;
+  border-top-color: transparent !important;
+}
+main .band-paper + section, main .band-paper + .sec { border-top-color: transparent !important; }
+main .band-paper :is(h1, h2, h3, h4, .statement, .fx-h2, .fx-h3, .fx-card-t, .fx-fig-n) { color: #0B0B09; }
+main .band-paper p, main .band-paper li { color: #3A3631; }
+main .band-paper :is(p, li) b, main .band-paper :is(p, li) strong { color: #0B0B09; }
+main .band-paper :is(.eyebrow-rule, .es-eyebrow, .es-kicker, .label, p.label, .fx-label) { color: #5E584F !important; }
+main .band-paper :is(.fx-n, .fx-card-n, .num, .index-n, .es-tile-n, .fc-tile-n, .tag, .fx-tag) { color: #6F685E; }
+main .band-paper .fx-card-pts li { color: #1C1B18; }
+main .band-paper .fx-points li::before, main .band-paper .fx-card-pts li::before, main .band-paper .points li::before { background: #5E584F; }
+main .band-paper .fx-box { background: transparent; border-color: rgba(11, 11, 9, .2); }
+main .band-paper .fx-box:hover { border-color: rgba(11, 11, 9, .5); }
+main .band-paper .tile { background: #EAE3D7; }
+main .band-paper a.tile:hover { background: #E2DACC; }
+main .band-paper .tags span, main .band-paper .step-tag { border-color: rgba(11, 11, 9, .25) !important; color: #1C1B18; }
+main .band-paper .figs > div { border-top-color: rgba(11, 11, 9, .18); }
+/* outlined dark buttons and tracked links on paper */
+main .band-paper :is(.btn:not(.btn-ghost), .fx-btn, .xc-btn) { color: #0B0B09 !important; border-color: rgba(11, 11, 9, .45) !important; background: transparent !important; }
+main .band-paper :is(.btn:not(.btn-ghost), .fx-btn, .xc-btn):hover { background: #0B0B09 !important; color: #F4EFE6 !important; border-color: #0B0B09 !important; }
+main .band-paper :is(.linkline, .fx-more-link, .fx-link, .textlink, .xc-link, .ni-viewall) { color: #0B0B09; }
+main .band-paper .textlink { text-decoration-color: rgba(11, 11, 9, .35); }
+main .band-paper img { filter: grayscale(1) contrast(1.04); }
+
+/* guide cards: a quiet brochure download on the card's last line, aligned right (owner, 13 Nov) */
+main .ni-card-guide { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+main .ni-card-guide .ni-dl { position: relative; z-index: 2; font-family: var(--font-body); font-weight: 400; font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: #8A8277; text-decoration: none; white-space: nowrap; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: color .2s ease, border-color .2s ease; }
+main .ni-card-guide .ni-dl:hover, main .ni-card-guide .ni-dl:focus-visible { color: #D9D3C9; border-bottom-color: currentColor; }
+main .band-paper .ni-card-guide .ni-dl:hover { color: #0B0B09; }
+
+/* 13 Nov 2026 (owner): no grey panels anywhere. Tiles, tags and step tags are black with a hairline;
+   the form panel takes the paper white of the Partner With Us button, with dark ink. */
+.ia { --ia-tile: transparent; }
+.ia .tone, .ia .band-white { --ia-tile: transparent; }
+.ia .tile, .ia .tags span, .ia .step-tag { background: transparent !important; border: 1px solid rgba(245, 242, 235, .16); }
+.ia .form-panel, .ia .mj-ok { background: #F4EFE6 !important; color: #0B0B09; }
+.ia .form-panel label, .ia .form-panel .field label, .ia .form-panel .small, .ia .form-panel p { color: #5F594F !important; }
+.ia .form-panel input, .ia .form-panel textarea, .ia .form-panel select { color: #0B0B09 !important; background: transparent !important; border-color: rgba(11, 11, 9, .28) !important; caret-color: #0B0B09; }
+.ia .form-panel input:focus, .ia .form-panel textarea:focus { border-color: #0B0B09 !important; }
+.ia .form-panel input::placeholder, .ia .form-panel textarea::placeholder { color: rgba(11, 11, 9, .4); }
+body.ia main .form-panel .btn:not(.btn-ghost) { background: #0B0B09 !important; color: #F4EFE6 !important; border: 1px solid #0B0B09 !important; }
+body.ia main .form-panel .btn:not(.btn-ghost):hover { background: transparent !important; color: #0B0B09 !important; border-color: #0B0B09 !important; }
+.ia .form-panel a, .ia .form-panel .textlink { color: #0B0B09 !important; border-color: #0B0B09 !important; text-decoration-color: #0B0B09; }
+.ia .mj-ok, .ia .mj-ok * { color: #0B0B09 !important; }
+/* the form's buttons sit on the left */
+body.ia main .form-panel .btn-row, body.ia main .form-panel .ni-x-actions--end { justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; }

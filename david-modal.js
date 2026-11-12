@@ -20,7 +20,7 @@
 .dm-ph{width:240px;height:300px;border:1px solid #2A2724;overflow:hidden;background:#0B0B09}
 .dm-ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.02);display:block}
 .dm-sec{margin-top:clamp(40px,5vw,60px);padding-top:clamp(32px,4vw,44px);border-top:1px solid #2A2724}
-.dm-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.dm-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
 .dm-c{border:1px solid #2A2724;background:#0B0B09;padding:24px 22px;opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .7s cubic-bezier(.22,1,.36,1)}
 .dm-ov.open .dm-c{opacity:1;transform:none}
 .dm-big{font-family:'Cormorant Garamond',serif;color:#F4EFE6;font-size:42px;line-height:1}
@@ -43,29 +43,20 @@ html.dm-lock,html.dm-lock body{overflow:hidden}
   var P = {
     'david-hunter': { role: 'Senior Advisor', name: 'David Hunter', img: 'images/david.webp',
       text: `<p class="dm-lede">As Executive Director and Chief Investment Officer of two US public pension systems, David decided which managers received pension capital. Today he brings managers to the allocators he knows.</p>
-        <p class="dm-p">Close to forty years in institutional capital, twenty-four of them in banking at HSBC, Citibank and Sumitomo, and then as Executive Director and Chief Investment Officer of the North Dakota Retirement and Investment Office and the Texas Municipal Retirement System.</p>
+        <p class="dm-p">Close to forty years in institutional capital, twenty-four of them in banking at HSBC, Citibank and Sumitomo, and then as Executive Director and Chief Investment Officer of the North Dakota Retirement and Investment Office and the Texas Municipal Retirement System. Named among the ISS Power 100 Chief Investment Officers in 2023.</p>
       `,
       secs: `<div class="dm-sec">
       <div class="dm-ey">The record</div>
       <div class="dm-h2">The capital David has already been trusted with.</div>
       <div class="dm-g3">
-        <div class="dm-c" style="${d(0)}"><div class="dm-big">$7B+</div><div class="dm-cap">HSBC North America</div><p>Directed more than $7B in pension assets at HSBC North America, within twenty-four years in banking at HSBC, Citibank and Sumitomo.</p></div>
-        <div class="dm-c" style="${d(1)}"><div class="dm-big">$20B</div><div class="dm-cap">North Dakota Retirement &amp; Investment Office</div><p>Grew from approximately $8 billion to nearly $20 billion across 27 portfolios, including the state's sovereign wealth fund, as Executive Director and Chief Investment Officer.</p></div>
-        <div class="dm-c" style="${d(2)}"><div class="dm-big">$40B</div><div class="dm-cap">Texas Municipal Retirement System</div><p>As Executive Director and Chief Investment Officer, led the $40 billion retirement system for Texas cities to two consecutive years of top-quartile returns, a first for the system.</p></div>
+        <div class="dm-c" style="${d(0)}"><div class="dm-big">US$7B+</div><div class="dm-cap">HSBC North America</div><p>Directed more than $7B in pension assets at HSBC North America, within twenty-four years in banking at HSBC, Citibank and Sumitomo.</p></div>
+        <div class="dm-c" style="${d(1)}"><div class="dm-big">US$20B</div><div class="dm-cap">North Dakota Retirement &amp; Investment Office</div><p>Grew from approximately $8 billion to nearly $20 billion across 27 portfolios, including the state's sovereign wealth fund, as Executive Director and Chief Investment Officer.</p></div>
+        <div class="dm-c" style="${d(2)}"><div class="dm-big">US$40B</div><div class="dm-cap">Texas Municipal Retirement System</div><p>As Executive Director and Chief Investment Officer, led the $40 billion retirement system for Texas cities to two consecutive years of top-quartile returns, a first for the system.</p></div>
       </div>
       <p class="dm-fine">Figures reflect the prior institutional experience of David Hunter and are not transactions of Inaya Advisory.</p>
     </div>
 
-    <div class="dm-sec">
-      <div class="dm-ey">Standing</div>
-      <div class="dm-h2">Known on the allocator's side of the table.</div>
-      <div class="dm-g3">
-        <div class="dm-c" style="${d(3)}"><div class="dm-n">01</div><h3>Former Executive Director and CIO</h3><p>Texas Municipal Retirement System and the North Dakota Retirement and Investment Office.</p></div>
-        <div class="dm-c" style="${d(4)}"><div class="dm-n">02</div><h3>ISS Power 100</h3><p>Named among the Power 100 Chief Investment Officers in 2023.</p></div>
-        <div class="dm-c" style="${d(5)}"><div class="dm-n">03</div><h3>200+ CIO relationships</h3><p>Across US public pensions, consultants, endowments and family offices.</p></div>
-      </div>
-    </div>
-
+    
     ` },
     'anas-ansar': { role: 'Managing Partner', name: 'Anas Ansar', img: 'images/anas-ansar.webp',
       text: '<p class="dm-lede">Runs each mandate from the first review of a raise to its final close.</p><p class="dm-p">He leads the origination of new mandates, directs the deck, the data room and the terms review, and signs each engagement on the firm&rsquo;s behalf. He leads senior review with David Hunter, and leads investor relations after the close.</p>',
