@@ -682,3 +682,14 @@ body.ia main .form-panel .btn:not(.btn-ghost):hover { background: transparent !i
 .ia .mj-ok, .ia .mj-ok * { color: #0B0B09 !important; }
 /* the form's buttons sit on the left */
 body.ia main .form-panel .btn-row, body.ia main .form-panel .ni-x-actions--end { justify-content: flex-start !important; text-align: left !important; margin-left: 0 !important; }
+/* the method dashboard drawing on paper */
+main .band-paper .dash { background: #EAE3D7; }
+main .band-paper .dash-bar span { background: #B8B0A4; }
+main .band-paper .dash-row i { background: rgba(11, 11, 9, .14); }
+main .band-paper .dash-row i.on { background: #0B0B09; }
+main .band-paper .dash-row:nth-child(odd):not(.dash-row--h) { background: rgba(11, 11, 9, .03); }
+/* cards that link: one stretched link, secondary links above it, the title underlines on hover (13 Nov) */
+main :is(.ni-card, .fs-card, .ni-feat) { position: relative; }
+main :is(.ni-cat, .fs-cat, .ni-dl) { position: relative; z-index: 2; }
+body.home main .fs-card:hover h3 .fs-link, body.home .fs-card:hover h3 .fs-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+body.home .fs-card:hover .fs-go { text-decoration: none; }
