@@ -20,11 +20,11 @@
 <link rel="preload" href="/fonts/DMSans-300-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css?v=10">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="stylesheet" href="/inaya.css?v=23">
+<link rel="stylesheet" href="/inaya.css?v=24">
 <script>(function(d){d.classList.add("ia-js");setTimeout(function(){if(!d.classList.contains("ia-ready"))d.classList.add("ia-done")},2500)})(document.documentElement)</script>
 <!-- ix:head -->
 <link rel="stylesheet" href="/footer.css?v=7">
-<link rel="stylesheet" href="/shell.css?v=37">
+<link rel="stylesheet" href="/shell.css?v=40">
 <script>(function(d){d.classList.add("rv-js");setTimeout(function(){if(!d.classList.contains("rv-ready"))d.classList.add("rv-done")},2500)})(document.documentElement)</script>
 <!-- /ix:head -->
 </head>
@@ -38,6 +38,7 @@
       <nav class="ix-nav" aria-label="Main">
         <ul class="ix-menu"><li class="ix-item ix-item--link is-current"><a class="ix-top" href="/firm">The Firm</a></li><li class="ix-item ix-item--link"><a class="ix-top" href="/what-we-do">What We Do</a></li><li class="ix-item ix-item--link"><a class="ix-top" href="/insights">News and Insights</a></li><li class="ix-item ix-item--link"><a class="ix-top" href="/majlis">The Majlis</a></li></ul>
       </nav>
+      <a class="ix-login" href="/majlis/login">Member login</a>
       <a class="ix-cta" href="/mandateconsultation">Partner With Us</a>
       <button class="ix-burger" type="button" aria-expanded="false" aria-controls="ix-mnav" aria-label="Menu"><span></span><span></span></button>
     </div>
@@ -47,6 +48,7 @@
       <div class="ix-macc ix-macc--link is-current"><a class="ix-mtop" href="/firm"><span>The Firm</span></a></div><div class="ix-macc ix-macc--link"><a class="ix-mtop" href="/what-we-do"><span>What We Do</span></a></div><div class="ix-macc ix-macc--link"><a class="ix-mtop" href="/insights"><span>News and Insights</span></a></div><div class="ix-macc ix-macc--link"><a class="ix-mtop" href="/majlis"><span>The Majlis</span></a></div>
       <div class="ix-mfoot">
         <a class="ix-cta ix-cta--block" href="/mandateconsultation">Partner With Us</a>
+        <a class="ix-login ix-login--block" href="/majlis/login">Member login</a>
         <a class="ix-mmail" href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a>
       </div>
     </nav>
@@ -135,7 +137,8 @@
 ]
 </script>
 <section class="sec tone" id="current"><div class="wrap">
-  <div class="tiles mn-grid" id="mandates-grid" data-stagger></div>
+  <div class="head head--row mn-head"><div><p class="label" data-reveal>Our current mandates</p><h2 class="statement" data-reveal>Sector, size and stage, without names.</h2></div><div class="mn-head-act" data-reveal><button class="mn-viewall" type="button" id="mn-viewall" aria-expanded="false" aria-controls="mandates-grid">View all mandates</button></div></div>
+  <div class="tiles mn-grid is-teaser" id="mandates-grid" data-stagger></div>
   <noscript><p>The list of mandates needs JavaScript to display. Please write to <a class="textlink" href="mailto:capital@inayaadvisory.com">capital@inayaadvisory.com</a> for the current list.</p></noscript>
 </div></section>
 <script>
@@ -150,8 +153,25 @@
       + '<h3 class="mn-sector">' + esc(m.sector) + '</h3><p>' + esc(m.description) + '</p>'
       + '<dl class="mn-facts">' + facts + '</dl></article>';
   }).join('');
+  var btn = document.getElementById('mn-viewall');
+  if (btn) {
+    if (data.length <= 3) { btn.hidden = true; grid.classList.remove('is-teaser'); }
+    btn.addEventListener('click', function () {
+      var open = grid.classList.toggle('is-teaser') === false;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Show fewer' : 'View all mandates';
+    });
+  }
 })();
 </script>
+<section class="sec" id="principles"><div class="wrap">
+  <div class="head"><p class="label" data-reveal>How we hold a mandate</p><h2 class="statement" data-reveal>Three things every mandate gets from us.</h2></div>
+  <ol class="fx-like mn-pr">
+    <li data-reveal><span class="mn-pr-n">01</span><h3>Market terms</h3><p>Each mandate is measured against current terms and against comparable raises before it reaches an investor.</p></li>
+    <li data-reveal><span class="mn-pr-n">02</span><h3>Execution</h3><p>We carry the process through diligence and the closing mechanics, and we stay on it until the capital is committed.</p></li>
+    <li data-reveal><span class="mn-pr-n">03</span><h3>Discretion</h3><p>Client names and investor identities are protected, and nothing about a raise is circulated in the market.</p></li>
+  </ol>
+</div></section>
 <section class="sec" id="names"><div class="wrap">
   <p class="label" data-reveal>How names are shared</p>
   <p class="display" style="margin:24px 0 clamp(40px,5vw,72px);max-width:20ch" data-reveal>Names are shared once an agreement with a non-circumvention clause is signed.</p>
