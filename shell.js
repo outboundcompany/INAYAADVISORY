@@ -153,26 +153,7 @@
   window.addEventListener('pageshow', function (e) { if (e.persisted) reset(); });
 })();
 
-/* v5 (12 Nov 2026): a quiet strip in the footer with the local time in New York, London and Dubai. */
-(function () {
-  var d = document, foot = d.querySelector('footer.ifoot .ifoot-brand');
-  if (!foot || !window.Intl || d.querySelector('.ifoot-time')) return;
-  var zones = [['New York', 'America/New_York'], ['London', 'Europe/London'], ['Dubai', 'Asia/Dubai']];
-  var box = d.createElement('p');
-  box.className = 'ifoot-time';
-  box.setAttribute('aria-label', 'Local time in New York, London and Dubai');
-  var cells = zones.map(function (z) {
-    var s = d.createElement('span'), t = d.createElement('time');
-    s.appendChild(d.createTextNode(z[0]));
-    s.appendChild(t);
-    box.appendChild(s);
-    return [t, new Intl.DateTimeFormat('en-GB', { timeZone: z[1], hour: '2-digit', minute: '2-digit', hour12: false })];
-  });
-  function tick() { var now = new Date(); cells.forEach(function (c) { c[0].textContent = c[1].format(now); }); }
-  tick();
-  foot.appendChild(box);
-  setInterval(tick, 20000);
-})();
+
 
 /* v5.2 (owner, 12 Nov 2026): side-by-side text blocks align. In every grid row of cards, titles and
    paragraphs that sit next to each other are locked to the height of the tallest one in that row, in
