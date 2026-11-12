@@ -104,6 +104,16 @@
           + '<dl class="mr-dl">' + facts + '</dl>'
           + '<div class="mr-act"><a class="mr-btn" href="mailto:' + esc(data.contact) + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body) + '">Request the materials</a>' + deck + '<span class="mr-note">Materials follow once an agreement with a non-circumvention clause is signed.</span></div></article>';
       }).join('');
+      var sx = d.getElementById('mr-strategies');
+      if (sx && data.strategies && data.strategies.length) {
+        sx.hidden = false;
+        d.getElementById('mr-strat-list').innerHTML = data.strategies.map(function (st, i) {
+          var src = (st.sources || []).map(function (u) { return '<a class="mr-src" href="' + esc(u) + '">' + esc(u.replace('/insights/', '').replace(/-/g, ' ')) + '</a>'; }).join('');
+          return '<article class="mr-st"><p class="mr-st-n">' + String(i + 1).padStart(2, '0') + '</p><h3 class="mr-st-t">' + esc(st.title) + '</h3>'
+            + '<div class="mr-st-b"><div><p class="mr-st-l">Thesis</p><p>' + esc(st.thesis) + '</p></div><div><p class="mr-st-l">What we are seeing</p><p>' + esc(st.seeing) + '</p></div></div>'
+            + '<div class="mr-st-f"><p class="mr-st-l">Mandates that fit</p><p class="mr-st-refs">' + (st.fits || []).map(esc).join('<span>,</span> ') + '</p>' + (src ? '<p class="mr-st-src"><span class="mr-st-l">Our notes</span>' + src + '</p>' : '') + '</div></article>';
+        }).join('');
+      }
       /* decks: fetched as ciphertext, decrypted here with the room key, saved as a PDF */
       room.addEventListener('click', async function (e) {
         var a = e.target.closest && e.target.closest('[data-deck]'); if (!a) return;
