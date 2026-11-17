@@ -27,3 +27,13 @@
 .ifoot-reg a{text-decoration:none!important;color:#C9C1B5}
 .ifoot-reg a:hover{color:#F4EFE6}
 .ifoot-reg span{margin:0 12px;color:#4A453E}
+
+/* 17 Nov 2026: footer columns (Navigate, Legal, Media) per Anas's draft */
+.ifoot-top--cols{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:40px clamp(24px,4vw,64px)}
+.ifoot-top--cols .ifoot-brand p{margin-top:16px;color:#A79E92}
+.ifoot-top--cols .ifoot-brand .ifoot-cta{margin-top:26px}
+.ifoot-top--cols .ifoot-brand a.ifoot-btn{display:inline-flex;align-items:center;min-height:46px;padding:0 28px;margin:0;border:1px solid rgba(245,242,235,.35);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#F4EFE6;text-decoration:none;transition:background-color .25s,color .25s}
+.ifoot-top--cols .ifoot-brand a.ifoot-btn:hover{background:#F4EFE6;color:#0B0B09;border-color:#F4EFE6}
+.ifoot-top--cols .ifoot-col h4{margin-top:6px}
+@media(max-width:900px){.ifoot-top--cols{grid-template-columns:repeat(3,minmax(0,1fr))}.ifoot-top--cols .ifoot-brand{grid-column:1/-1}}
+@media(max-width:480px){.ifoot-top--cols{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -3,74 +3,123 @@
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "thetranchemandate.inayaadvisory.com"
-        }
-      ],
-      "destination": "/first-tranche",
-      "permanent": false
+      "source": "/what-we-do",
+      "destination": "/how-we-work",
+      "permanent": true
+    },
+    {
+      "source": "/what-we-do/:path*",
+      "destination": "/how-we-work",
+      "permanent": true
+    },
+    {
+      "source": "/mandateconsultation",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/mandates",
+      "destination": "/firm",
+      "permanent": true
+    },
+    {
+      "source": "/first-tranche",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/email-disclaimer",
+      "destination": "/disclosures",
+      "permanent": true
+    },
+    {
+      "source": "/email-policy",
+      "destination": "/disclosures",
+      "permanent": true
+    },
+    {
+      "source": "/accessibility",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/perspectives/:path*",
+      "destination": "/insights",
+      "permanent": true
+    },
+    {
+      "source": "/education/:path*",
+      "destination": "/how-we-work",
+      "permanent": true
+    },
+    {
+      "source": "/insights/:path+",
+      "destination": "/insights",
+      "permanent": true
     },
     {
       "source": "/partner",
-      "destination": "/mandateconsultation",
+      "destination": "/contact",
       "permanent": true
     },
     {
       "source": "/tranche",
-      "destination": "/first-tranche",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/david-hunter",
-      "destination": "/firm#david-hunter",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/leadership",
-      "destination": "/firm#people",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/leadership/david-hunter",
-      "destination": "/firm#david-hunter",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/leadership/anas-ansar",
-      "destination": "/firm#anas-ansar",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/leadership/shayan-mohammed",
-      "destination": "/firm#shayan-mohammed",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/leadership/abbas-chothia",
-      "destination": "/firm#abbas-chothia",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/principles",
-      "destination": "/firm#principles",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/mandate-selection",
-      "destination": "/firm#selection",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/standards",
-      "destination": "/firm#standards",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/firm/how-we-work",
-      "destination": "/what-we-do#how-we-work",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
@@ -80,67 +129,67 @@
     },
     {
       "source": "/clients",
-      "destination": "/firm#clients",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/clients/emerging-managers",
-      "destination": "/firm#established-managers",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/clients/established-managers",
-      "destination": "/firm#established-managers",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/clients/companies-and-sponsors",
-      "destination": "/firm#companies-and-sponsors",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/clients/real-assets",
-      "destination": "/firm#real-assets",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/clients/:path*",
-      "destination": "/firm#clients",
+      "destination": "/firm",
       "permanent": true
     },
     {
       "source": "/what-we-do/capital-raising",
-      "destination": "/what-we-do#capital-raising",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/investor-relations",
-      "destination": "/what-we-do#investor-relations",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/targeted-introductions",
-      "destination": "/what-we-do#targeted-introductions",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/positioning",
-      "destination": "/what-we-do#positioning",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/investment-committee-review",
-      "destination": "/what-we-do#investment-committee-review",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/mergers-acquisitions",
-      "destination": "/what-we-do#mergers-acquisitions",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
       "source": "/what-we-do/:path+",
-      "destination": "/what-we-do",
+      "destination": "/how-we-work",
       "permanent": true
     },
     {
@@ -185,32 +234,32 @@
     },
     {
       "source": "/education",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     },
     {
       "source": "/education/how-a-raise-runs",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     },
     {
       "source": "/education/what-a-committee-asks",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     },
     {
       "source": "/education/reading-a-form-d",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     },
     {
       "source": "/education/private-placements",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     },
     {
       "source": "/education/preparing-materials",
-      "destination": "/insights#education",
+      "destination": "/insights",
       "permanent": true
     }
   ],
